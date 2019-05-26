@@ -1,14 +1,6 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    {
-      "path": "pages/tabBar/psCenter/psCenter",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    }
-    ,
+   
     {
       "path": "pages/tabBar/onGoods/onGoods",
       "style": {
@@ -17,13 +9,21 @@
         }
       }
     },
+		 {
+		  "path": "pages/tabBar/psCenter/psCenter",
+		  "style": {
+		    "app-plus": {
+		      "titleNView": false
+		    }
+		  }
+		}
+		,
     {
       "path": "pages/news/news",
       "style": {
         "app-plus": {
           "titleNView": false
-        },
-        "usingComponents": true
+        }
       }
     },
 
@@ -32,8 +32,7 @@
       "style": {
         "app-plus": {
           "titleNView": false
-        },
-        "usingComponents": true
+        }
       }
     },
 
@@ -68,17 +67,14 @@
           "titleNView": false
         }
       }
-    }, {
-      "path": "pages/news/news",
-      "style": {}
     }
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8",
-    "usingComponents": true
+    "backgroundColor": "#F8F8F8"
+   /* "usingComponents": true */
   },
   "tabBar": {
     "color": "#7A7E83",
