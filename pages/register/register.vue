@@ -11,23 +11,23 @@
         </em>
         <form @submit="formSubmit">
           <view class="forinpuBox">
-              <image src="../../static/ga005_122.png" mode=""></image>
-              <input type="text" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员手机号" maxlength="11">
+              <image src="../../static/ga005_122.png" mode="widthFix"></image>
+              <input type="text" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员手机号" maxlength="11" name="userPhone">
           </view>
           <view class="forinpuBox">
-              <image src="../../static/ga005_123.png" mode=""></image>
-              <input type="password" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员密码">
+              <image src="../../static/ga005_123.png" mode="widthFix"></image>
+              <input type="password" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员密码" name="userPassword">
           </view>
           <view class="forinpuBox">
-              <image src="../../static/ga005_123.png" mode=""></image>
-              <input type="password" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="再次输入密码">
+              <image src="../../static/ga005_123.png" mode="widthFix"></image>
+              <input type="password" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="再次输入密码" name="agianPassword">
           </view>
           <view class="forinpuBox">
-              <image src="../../static/ga005_124.png" mode=""></image>
-              <input type="text" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="输入邀请码">          
+              <image src="../../static/ga005_124.png" mode="widthFix"></image>
+              <input type="text" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="输入邀请码" name="InvitationCode">          
           </view>
           <view class="forinpuBox subBtn">
-              <button class="btn">立即登录</button>
+              <button class="btn" formType="submit">立即登录</button>
           </view>
         </form>
       </view>
@@ -40,8 +40,27 @@
   export default {
     data() {
       return {
-
+        
       };
+    },
+    methods:{
+      // http://2019a005api.jiafuw.com
+      formSubmit(ev){
+        uni.request({
+         // url:"https://www.dshui.cc/goodswap/allCtgy?&token=",
+         url:"http://2019a005api.jiafuw.com/v1/user/login",
+         data:{
+           token:""
+         },
+         success: (res) => {
+          console.log("请求成功");
+          console.log(res.data);
+          },
+         fail:function(res){
+           console.log("请求失败");
+         }
+        })
+      }
     }
   }
 </script>
@@ -61,7 +80,7 @@
 
   .reglogoBox {
     text-align: center;
-    padding-top: 250upx;
+    padding-top: 220upx;
   }
 
   .reglogo {
@@ -83,7 +102,7 @@
      color:white;
    }
   .forinpuBox {
-    height: 100upx;
+    height:100upx;
     background: RGBA(137, 185, 147, 1);
     border-radius: 16upx;
     margin-bottom: 20upx;
@@ -92,7 +111,6 @@
 
   .forinpuBox image {
     width: 60upx;
-    height: 60upx;
     position: absolute;
     top: 20upx;
     left: 30upx;
@@ -105,7 +123,7 @@
     background: none;
     margin: 0upx;
     padding: 0upx 20upx 0upx 100upx;
-    color:#ffffff;
+    // color:#ffffff;
   }
   
  .forinpuBox .btn{
@@ -117,7 +135,7 @@
  }
  
  .subBtn{
-   margin-top:120upx;
+   margin-top:100upx;
  }
 
 </style>

@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/category/category",
     "pages/tabBar/onGoods/onGoods",
     "pages/tabBar/psCenter/psCenter",
     "pages/news/news",
-    "pages/login/login",
-    "pages/register/register",
     "pages/tabBar/offStores/offStores",
     "pages/tabBar/swCenter/swCenter",
     "pages/tabBar/shCart/shCart"

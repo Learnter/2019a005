@@ -24,17 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-._h2 {
-  font-size: 32rpx;
-  font-weight: 700;
-}
-.good-text {
-  font-size: 14rpx;
-  color: white;
-  background: red;
-  margin-right: 8rpx;
-  padding: 2rpx 6rpx;
-}
 .tickets-p {
   margin-top: 20rpx;
   margin-bottom: 10rpx;
@@ -43,41 +32,33 @@
 .textSize {
   font-size: 26rpx;
 }
-.text-del-style {
-  font-size: 28rpx;
-  color: #C1C1C1;
-  margin-top: 4rpx;
-}
 .tickets-Icon {
   width: 30rpx;
   margin-right: 6rpx;
 }
-image {
-  width: 100%;
-}
-.home-head {
+.headBox {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   width: 100%;
 }
-.home-head .bgImage {
+.headBox .bgImage {
     width: 100%;
     z-index: 1;
 }
-.home-head .contentBox {
+.headBox .contentBox {
     position: absolute;
     left: 0;
     top: 100rpx;
     right: 0;
     z-index: 2;
 }
-.home-head .contentBox .con_text {
+.headBox .contentBox .con_text {
       padding: 0 30rpx;
       color: white;
 }
-.home-head .contentBox .con_text .con_buttom {
+.headBox .contentBox .con_text .con_buttom {
         background-color: white;
         width: 100%;
         -webkit-box-sizing: border-box;
@@ -99,7 +80,7 @@ image {
         border-radius: 10rpx;
         margin-top: 30rpx;
 }
-.home-head .contentBox .con_text .con_buttom .conImg {
+.headBox .contentBox .con_text .con_buttom .conImg {
           height: 30rpx;
           width: 30rpx;
 }
@@ -110,7 +91,6 @@ image {
   right: 0;
   top: 0;
   z-index: 10;
-  /*分类样式 */
   /* 公告栏样式 */
   /*广告专区*/
   /*商品列表区 */
@@ -126,13 +106,6 @@ image {
 }
 .home-main .bannerBox .swiper-box {
       height: 300rpx;
-}
-.home-main .more-Icon {
-    width: 40rpx;
-    padding: 6rpx 18rpx;
-    border: 2rpx solid rgba(0, 0, 0, 0.12);
-    border-radius: 8rpx;
-    z-index: 10;
 }
 .home-main .iconBox {
     display: -webkit-box;
@@ -267,20 +240,17 @@ image {
 }
 .home-main .seckill .s_list .s_li {
         width: 23%;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        font-size: 8rpx;
-        line-height: 1.2;
 }
-.home-main .seckill .s_list .s_li ._del {
-          color: rgba(0, 0, 0, 0.2);
+.home-main .seckill .s_list .s_li .s_li_head {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
 }
 .home-main .seckill .s_list .s_li .giftImg {
           display: -webkit-box;

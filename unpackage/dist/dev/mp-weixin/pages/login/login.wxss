@@ -81,7 +81,6 @@ page {
   background: none;
   margin: 0rpx;
   padding: 0rpx 20rpx 0rpx 100rpx;
-  color: #ffffff;
 }
 .fortextBox {
   display: -webkit-box;

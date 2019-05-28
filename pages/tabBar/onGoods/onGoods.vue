@@ -1,7 +1,7 @@
 <template>
-	<view class="homeBox">
+	<view class="homePage">
 
-		<view class="home-head">
+		<view class="headBox">
 			<!-- 首页头部 -->
 			<image class="bgImage" src="../../../static/ga005_26.png" mode="widthFix"></image>
 			<view class="contentBox">
@@ -117,26 +117,37 @@
 					<h2>秒杀精品</h2>
 					<image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
 				</view>
+        
 				<view class="s_list">
 					<view class="s_li">
-						<image src="../../../static/ga005_38.png" class="fImg"></image>
-						<text class="textSize">￥2000</text>
-						<del class="text-del-style">￥1000</del>
+            <view class="s_li_head">
+              <image src="../../../static/ga005_38.png" class="fImg"></image>
+              <text class="textSize">￥2000</text>
+            </view>
+            <text class="text-del-style">￥1000</text>
+					</view>
+          
+          
+					<view class="s_li">
+					  <view class="s_li_head">
+					    <image src="../../../static/ga005_38.png" class="fImg"></image>
+					    <text class="textSize">￥2000</text>
+					  </view>
+					  <text class="text-del-style">￥1000</text>
 					</view>
 					<view class="s_li">
-						<image src="../../../static/ga005_38.png" class="fImg"></image>
-						<text class="textSize">￥2000</text>
-						<del class="text-del-style">￥1000</del>
+					  <view class="s_li_head">
+					    <image src="../../../static/ga005_38.png" class="fImg"></image>
+					    <text class="textSize">￥2000</text>
+					  </view>
+					  <text class="text-del-style">￥1000</text>
 					</view>
 					<view class="s_li">
-						<image src="../../../static/ga005_38.png" class="fImg"></image>
-						<text class="textSize">￥2000</text>
-						<del class="text-del-style">￥1000</del>
-					</view>
-					<view class="s_li">
-						<image src="../../../static/ga005_38.png" class="fImg"></image>
-						<text class="textSize">￥2000</text>
-						<del class="text-del-style">￥1000</del>
+					  <view class="s_li_head">
+					    <image src="../../../static/ga005_38.png" class="fImg"></image>
+					    <text class="textSize">￥2000</text>
+					  </view>
+					  <text class="text-del-style">￥1000</text>
 					</view>
 				</view>
 			</view>
@@ -149,24 +160,32 @@
 				</view>
 				<view class="s_list">
 					<view class="s_li">
-						<image src="../../../static/ga005_38.png" class="fImg"></image>
-						<text class="textSize">￥2000</text>
-						<del class="text-del-style">￥1000</del>
+					  <view class="s_li_head">
+					    <image src="../../../static/ga005_38.png" class="fImg"></image>
+					    <text class="textSize">￥2000</text>
+					  </view>
+					  <text class="text-del-style">￥1000</text>
 					</view>
 					<view class="s_li">
-						<image src="../../../static/ga005_38.png" class="fImg"></image>
-						<text class="textSize">￥2000</text>
-						<del class="text-del-style">￥1000</del>
+					  <view class="s_li_head">
+					    <image src="../../../static/ga005_38.png" class="fImg"></image>
+					    <text class="textSize">￥2000</text>
+					  </view>
+					  <text class="text-del-style">￥1000</text>
 					</view>
 					<view class="s_li">
-						<image src="../../../static/ga005_38.png" class="fImg"></image>
-						<text class="textSize">￥2000</text>
-						<del class="text-del-style">￥1000</del>
+					  <view class="s_li_head">
+					    <image src="../../../static/ga005_38.png" class="fImg"></image>
+					    <text class="textSize">￥2000</text>
+					  </view>
+					  <text class="text-del-style">￥1000</text>
 					</view>
 					<view class="s_li">
-						<image src="../../../static/ga005_38.png" class="fImg"></image>
-						<text class="textSize">￥2000</text>
-						<del class="text-del-style">￥1000</del>
+					  <view class="s_li_head">
+					    <image src="../../../static/ga005_38.png" class="fImg"></image>
+					    <text class="textSize">￥2000</text>
+					  </view>
+					  <text class="text-del-style">￥1000</text>
 					</view>
 				</view>
 			</view>
@@ -202,7 +221,7 @@
 							<image src="../../../static/ga005_48.png" mode="widthFix" class="tickets-Icon"></image>
 							<text class="textSize">￥2000</text>
 						</view>
-						<del class="text-del-style">￥1000</del>
+						<text class="text-del-style">￥1000</text>
 					</view>
 					<view class="s_li">
 						<image src="../../../static/ga005_38.png" class="fImg"></image>
@@ -210,7 +229,7 @@
 							<image src="../../../static/ga005_48.png" mode="widthFix" class="tickets-Icon"></image>
 							<text class="textSize">￥2000</text>
 						</view>
-						<del class="text-del-style">￥1000</del>
+						<text class="text-del-style">￥1000</text>
 					</view>
 					<view class="s_li">
 						<image src="../../../static/ga005_38.png" class="fImg"></image>
@@ -218,7 +237,7 @@
 							<image src="../../../static/ga005_49.png" mode="widthFix" class="tickets-Icon"></image>
 							<text class="textSize">￥2000</text>
 						</view>
-						<del class="text-del-style">￥1000</del>
+						<text class="text-del-style">￥1000</text>
 					</view>
 					<view class="s_li">
 						<image src="../../../static/ga005_38.png" class="fImg"></image>
@@ -226,7 +245,7 @@
 							<image src="../../../static/ga005_49.png" mode="widthFix" class="tickets-Icon"></image>
 							<text class="textSize">￥2000</text>
 						</view>
-						<del class="text-del-style">￥1000</del>
+						<text class="text-del-style">￥1000</text>
 					</view>
 				</view>
 			</view>
@@ -256,7 +275,7 @@
 								</view>
 								<text class="t_top_right">购买</text>
 							</view>
-							<del class="text-del-style">￥1000</del>
+							<text class="text-del-style">￥1000</text>
 						</view>
 					</view>
 				</view>
@@ -276,7 +295,7 @@
 								</view>
 								<text class="t_top_right">购买</text>
 							</view>
-							<del class="text-del-style">￥1000</del>
+							<text class="text-del-style">￥1000</text>
 						</view>
 					</view>
 				</view>
@@ -296,7 +315,7 @@
 								</view>
 								<text class="t_top_right">购买</text>
 							</view>
-							<del class="text-del-style">￥1000</del>
+							<text class="text-del-style">￥1000</text>
 						</view>
 					</view>
 				</view>
@@ -316,7 +335,7 @@
 								</view>
 								<text class="t_top_right">购买</text>
 							</view>
-							<del class="text-del-style">￥1000</del>
+							<text class="text-del-style">￥1000</text>
 						</view>
 					</view>
 				</view>
@@ -384,19 +403,7 @@
 </script>
 
 <style lang="scss">
-	h2 {
-		font-size: 32upx;
-		font-weight: 700;
-	}
-
-	.good-text {
-		font-size: 14upx;
-		color: white;
-		background: red;
-		margin-right: 8upx;
-		padding: 2upx 6upx;
-	}
-
+  
 	.tickets-p {
 		margin-top: 20upx;
 		margin-bottom: 10upx;
@@ -407,22 +414,12 @@
 		font-size: 26upx;
 	}
 
-	.text-del-style {
-		font-size: 28upx;
-		color: #C1C1C1;
-		margin-top: 4upx;
-	}
-
 	.tickets-Icon {
 		width: 30upx;
 		margin-right: 6upx;
 	}
 
-	image {
-		width: 100%;
-	}
-
-	.home-head {
+	.headBox {
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -485,15 +482,6 @@
 			.swiper-box {
 				height: 300upx;
 			}
-		}
-
-		/*分类样式 */
-		.more-Icon {
-			width: 40upx;
-			padding: 6upx 18upx;
-			border: 2upx solid rgba(0, 0, 0, 0.12);
-			border-radius: 8upx;
-			z-index: 10;
 		}
 
 		.iconBox {
@@ -571,15 +559,11 @@
 
 
 				.s_li {
-					width: 23%;
-					display: flex;
-					flex-direction: column;
-					font-size: 8upx;
-					line-height: 1.2;
-
-					del {
-						color: rgba(0, 0, 0, 0.2);
-					}
+					width: 23%; 
+          .s_li_head{
+            display: flex;
+            flex-direction: column;
+          }
 
 					.giftImg {
 						display: flex;

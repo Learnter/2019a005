@@ -9,18 +9,18 @@
         <form @submit="formSubmit">
           <view class="forinpuBox">
               <image src="../../static/ga005_122.png" mode=""></image>
-              <input type="text" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员手机号" maxlength="11">
+              <input type="text" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员手机号" maxlength="11" v-model="account">
           </view>
           <view class="forinpuBox">
               <image src="../../static/ga005_123.png" mode=""></image>
-              <input type="password" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员密码">
+              <input type="password" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员密码" v-model="password">
           </view>
           <view class="fortextBox">
             <text>注册</text>
             <text>忘记密码</text>
           </view>
           <view class="forinpuBox subBtn">
-              <button class="btn">立即登录</button>
+              <button class="btn" formType="submit">立即登录</button>
           </view>
         </form>
       </view>
@@ -33,8 +33,30 @@
   export default {
     data() {
       return {
-
+          account:"",
+          password:""
       };
+    },
+    methods:{
+      formSubmit(){
+        console.log("用户的账号:"+this.account,"用户的密码:"+this.password);
+        uni.request({
+          url:"http://2019a005api.jiafuw.com/v1/user/login",
+          method:"POST",
+          data:{
+            account:"18888888888",
+            password:"888888"
+          },
+           success: (res) => {
+            console.log("请求成功");
+            console.log(res.data);
+          },
+          fail: (res) => {
+            console.log("请求失败");
+            console.log(res)
+          }
+        })
+      }
     }
   }
 </script>
@@ -95,7 +117,6 @@
     background: none;
     margin: 0upx;
     padding: 0upx 20upx 0upx 100upx;
-    color:#ffffff;
   }
   .fortextBox{
     display:flex;

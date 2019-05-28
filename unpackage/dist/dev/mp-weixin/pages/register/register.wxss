@@ -36,7 +36,7 @@ page {
 }
 .reglogoBox {
   text-align: center;
-  padding-top: 250rpx;
+  padding-top: 220rpx;
 }
 .reglogo {
   width: 80rpx;
@@ -73,7 +73,6 @@ page {
 }
 .forinpuBox image {
   width: 60rpx;
-  height: 60rpx;
   position: absolute;
   top: 20rpx;
   left: 30rpx;
@@ -85,7 +84,6 @@ page {
   background: none;
   margin: 0rpx;
   padding: 0rpx 20rpx 0rpx 100rpx;
-  color: #ffffff;
 }
 .forinpuBox .btn {
   background: RGBA(137, 185, 147, 1);
@@ -95,6 +93,6 @@ page {
   color: RGBA(202, 219, 200, 1);
 }
 .subBtn {
-  margin-top: 120rpx;
+  margin-top: 100rpx;
 }
 
