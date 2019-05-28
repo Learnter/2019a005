@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/category/detail/detail",
+    "pages/news/news",
+    "pages/category/category",
+    "pages/tabBar/offStores/offStores",
     "pages/login/login",
     "pages/register/register",
-    "pages/category/category",
     "pages/tabBar/onGoods/onGoods",
     "pages/tabBar/psCenter/psCenter",
-    "pages/news/news",
-    "pages/tabBar/offStores/offStores",
     "pages/tabBar/swCenter/swCenter",
     "pages/tabBar/shCart/shCart"
   ],

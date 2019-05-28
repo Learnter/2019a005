@@ -40,7 +40,7 @@
       top:20px;
       left:20px;
       z-index:1;
-      width:60upx;
+      width:66upx;
     }
     .newsImg{
       width:100%;

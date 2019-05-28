@@ -83,6 +83,7 @@
   right: 0;
   top: 0;
   z-index: 10;
+  /* 店铺列表*/
 }
 .main .bannerBox {
     width: 100%;
@@ -94,7 +95,7 @@
     margin-top: -240rpx;
 }
 .main .bannerBox .swiper-box {
-      height: 300rpx;
+      min-height: 300rpx;
 }
 .main .sortBox {
     display: -webkit-box;
@@ -110,7 +111,8 @@
         -ms-flex-align: center;
             align-items: center;
     margin-top: 40rpx;
-    border: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
 }
 .main .sortBox .sort-item {
       width: 23%;
@@ -128,30 +130,30 @@
           -ms-flex-align: center;
               align-items: center;
       padding: 16rpx 0;
+      border-left: 1px solid #E6E6E6;
+      border-right: 1px solid #E6E6E6;
 }
 .main .sortBox .sort-item image {
         width: 16rpx;
         margin-left: 4rpx;
 }
-.main .category-li {
+.main .storeBox {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    background: white;
-    border: 1px solid lightgray;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     margin-top: 16rpx;
-    border-radius: 0 10rpx 10rpx 0;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
-.main .category-li .cate-li-right {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      padding: 10rpx 20rpx;
-      border-left: 1px solid lightgray;
+.main .storeBox .store-item {
+      background: white;
+      width: 49%;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -161,19 +163,62 @@
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
+      margin-bottom: 20rpx;
 }
-.main .category-li .cate-li-right .li-r-top {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
+.main .storeBox .store-item image {
+        min-height: 360rpx;
+}
+.main .storeBox .store-item .item-tips {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 10rpx 14rpx;
+        overflow: hidden;
+}
+.main .storeBox .store-item .item-tips .i-t-top {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
+}
+.main .storeBox .store-item .item-tips .i-t-top ._h3, .main .storeBox .store-item .item-tips .i-t-top ._p {
+            width: 100%;
+            margin-bottom: 10rpx;
+            overflow: hidden;
+            white-space: nowrap;
+            -o-text-overflow: ellipsis;
+               text-overflow: ellipsis;
+}
+.main .storeBox .store-item .item-tips .i-t-bottom {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+}
+.main .storeBox .store-item .item-tips .i-t-bottom text {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            padding: 6rpx 8rpx;
+            margin-right: 10rpx;
+            color: white;
+            font-size: 10rpx;
+}
+.main .storeBox .store-item .item-tips .i-t-bottom text:nth-child(odd) {
+              background: red;
+}
+.main .storeBox .store-item .item-tips .i-t-bottom text:nth-child(even) {
+              background: green;
 }
 

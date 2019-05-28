@@ -29,7 +29,7 @@
   top: 20px;
   left: 20px;
   z-index: 1;
-  width: 60rpx;
+  width: 66rpx;
 }
 .newsImg {
   width: 100%;

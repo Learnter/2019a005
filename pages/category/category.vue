@@ -50,7 +50,7 @@
       </view>
       
       <view class="category-list">
-         <view class="category-li">
+         <view class="category-li" @tap="toDetail">
            <image src="../../static/ga005_40.png" mode="widthFix" style="width:30%"></image>
            <view class="cate-li-right">
              <view class="li-r-top">
@@ -186,7 +186,13 @@
 		methods: {
 			change(e) {
 				this.current = e.detail.current
-			}
+			},
+      toDetail(){
+        //跳转到详情页面
+        uni.navigateTo({
+          url:"detail/detail"
+        })
+      }
 		},
 		components: {
 			uniSwiperDot
@@ -270,7 +276,7 @@
       justify-content:space-between;
       align-items:center;
       margin-top:40upx;
-      border:1px solid lightgray;
+      border:1px solid #E6E6E6;
       .sort-item{
         width:23%;
         background:white;

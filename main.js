@@ -10,7 +10,6 @@ Vue.prototype.$api = httpApi
 Vue.prototype.$Request = HttpRequest
 Vue.prototype.$Sysconf = HttpRequest.config
 Vue.prototype.$SysCache = HttpCache
-Vue.prototype.$util = util
 
 App.mpType = 'app'
 

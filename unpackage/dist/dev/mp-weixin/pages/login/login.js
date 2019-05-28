@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -50,24 +50,36 @@ var _default =
   methods: {
     formSubmit: function formSubmit() {
       console.log("用户的账号:" + this.account, "用户的密码:" + this.password);
-      uni.request({
-        url: "http://2019a005api.jiafuw.com/v1/user/login",
-        method: "POST",
-        data: {
-          account: "18888888888",
-          password: "888888" },
+      // 原生请求 
+      // uni.request({
+      //   url:"http://2019a005api.jiafuw.com/v1/user/login",
+      //   method:"POST",
+      //   data:{
+      //     account:"18888888888",
+      //     password:"888888"
+      //   },
+      //    success: (res) => {
+      //     console.log("请求成功");
+      //     console.log(res.data);
+      //   },
+      //   fail: (res) => {
+      //     console.log("请求失败");
+      //     console.log(res)
+      //   }
+      // })
 
-        success: function success(res) {
-          console.log("请求成功");
-          console.log(res.data);
-        },
-        fail: function fail(res) {
-          console.log("请求失败");
-          console.log(res);
-        } });
 
+      // 封装好的请求  
+      var data = {
+        account: "18888888888",
+        password: "888888" };
+
+      var url = "user/login";
+
+      this.$Request.post(url, data).then(function (res) {
+        console.log(res.data.token);
+      });
     } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 
