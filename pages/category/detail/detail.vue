@@ -89,11 +89,8 @@
     }
 
     .returnBtn {
-      position: absolute;
       top: 12upx;
       left: 12upx;
-      z-index: 10;
-      width: 66upx;
     }
   }
 

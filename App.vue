@@ -20,15 +20,23 @@
 		min-height: 100%;
     background:#F7F5F4;  
     letter-spacing:1px;
+    overflow:auto;
     }
     
     view{
-        line-height:1;
+        line-height:1;        
     }
       
     image{
       width:100%;
     }
+    
+    .returnBtn {
+      position: absolute;
+      z-index: 10;
+      width: 60upx;
+    }
+    
     /* 公共的更多icon样式*/
     .more-Icon {
     	width: 40upx;
@@ -61,6 +69,10 @@
      /*浅暗色-*/
    .text-color-gray{
      color: #C1C1C1;
+   }
+   
+   .text-color-red{
+     color:red;
    }
    
    /* 促销样式  例如-秒杀*/

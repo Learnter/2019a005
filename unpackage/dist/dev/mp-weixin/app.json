@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/tabBar/shCart/shCart",
+    "pages/tabBar/swCenter/swCenter",
     "pages/category/detail/detail",
     "pages/news/news",
     "pages/category/category",
@@ -7,9 +9,7 @@
     "pages/login/login",
     "pages/register/register",
     "pages/tabBar/onGoods/onGoods",
-    "pages/tabBar/psCenter/psCenter",
-    "pages/tabBar/swCenter/swCenter",
-    "pages/tabBar/shCart/shCart"
+    "pages/tabBar/psCenter/psCenter"
   ],
   "subPackages": [],
   "window": {

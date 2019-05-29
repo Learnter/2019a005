@@ -50,11 +50,8 @@
     border: 1px solid #E6E6E6;
 }
 .big-Piture .returnBtn {
-    position: absolute;
     top: 12rpx;
     left: 12rpx;
-    z-index: 10;
-    width: 66rpx;
 }
 .detailNav {
   background: #BAD0BA;
