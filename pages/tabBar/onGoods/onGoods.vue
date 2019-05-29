@@ -465,10 +465,7 @@
 
 	.home-main {
 		padding: 480upx 20upx 0;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
+		position:relative;
 		z-index: 10;
 
 		.bannerBox {
