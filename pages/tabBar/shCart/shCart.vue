@@ -146,8 +146,8 @@
            </checkbox-group>
          </view>
          <view class="select-all-right">
-           <label>合计:<text class="text-color-red">￥99</text></label>
-           <text class="settle-money">去结算(*)</text>
+           <label>合计: <text class="text-color-red">￥99</text></label>
+					 <button class="settle-money">去结算(*)</button>
          </view>
       </view>
       
@@ -245,14 +245,27 @@
             }   
           }
         }
-      }
-      
+      }  
   .select-all{
+		margin:30upx 0;
     background: white;
-    margin: 40upx 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30upx;
+		.select-all-right{
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			.settle-money{
+				height: 60upx;
+				background: green;
+				font-size: 30upx;
+				padding:0 20upx;
+				line-height: 60upx;
+				margin:20upx 0 20upx 20upx;
+				flex-shrink:0;
+			}
+		}
   }
 </style>

@@ -1,168 +1,168 @@
 {
-  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-  {
-    "path": "pages/tabBar/onGoods/onGoods",
-    "style": {
-      "app-plus": { //去除app 头部导航栏
-        "titleNView": false
-      }
-    }
-  },
-    {
-      "path": "pages/tabBar/shCart/pay-bill/pay-bill",
-      "style": {
-        "app-plus": { //去除app 头部导航栏
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/tabBar/swCenter/exchange-center/exchange-center",
-      "style": {
-        "app-plus": { //去除app 头部导航栏
-          "titleNView": false
-        }
-      }
-    },
-    
-    {
-      "path": "pages/tabBar/shCart/user-orders/user-orders",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/tabBar/swCenter/user-bill/user-bill",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/tabBar/swCenter/user-assets/user-assets",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/tabBar/shCart/shCart",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/tabBar/swCenter/swCenter",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/category/detail/detail",
-      "style": {
-        "app-plus": { //去除app 头部导航栏
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/news/news",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabBar/onGoods/onGoods",
+			"style": {
+				"app-plus": { //去除app 头部导航栏
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/shCart/pay-bill/pay-bill",
+			"style": {
+				"app-plus": { //去除app 头部导航栏
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/swCenter/exchange-center/exchange-center",
+			"style": {
+				"app-plus": { //去除app 头部导航栏
+					"titleNView": false
+				}
+			}
+		},
 
-    {
-      "path": "pages/category/category",
-      "style": {
-        "app-plus": { //去除app 头部导航栏
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/tabBar/offStores/offStores",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/login/login",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/register/register",
-      "style": {
-        "app-plus": { //去除app 头部导航栏
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/tabBar/psCenter/psCenter",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    }
-  ],
-  "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
-    /* "usingComponents": true */
-  },
-  "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#007AFF",
-    "borderStyle": "black",
-    "backgroundColor": "#F8F8F8",
-    "list": [{
-        "pagePath": "pages/tabBar/onGoods/onGoods",
-        "iconPath": "static/2019_a005_55.png",
-        "selectedIconPath": "static/2019_a005_55_1.png",
-        "text": "线上商品"
-      },
-      {
-        "pagePath": "pages/tabBar/offStores/offStores",
-        "iconPath": "static/2019_a005_56.png",
-        "selectedIconPath": "static/2019_a005_56_1.png",
-        "text": "线下门店"
-      }, {
-        "pagePath": "pages/tabBar/swCenter/swCenter",
-        "iconPath": "static/2019_a005_57.png",
-        "selectedIconPath": "static/2019_a005_57_1.png",
-        "text": "交换中心"
-      }, {
-        "pagePath": "pages/tabBar/shCart/shCart",
-        "iconPath": "static/2019_a005_58.png",
-        "selectedIconPath": "static/2019_a005_58_1.png",
-        "text": "购物车"
-      },
-      {
-        "pagePath": "pages/tabBar/psCenter/psCenter",
-        "iconPath": "static/2019_a005_59.png",
-        "selectedIconPath": "static/2019_a005_59_1.png",
-        "text": "个人中心"
-      }
-    ]
-  }
+		{
+			"path": "pages/tabBar/shCart/user-orders/user-orders",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/swCenter/user-bill/user-bill",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/swCenter/user-assets/user-assets",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/shCart/shCart",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/swCenter/swCenter",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/category/detail/detail",
+			"style": {
+				"app-plus": { //去除app 头部导航栏
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/news/news",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+
+		{
+			"path": "pages/category/category",
+			"style": {
+				"app-plus": { //去除app 头部导航栏
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/offStores/offStores",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/register/register",
+			"style": {
+				"app-plus": { //去除app 头部导航栏
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/psCenter/psCenter",
+			"style": {
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+		/* "usingComponents": true */
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/tabBar/onGoods/onGoods",
+				"iconPath": "static/2019_a005_55.png",
+				"selectedIconPath": "static/2019_a005_55_1.png",
+				"text": "线上商品"
+			},
+			{
+				"pagePath": "pages/tabBar/offStores/offStores",
+				"iconPath": "static/2019_a005_56.png",
+				"selectedIconPath": "static/2019_a005_56_1.png",
+				"text": "线下门店"
+			}, {
+				"pagePath": "pages/tabBar/swCenter/swCenter",
+				"iconPath": "static/2019_a005_57.png",
+				"selectedIconPath": "static/2019_a005_57_1.png",
+				"text": "交换中心"
+			}, {
+				"pagePath": "pages/tabBar/shCart/shCart",
+				"iconPath": "static/2019_a005_58.png",
+				"selectedIconPath": "static/2019_a005_58_1.png",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/tabBar/psCenter/psCenter",
+				"iconPath": "static/2019_a005_59.png",
+				"selectedIconPath": "static/2019_a005_59_1.png",
+				"text": "个人中心"
+			}
+		]
+	}
 }

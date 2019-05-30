@@ -72,12 +72,10 @@
       .pay-item-btn {
         width: 160upx;
         height: 160upx;
+				line-height: 160upx;
         font-size: 50upx;
         border-radius: 50%;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        color:white;
         margin-bottom: 30upx;
       }
     }

@@ -128,8 +128,8 @@
                       align-items: center;
 }
 .select-all {
+  margin: 30rpx 0;
   background: white;
-  margin: 40rpx 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -143,5 +143,30 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 0 30rpx;
+}
+.select-all .select-all-right {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.select-all .select-all-right .settle-money {
+      height: 60rpx;
+      background: green;
+      font-size: 30rpx;
+      padding: 0 20rpx;
+      line-height: 60rpx;
+      margin: 20rpx 0 20rpx 20rpx;
+      -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+              flex-shrink: 0;
 }
 
