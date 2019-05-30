@@ -1,95 +1,134 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
   {
-    "path": "pages/tabBar/shCart/shCart",
-    "style": {
-      "app-plus": {
-        "titleNView": false
-      }
-    }
-  } ,
-   {
-    "path": "pages/tabBar/swCenter/swCenter",
-    "style": {
-      "app-plus": {
-        "titleNView": false
-      }
-    }
-  },
-   {
-      "path" : "pages/category/detail/detail",
-      "style" : {
-        "app-plus": { //去除app 头部导航栏
-          "titleNView": false
-        }
-      }
-  },
-  {
-    "path": "pages/news/news",
-    "style": {
-      "app-plus": {
-        "titleNView": false
-      }
-    }
-  },
-  
-   {
-        "path" : "pages/category/category",
-        "style": {
-          "app-plus": { //去除app 头部导航栏
-            "titleNView": false
-          }
-        }
-    }, 
-   {
-    "path": "pages/tabBar/offStores/offStores",
-    "style": {
-      "app-plus": {
-        "titleNView": false
-      }
-    }
-  },
-   {
-    "path": "pages/login/login",
-    "style": {
-      "app-plus": {
-        "titleNView": false
-      }
-    }
-  },
-  {
-    "path": "pages/register/register",
+    "path": "pages/tabBar/onGoods/onGoods",
     "style": {
       "app-plus": { //去除app 头部导航栏
         "titleNView": false
       }
     }
-  },   
- 
+  },
     {
-      "path": "pages/tabBar/onGoods/onGoods",
+      "path": "pages/tabBar/shCart/pay-bill/pay-bill",
       "style": {
         "app-plus": { //去除app 头部导航栏
           "titleNView": false
         }
       }
     },
-  {
-    "path": "pages/tabBar/psCenter/psCenter",
-    "style": {
-      "app-plus": {
-        "titleNView": false
+    {
+      "path": "pages/tabBar/swCenter/exchange-center/exchange-center",
+      "style": {
+        "app-plus": { //去除app 头部导航栏
+          "titleNView": false
+        }
+      }
+    },
+    
+    {
+      "path": "pages/tabBar/shCart/user-orders/user-orders",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/tabBar/swCenter/user-bill/user-bill",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/tabBar/swCenter/user-assets/user-assets",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/tabBar/shCart/shCart",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/tabBar/swCenter/swCenter",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/category/detail/detail",
+      "style": {
+        "app-plus": { //去除app 头部导航栏
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/news/news",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+
+    {
+      "path": "pages/category/category",
+      "style": {
+        "app-plus": { //去除app 头部导航栏
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/tabBar/offStores/offStores",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/register/register",
+      "style": {
+        "app-plus": { //去除app 头部导航栏
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/tabBar/psCenter/psCenter",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
       }
     }
-  }
- 
-    ],
+  ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
-   /* "usingComponents": true */
+    /* "usingComponents": true */
   },
   "tabBar": {
     "color": "#7A7E83",

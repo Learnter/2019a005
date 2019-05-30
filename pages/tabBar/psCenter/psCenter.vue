@@ -266,6 +266,7 @@
     top: 0;
     right: 0;
     z-index: 2;
+    overflow:hidden;
 
     .bgImage {
       width: 102%;

@@ -22,53 +22,57 @@
         </view>
         
         <!-- 产品列表信息 -->
-        <view class="goods-list">
-          <view class="goods-li">
-            <view>
-              <checkbox-group>
-                <label>
-                  <checkbox value="cb" ></checkbox>
-                </label>
-              </checkbox-group>
-            </view>
-            <view class="good-li-item">
-              <image class="img-border" src="../../../static/ga005_65.png" mode="widthFix"></image>
-              <view class="good-li-item-right">
-                 <h2>标题......</h2>
-                 <text>............</text>
-                 <label><text class="text-color-red">￥99</text></label>
-                 <view class="good-li-item-right-bottom">
-                   <uni-number-box />
-                   <label>合计:<text class="text-color-red">￥99</text></label>
-                 </view>
+        <view class="good-items">
+          <view class="good-list">
+              <view class="good-list-li">
+                <view>
+                  <checkbox-group>
+                    <label>
+                      <checkbox value="cb" ></checkbox>
+                    </label>
+                  </checkbox-group>
+                </view>
+                <view class="good-li-item">
+                  <image class="img-border" src="../../../static/ga005_65.png" mode="widthFix"></image>
+                  <view class="good-li-item-right">
+                     <h2>标题......</h2>
+                     <text>............</text>
+                     <label><text class="text-color-red">￥99</text></label>
+                     <view class="good-li-item-right-bottom">
+                       <uni-number-box />
+                       <label>合计:<text class="text-color-red">￥99</text></label>
+                     </view>
+                  </view>
+                </view>
               </view>
             </view>
+            <view class="good-list">
+              <view class="good-list-li">
+                <view>
+                  <checkbox-group>
+                    <label>
+                      <checkbox value="cb" ></checkbox>
+                    </label>
+                  </checkbox-group>
+                </view>
+                <view class="good-li-item">
+                  <image class="img-border" src="../../../static/ga005_65.png" mode="widthFix"></image>
+                  <view class="good-li-item-right">
+                     <h2>标题......</h2>
+                     <text>............</text>
+                     <label><text class="text-color-red">￥99</text></label>
+                     <view class="good-li-item-right-bottom">
+                       <uni-number-box />
+                       <label>合计:<text class="text-color-red">￥99</text></label>
+                     </view>
+                  </view>
+                </view>
+              </view>
+            </view>  
           </view>
+          
         </view>
-        <view class="goods-list">
-          <view class="goods-li">
-            <view>
-              <checkbox-group>
-                <label>
-                  <checkbox value="cb" ></checkbox>
-                </label>
-              </checkbox-group>
-            </view>
-            <view class="good-li-item">
-              <image class="img-border" src="../../../static/ga005_65.png" mode="widthFix"></image>
-              <view class="good-li-item-right">
-                 <h2>标题......</h2>
-                 <text>............</text>
-                 <label><text class="text-color-red">￥99</text></label>
-                 <view class="good-li-item-right-bottom">
-                   <uni-number-box />
-                   <label>合计:<text class="text-color-red">￥99</text></label>
-                 </view>
-              </view>
-            </view>
-          </view>
-        </view>  
-      </view> 
+         
       
        <view class="storeInfo">
         <!-- 店铺名称-->
@@ -81,56 +85,59 @@
             <text>店铺名称.....</text>
         </view>
         
-        <!-- 产品列表信息 -->
-        <view class="goods-list">
-          <view class="goods-li">
-            <view>
-              <checkbox-group>
-                <label>
-                  <checkbox value="cb" ></checkbox>
-                </label>
-              </checkbox-group>
-            </view>
-            <view class="good-li-item">
-              <image class="img-border" src="../../../static/ga005_65.png" mode="widthFix"></image>
-              <view class="good-li-item-right">
-                 <h2>标题......</h2>
-                 <text>............</text>
-                 <label><text class="text-color-red">￥99</text></label>
-                 <view class="good-li-item-right-bottom">
-                   <uni-number-box />
-                   <label>合计:<text class="text-color-red">￥99</text></label>
+        
+         <view class="good-items">
+           <!-- 产品列表信息 -->
+             <view class="good-list">
+               <view class="good-list-li">
+                 <view>
+                   <checkbox-group>
+                     <label>
+                       <checkbox value="cb" ></checkbox>
+                     </label>
+                   </checkbox-group>
                  </view>
-              </view>
-            </view>
-          </view>
-        </view>
-        <view class="goods-list">
-          <view class="goods-li">
-            <view>
-              <checkbox-group>
-                <label>
-                  <checkbox value="cb"></checkbox>
-                </label>
-              </checkbox-group>
-            </view>
-            <view class="good-li-item">
-              <image class="img-border" src="../../../static/ga005_65.png" mode="widthFix"></image>
-              <view class="good-li-item-right">
-                 <h2>标题......</h2>
-                 <text>............</text>
-                 <label><text class="text-color-red">￥99</text></label>
-                 <view class="good-li-item-right-bottom">
-                   <uni-number-box />
-                   <label>合计:<text class="text-color-red">￥99</text></label>
+                 <view class="good-li-item">
+                   <image class="img-border" src="../../../static/ga005_65.png" mode="widthFix"></image>
+                   <view class="good-li-item-right">
+                      <h2>标题......</h2>
+                      <text>............</text>
+                      <label><text class="text-color-red">￥99</text></label>
+                      <view class="good-li-item-right-bottom">
+                        <uni-number-box />
+                        <label>合计:<text class="text-color-red">￥99</text></label>
+                      </view>
+                   </view>
                  </view>
-              </view>
-            </view>
-          </view>
-        </view>  
-      </view> 
-      
-      <view class="selectAll">
+               </view>
+             </view>
+             <view class="good-list">
+               <view class="good-list-li">
+                 <view>
+                   <checkbox-group>
+                     <label>
+                       <checkbox value="cb"></checkbox>
+                     </label>
+                   </checkbox-group>
+                 </view>
+                 <view class="good-li-item">
+                   <image class="img-border" src="../../../static/ga005_65.png" mode="widthFix"></image>
+                   <view class="good-li-item-right">
+                      <h2>标题......</h2>
+                      <text>............</text>
+                      <label><text class="text-color-red">￥99</text></label>
+                      <view class="good-li-item-right-bottom">
+                        <uni-number-box />
+                        <label>合计:<text class="text-color-red">￥99</text></label>
+                      </view>
+                   </view>
+                 </view>
+               </view>
+             </view>  
+           </view>  
+         </view>
+
+      <view class="select-all">
          <view>
            <checkbox-group>
              <label>
@@ -138,7 +145,7 @@
              </label>
            </checkbox-group>
          </view>
-         <view class="">
+         <view class="select-all-right">
            <label>合计:<text class="text-color-red">￥99</text></label>
            <text class="settle-money">去结算(*)</text>
          </view>
@@ -204,50 +211,48 @@
         background:white;
         font-size:30upx;
         color:#737373;
-        height:88upx;  
-        padding:20upx 30upx;
+        height:88upx; 
+        line-height:88upx;
+        padding: 0 30upx;
       }
       
-      .goods-list{
-       box-sizing:border-box;
-       padding:20upx 30upx;
-       background:white;
-       .goods-li{
-         display:flex;
-       .good-li-item{
-         flex: 1;
-         display:flex;
-         .good-li-item-right{
-           flex:1;
-           margin-left:30upx;
-           box-sizing:border-box;
-           padding-top:10upx;
-           display:flex;
-           flex-direction:column;
-           justify-content:space-between;
-           .good-li-item-right-bottom{
-             display:flex;
-             justify-content:space-between;
-             align-items:center;
-           }
-         }
+      .good-items{
+        box-sizing:border-box;
+        padding:20upx 30upx ;
+        background:white;
+        .good-list{
+             margin-bottom:20upx;
+             .good-list-li{
+               display:flex;
+             .good-li-item{
+               flex: 1;
+               display:flex;
+               .good-li-item-right{
+                 flex:1;
+                 margin-left:30upx;
+                 box-sizing:border-box;
+                 padding-top:10upx;
+                 display:flex;
+                 flex-direction:column;
+                 justify-content:space-between;
+                 .good-li-item-right-bottom{
+                   display:flex;
+                   justify-content:space-between;
+                   align-items:center;
+                 }
+               }
+              }
+            }   
+          }
         }
-      }   
-    }
-  }
-  
-  .selectAll{
+      }
+      
+  .select-all{
     background: white;
-    margin: 20px 0;
+    margin: 40upx 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    height:100upx;
-    .settle-money{
-      margin-left:20upx;
-      background:green;
-      
-    }
+    padding: 0 30upx;
   }
 </style>

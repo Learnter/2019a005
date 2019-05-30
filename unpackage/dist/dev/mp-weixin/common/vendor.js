@@ -463,7 +463,7 @@ function getData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6559,7 +6559,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6580,14 +6580,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -6656,7 +6656,7 @@ var patch = function(oldVnode, vnode) {
         });
         var diffData = diff(data, mpData);
         if (Object.keys(diffData).length) {
-            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
                 console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
                     ']差量更新',
                     JSON.stringify(diffData));
@@ -7633,6 +7633,23 @@ createPage(_psCenter.default);
 
 /***/ }),
 
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2Fpay-bill%2Fpay-bill\"}":
+/*!***********************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2Fpay-bill%2Fpay-bill"} ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _payBill = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/pay-bill/pay-bill.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\shCart\\pay-bill\\pay-bill.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_payBill.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
 /***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2FshCart\"}":
 /*!**********************************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2FshCart"} ***!
@@ -7650,6 +7667,40 @@ createPage(_shCart.default);
 
 /***/ }),
 
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2Fuser-orders%2Fuser-orders\"}":
+/*!*****************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2Fuser-orders%2Fuser-orders"} ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _userOrders = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/user-orders/user-orders.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\shCart\\user-orders\\user-orders.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_userOrders.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2Fexchange-center%2Fexchange-center\"}":
+/*!***************************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2Fexchange-center%2Fexchange-center"} ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _exchangeCenter = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/exchange-center/exchange-center.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\swCenter\\exchange-center\\exchange-center.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_exchangeCenter.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
 /***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2FswCenter\"}":
 /*!**************************************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2FswCenter"} ***!
@@ -7663,6 +7714,40 @@ createPage(_shCart.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _swCenter = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/swCenter.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\swCenter\\swCenter.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_swCenter.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2Fuser-assets%2Fuser-assets\"}":
+/*!*******************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2Fuser-assets%2Fuser-assets"} ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _userAssets = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/user-assets/user-assets.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\swCenter\\user-assets\\user-assets.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_userAssets.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2Fuser-bill%2Fuser-bill\"}":
+/*!***************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2Fuser-bill%2Fuser-bill"} ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _userBill = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/user-bill/user-bill.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\swCenter\\user-bill\\user-bill.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_userBill.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),

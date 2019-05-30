@@ -1,61 +1,71 @@
 <template>
-  <!-- 交换中心页面-->
-  <view class="swCenter">
-
+    <!-- 兑换中心页面-->
+	<view class="exchange-center">
+    
     <!-- 头部返回栏-->
     <view class="returnTitle">
-      <image class="returnBtn" src="../../../static/ga005_64.png" mode="widthFix"></image>
+      <image class="returnBtn" src="../../../../static/ga005_64.png" mode="widthFix"></image>
       <text>交换中心</text>
     </view>
-
+    
+    
     <!--账号余额-->
     <view class="accountInfo">
       <view class="account-left">
-        <image src="../../../static/ga005_118.png" mode="widthFix"></image>
+        <image src="../../../../static/ga005_118.png" mode="widthFix"></image>
         <text class="account-balance">我的余额</text>
-      </view>
-      <view class="account-right">
-        <view class="account-r-item">
-          <text>订单列表</text>
-          <text>￥88888</text>
-        </view>
-        <view class="account-r-item">
-          <text>交易记录</text>
-          <text>￥88888</text>
-        </view>
-        <view class="account-r-item">
-          <text>总红包</text>
-          <text>￥88888</text>
-        </view>
-        <view class="account-r-item">
-          <text>总余额</text>
-          <text>￥88888</text>
-        </view>
-      </view>
+      </view>       
     </view>
-
-    <view class="sw-main">
+    
+    
+    <view class="convertBox">
       
-      <!-- 买/买家列表-->
-      <view class="vendorBox">
-        <text>买家列表</text>
-        <text>卖家列表</text>
+      <view class="convert-info">
+        <view class="convert-item">
+          <view class="convert-info-packets convert-item-li">
+            <text>转换成红包</text>
+            <input type="text" value="" />
+          </view>
+          <view class="convert-info-password convert-item-li">
+            <text>二级密码</text>
+            <input type="password" value="" />
+          </view>
+           <text class="convert-tips">
+             每日钱包最高兑换金额以转入钱包的总金额为准
+           </text>
+        </view> 
       </view>
-
-
+      
+     <!-- <view class="convert-btn">
+          <button type="primary">提交</button>
+      </view> -->
+      <button type="primary" class="convert-btn">提交</button>
+      
+    </view>
+      
+      
+    
+     <view class="sw-main">
+      
+      <!-- 资产日志-->
+      <view class="assets-log">
+        <text>兑换日志</text>
+      </view>
+    
+    
       <!-- 排序列表-->
       <view class="sortBox">
         <view class="sort-item">
           <text>分类</text>
-          <image src="../../../static/ga005_68.png" mode="widthFix"></image>
+          <image src="../../../../static/ga005_68.png" mode="widthFix"></image>
         </view>
         <view class="sort-item">
           <text>日期</text>
-          <image src="../../../static/ga005_68.png" mode="widthFix"></image>
+          <image src="../../../../static/ga005_68.png" mode="widthFix"></image>
         </view>
         <view class="sort-item">
           <text>排序</text>
-          <image src="../../../static/ga005_68.png" mode="widthFix"></image>
+          <image src="../../../../static/ga005_68.png" mode="widthFix"></image>
         </view>
       </view>
       
@@ -64,7 +74,7 @@
       	<view class="uni-list-cell" hover-class="uni-list-cell-hover" >
       		<view class="uni-media-list">
       			<view class="uni-media-list-logo">
-      				<image  src="../../../static/ga005_119.png" mode="widthFix" ></image>
+      				<image  src="../../../../static/ga005_119.png" mode="widthFix" ></image>
       			</view>
       			<view class="uni-media-list-body">
       				<view class="uni-media-list-text-top">标题</view>
@@ -75,7 +85,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -86,7 +96,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -97,7 +107,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -108,7 +118,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -119,7 +129,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -130,7 +140,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -141,7 +151,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -152,7 +162,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -163,7 +173,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -174,7 +184,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -185,7 +195,7 @@
         <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
         	<view class="uni-media-list">
         		<view class="uni-media-list-logo">
-        			<image  src="../../../static/ga005_119.png" mode="widthFix"></image>
+        			<image  src="../../../../static/ga005_119.png" mode="widthFix"></image>
         		</view>
         		<view class="uni-media-list-body">
         			<view class="uni-media-list-text-top">标题</view>
@@ -195,23 +205,21 @@
         </view>
     </view>  
     </view>
-  </view>
+		
+	</view>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-
-      }
-    },
-    methods: {
-
-    }
-  }
+	export default {
+		data() {
+			return {
+				
+			};
+		}
+	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   
    /* 头部返回栏样式*/
   .returnTitle {
@@ -226,17 +234,18 @@
       transform: translateY(-50%);
     }
   }
-
-   /* 账号信息样式 */
+  
+  /* 账号信息样式 */
   .accountInfo {
     background: white;
     box-sizing: border-box;
     padding: 30upx 40upx;
     display: flex;
+    justify-content:center;
+    align-items:center;
     margin:10upx 0;
     .account-left {
       position: relative;
-      width:50%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -246,71 +255,76 @@
       .account-balance {
         position: absolute;
         font-size: 20upx;
-        top: 108upx;
+        top: 100upx;
       }
-    }
-
-    .account-right {
-      width: 50%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      .account-r-item {
-        width:50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items:center;
-        padding:16upx 0;
-        text{
-          &:nth-child(1){
-            font-size:24upx;
-          };
-          &:nth-child(2){
-            font-size:22upx;
-            color:green;
+    }   
+  }
+  
+  /* 红包转换盒子的样式*/
+  .convertBox{
+    padding:0 1% 20upx;
+    .convert-info{
+      background:white;
+      padding:40upx 0;
+      .convert-item{
+        width:80%; 
+        margin:0 auto;
+        .convert-item-li{
+            padding:20upx 0 20upx;
+            font-size:32upx;
+             input{
+               background:#E7E4E2;
+               height:70upx;
+               margin-top:20upx;
+               padding-left:5px;
+               box-sizing:border-box;
+             }
+          } 
+          .convert-tips{
+            font-size:20upx;
+            &::before{
+              content:".";
+              display:inline; 
+              position:relative;
+              top:-10upx;
+            }
           }
-        }
-      }
+        }  
+      }     
+    .convert-btn{
+      margin:40upx auto;
+      width:400upx;
+      font-size:30upx;
+      background:#41A069;
+      letter-spacing:10px;
     }
   }
-
-
+  
+  
   .sw-main {
     box-sizing:borde-box;
     padding: 0 1%;
     
-    /* 卖家--买家列表样式*/
-    .vendorBox {
-      display: flex;
-      font-size: 32upx;
-      margin-bottom:12upx;
-      text {
-        width: 50%;
-        padding: 20upx 0;
-        text-align: center;
-
-        &:nth-child(1) {
-          background: #E6E6E6;
-        }
-
-        ;
-
-        &:nth-child(2) {
-          background: #CCCCCC;
-        }
-      }
-    }
-
+    .assets-log{
+      background:#E6E6E6;
+      height:70upx;
+      line-height:70upx;
+      font-size: 28upx;
+      margin-bottom:10upx;
+      text-align:center;
+      
+    }   
+  
     /* 排序列表样式*/
     .sortBox {
       box-sizing: border-box;
-      padding: 20upx 40upx;
+      padding: 16upx 30upx;
       display: flex;
       justify-content: space-between;
       background: white;
-
+  
       .sort-item {
+        font-size:28upx;
         display: flex;
         align-items: center;
         height:40upx;
@@ -323,7 +337,7 @@
     
     /* 信息列表样式*/
     .uni-list{
-      margin-top:10upx;
+      margin-top:8upx;
       background:none;
       &::before,&::after{
         display:none;
@@ -345,16 +359,17 @@
         
           
         .uni-media-list-body{
-          height:70upx;
+          height:60upx;
         }
         
         .uni-media-list-text-top{
-          font-size:24upx;
+          font-size:22upx;
         }
         
         .uni-media-list-text-bottom{
-          font-size:20upx;
+          font-size:16upx;
         }
      } 
   }
+
 </style>

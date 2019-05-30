@@ -1,5 +1,11 @@
 {
   "pages": [
+    "pages/tabBar/onGoods/onGoods",
+    "pages/tabBar/shCart/pay-bill/pay-bill",
+    "pages/tabBar/swCenter/exchange-center/exchange-center",
+    "pages/tabBar/shCart/user-orders/user-orders",
+    "pages/tabBar/swCenter/user-bill/user-bill",
+    "pages/tabBar/swCenter/user-assets/user-assets",
     "pages/tabBar/shCart/shCart",
     "pages/tabBar/swCenter/swCenter",
     "pages/category/detail/detail",
@@ -8,7 +14,6 @@
     "pages/tabBar/offStores/offStores",
     "pages/login/login",
     "pages/register/register",
-    "pages/tabBar/onGoods/onGoods",
     "pages/tabBar/psCenter/psCenter"
   ],
   "subPackages": [],

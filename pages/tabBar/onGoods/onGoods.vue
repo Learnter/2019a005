@@ -620,6 +620,7 @@
 					flex-direction: column;
 					justify-content: space-between;
 					padding: 5% 5%;
+          box-sizing:border-box;
 
 					.tipTop {
 						display: flex;
@@ -633,6 +634,7 @@
 							.tip-text-margin {
 								margin-right: 10upx;
 							}
+              
 						}
 
 						.t_top_right {

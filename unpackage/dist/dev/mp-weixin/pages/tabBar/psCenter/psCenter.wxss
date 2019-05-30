@@ -48,6 +48,7 @@
   top: 0;
   right: 0;
   z-index: 2;
+  overflow: hidden;
 }
 .headBg .bgImage {
     width: 102%;
