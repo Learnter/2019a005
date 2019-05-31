@@ -247,7 +247,7 @@
     }
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   
   .text-w-color{
     color:white;

@@ -24,10 +24,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.text-w-color {
+.text-w-color.data-v-1c9ef4ef {
   color: white;
 }
-.sever-top {
+.sever-top.data-v-1c9ef4ef {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -42,7 +42,7 @@
           justify-content: space-between;
   margin-bottom: 16rpx;
 }
-.headBg {
+.headBg.data-v-1c9ef4ef {
   position: absolute;
   left: 0;
   top: 0;
@@ -50,7 +50,7 @@
   z-index: 2;
   overflow: hidden;
 }
-.headBg .bgImage {
+.headBg .bgImage.data-v-1c9ef4ef {
     width: 102%;
     position: absolute;
     left: -1%;
@@ -58,7 +58,7 @@
     bottom: -1%;
     z-index: 1;
 }
-.headBg .userBox {
+.headBg .userBox.data-v-1c9ef4ef {
     background: #C98631;
     position: absolute;
     bottom: 0;
@@ -82,20 +82,20 @@
     border-radius: 20rpx;
     font-weight: 500;
 }
-.headBg .userBox .useLeft text {
+.headBg .userBox .useLeft text.data-v-1c9ef4ef {
       padding: 0 10rpx;
       color: white;
 }
-.headBg .userBox .useLeft text:nth-child(1) {
+.headBg .userBox .useLeft text.data-v-1c9ef4ef:nth-child(1) {
         border-right: 4rpx solid white;
 }
-.headBg .userBox .useRight text {
+.headBg .userBox .useRight text.data-v-1c9ef4ef {
       color: #FF6100;
       padding: 0 20rpx;
       border-radius: 20rpx;
       background: white;
 }
-.headBg .useInfo {
+.headBg .useInfo.data-v-1c9ef4ef {
     position: absolute;
     width: 90%;
     top: 150rpx;
@@ -116,7 +116,7 @@
         -ms-flex-align: center;
             align-items: center;
 }
-.headBg .useInfo .info-left {
+.headBg .useInfo .info-left.data-v-1c9ef4ef {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -126,17 +126,17 @@
           -ms-flex-align: center;
               align-items: center;
 }
-.headBg .useInfo .info-left .use-logo {
+.headBg .useInfo .info-left .use-logo.data-v-1c9ef4ef {
         width: 120rpx;
         height: 120rpx;
         background: #E6E6E6;
         border-radius: 50%;
         margin-right: 40rpx;
 }
-.headBg .useInfo .info-left .use-phone {
+.headBg .useInfo .info-left .use-phone.data-v-1c9ef4ef {
         margin-bottom: 20rpx;
 }
-.headBg .useInfo .info-right {
+.headBg .useInfo .info-right.data-v-1c9ef4ef {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -151,15 +151,15 @@
           -ms-flex-align: center;
               align-items: center;
 }
-.headBg .useInfo .info-right image {
+.headBg .useInfo .info-right image.data-v-1c9ef4ef {
         width: 40rpx;
         height: 40rpx;
         margin-bottom: 10rpx;
 }
-.ps_main {
+.ps_main.data-v-1c9ef4ef {
   padding: 500rpx 16rpx 0;
 }
-.ps_main .orders .order-item {
+.ps_main .orders .order-item.data-v-1c9ef4ef {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -173,7 +173,7 @@
     -webkit-box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.2);
             box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.2);
 }
-.ps_main .orders .order-item .item-left {
+.ps_main .orders .order-item .item-left.data-v-1c9ef4ef {
       width: 78%;
       height: 100rpx;
       display: -webkit-box;
@@ -186,7 +186,7 @@
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
 }
-.ps_main .orders .order-item .item-left .left-li {
+.ps_main .orders .order-item .item-left .left-li.data-v-1c9ef4ef {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -205,13 +205,13 @@
             -ms-flex-align: center;
                 align-items: center;
 }
-.ps_main .orders .order-item .item-left .left-li .text-xm-size {
+.ps_main .orders .order-item .item-left .left-li .text-xm-size.data-v-1c9ef4ef {
           margin: 20rpx 0;
 }
-.ps_main .orders .order-item .item-left .left-li image {
+.ps_main .orders .order-item .item-left .left-li image.data-v-1c9ef4ef {
           width: 50rpx;
 }
-.ps_main .orders .order-item .item-right {
+.ps_main .orders .order-item .item-right.data-v-1c9ef4ef {
       width: 22%;
       height: 100rpx;
       display: -webkit-box;
@@ -223,7 +223,7 @@
           -ms-flex-pack: justify;
               justify-content: space-between;
 }
-.ps_main .orders .order-item .item-right .right-logo {
+.ps_main .orders .order-item .item-right .right-logo.data-v-1c9ef4ef {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -246,10 +246,10 @@
         padding-top: 16rpx;
         font-size: 24rpx;
 }
-.ps_main .orders .order-item .item-right .right-logo image {
+.ps_main .orders .order-item .item-right .right-logo image.data-v-1c9ef4ef {
           width: 40rpx;
 }
-.ps_main .severBox {
+.ps_main .severBox.data-v-1c9ef4ef {
     background: white;
     border-radius: 30rpx;
     display: -webkit-box;
@@ -264,7 +264,7 @@
     padding: 30rpx 40rpx;
     margin-bottom: 30rpx;
 }
-.ps_main .severBox .sever-list {
+.ps_main .severBox .sever-list.data-v-1c9ef4ef {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -273,7 +273,7 @@
           -ms-flex-wrap: wrap;
               flex-wrap: wrap;
 }
-.ps_main .severBox .sever-list .sever-li {
+.ps_main .severBox .sever-list .sever-li.data-v-1c9ef4ef {
         width: 25%;
         display: -webkit-box;
         display: -webkit-flex;
@@ -290,11 +290,11 @@
                 align-items: center;
         margin: 20rpx 0;
 }
-.ps_main .severBox .sever-list .sever-li image {
+.ps_main .severBox .sever-list .sever-li image.data-v-1c9ef4ef {
           width: 80rpx;
           margin-bottom: 20rpx;
 }
-.ps_main .severBox .noc-item {
+.ps_main .severBox .noc-item.data-v-1c9ef4ef {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -305,7 +305,7 @@
           -ms-flex-direction: column;
               flex-direction: column;
 }
-.ps_main .severBox .noc-item .noc-item-li {
+.ps_main .severBox .noc-item .noc-item-li.data-v-1c9ef4ef {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -318,7 +318,7 @@
         margin-bottom: 16rpx;
         border-radius: 10rpx;
 }
-.ps_main .severBox .noc-item .noc-item-li .noc-introduces {
+.ps_main .severBox .noc-item .noc-item-li .noc-introduces.data-v-1c9ef4ef {
           margin-left: 30rpx;
 }
 

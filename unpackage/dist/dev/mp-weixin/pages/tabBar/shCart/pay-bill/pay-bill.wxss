@@ -24,24 +24,24 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pay-bill {
+.pay-bill.data-v-5fa313a5 {
   overflow: hidden;
 }
-.text-bg-green {
+.text-bg-green.data-v-5fa313a5 {
   background: #47A16B;
 }
-.text-bg-orange {
+.text-bg-orange.data-v-5fa313a5 {
   background: #FFAA3B;
 }
-.pay-tips {
+.pay-tips.data-v-5fa313a5 {
   font-size: 24rpx;
   color: #818181;
 }
-.returnBtn {
+.returnBtn.data-v-5fa313a5 {
   left: 35rpx;
   top: 40rpx;
 }
-.bgImage {
+.bgImage.data-v-5fa313a5 {
   width: 102%;
   position: relative;
   left: -1%;
@@ -49,10 +49,10 @@
   top: -40rpx;
   z-index: 1;
 }
-.pay-box {
+.pay-box.data-v-5fa313a5 {
   margin-top: 120rpx;
 }
-.pay-box .pay-item {
+.pay-box .pay-item.data-v-5fa313a5 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -68,7 +68,7 @@
             align-items: center;
     margin-bottom: 100rpx;
 }
-.pay-box .pay-item .pay-item-btn {
+.pay-box .pay-item .pay-item-btn.data-v-5fa313a5 {
       width: 160rpx;
       height: 160rpx;
       line-height: 160rpx;

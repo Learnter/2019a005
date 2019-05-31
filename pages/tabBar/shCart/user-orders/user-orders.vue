@@ -92,7 +92,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   
    /* 头部返回栏样式*/
   .returnTitle {
@@ -110,6 +110,7 @@
   }
   
   .orderBox{
+    
      .order-navs{
        display:flex;
        justify-content:space-around;

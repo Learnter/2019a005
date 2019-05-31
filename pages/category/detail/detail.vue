@@ -60,7 +60,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .text-del-style {
     color: #E2E0DD;
   }

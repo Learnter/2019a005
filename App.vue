@@ -43,7 +43,7 @@
     	padding: 6upx 18upx;
     	border: 2upx solid rgba(0, 0, 0, 0.12);
     	border-radius: 8upx;
-    	z-index: 10;
+    	z-index:5;
     }
     
    h2 {
@@ -73,6 +73,14 @@
    
    .text-color-red{
      color:red;
+   }
+   
+   .text-bg-green {
+     background: #47A16B;
+   }
+   
+   .text-bg-orange {
+     background: #FFAA3B;
    }
    
    /* 促销样式  例如-秒杀*/

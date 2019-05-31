@@ -34,7 +34,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .returnBtn{
       position:absolute;
       top:20px;

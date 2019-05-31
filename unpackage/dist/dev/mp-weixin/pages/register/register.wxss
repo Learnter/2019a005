@@ -24,24 +24,24 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-page {
+page.data-v-406c990e {
   background: RGBA(65, 160, 105, 1);
   position: relative;
 }
-.pgetopBg {
+.pgetopBg.data-v-406c990e {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
 }
-.reglogoBox {
+.reglogoBox.data-v-406c990e {
   text-align: center;
   padding-top: 220rpx;
 }
-.reglogo {
+.reglogo.data-v-406c990e {
   width: 80rpx;
 }
-.fordlBox {
+.fordlBox.data-v-406c990e {
   width: 74%;
   margin: 0 auto;
   margin-top: 100rpx;
@@ -59,25 +59,25 @@ page {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.fordTips {
+.fordTips.data-v-406c990e {
   margin-bottom: 30rpx;
   text-align: center;
   color: white;
 }
-.forinpuBox {
+.forinpuBox.data-v-406c990e {
   height: 100rpx;
   background: RGBA(137, 185, 147, 1);
   border-radius: 16rpx;
   margin-bottom: 20rpx;
   position: relative;
 }
-.forinpuBox image {
+.forinpuBox image.data-v-406c990e {
   width: 60rpx;
   position: absolute;
   top: 20rpx;
   left: 30rpx;
 }
-.forinpuBox input {
+.forinpuBox input.data-v-406c990e {
   height: 100%;
   line-height: 100rpx;
   border: none;
@@ -85,14 +85,14 @@ page {
   margin: 0rpx;
   padding: 0rpx 20rpx 0rpx 100rpx;
 }
-.forinpuBox .btn {
+.forinpuBox .btn.data-v-406c990e {
   background: RGBA(137, 185, 147, 1);
   height: 100%;
   font-size: 30rpx;
   line-height: 100rpx;
   color: RGBA(202, 219, 200, 1);
 }
-.subBtn {
+.subBtn.data-v-406c990e {
   margin-top: 100rpx;
 }
 

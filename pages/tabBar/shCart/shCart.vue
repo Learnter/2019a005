@@ -77,7 +77,7 @@
        <view class="storeInfo">
         <!-- 店铺名称-->
         <view class="store-name">
-            <checkbox-group class="checkbox-group">
+            <checkbox-group class="checkbox-group ">
             	<label>
             		<checkbox value="cb" ></checkbox>
             	</label>
@@ -174,7 +174,12 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  
+  .uni-checkbox-input{
+    border-radius:50% !important;
+    border:1px solid red;
+  }
   
   .img-border{
     border:2upx solid #C1C1C1;

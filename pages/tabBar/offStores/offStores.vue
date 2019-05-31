@@ -175,7 +175,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
    
    .text-sx-size{
      font-size:20upx;

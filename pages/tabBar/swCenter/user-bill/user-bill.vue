@@ -178,7 +178,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   
    /* 头部返回栏样式*/
   .returnTitle {

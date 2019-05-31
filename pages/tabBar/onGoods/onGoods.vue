@@ -402,7 +402,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   
 	.tickets-p {
 		margin-top: 20upx;

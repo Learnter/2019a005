@@ -25,7 +25,7 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 头部返回栏样式*/
-.returnTitle {
+.returnTitle.data-v-08c9993d {
   position: relative;
   background: white;
   font-size: 32rpx;
@@ -33,7 +33,7 @@
   text-align: center;
   margin-bottom: 10rpx;
 }
-.returnTitle .returnBtn {
+.returnTitle .returnBtn.data-v-08c9993d {
     left: 30rpx;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -41,7 +41,7 @@
             transform: translateY(-50%);
 }
 /* 账号信息样式 */
-.accountInfo {
+.accountInfo.data-v-08c9993d {
   background: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -52,7 +52,7 @@
   display: flex;
   margin: 10rpx 0;
 }
-.accountInfo .account-left {
+.accountInfo .account-left.data-v-08c9993d {
     position: relative;
     width: 50%;
     display: -webkit-box;
@@ -68,15 +68,15 @@
         -ms-flex-pack: center;
             justify-content: center;
 }
-.accountInfo .account-left image {
+.accountInfo .account-left image.data-v-08c9993d {
       width: 160rpx;
 }
-.accountInfo .account-left .account-balance {
+.accountInfo .account-left .account-balance.data-v-08c9993d {
       position: absolute;
       font-size: 20rpx;
       top: 100rpx;
 }
-.accountInfo .account-col-right {
+.accountInfo .account-col-right.data-v-08c9993d {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
@@ -100,7 +100,7 @@
             align-items: center;
     padding: 20rpx 0;
 }
-.accountInfo .account-col-right .account-col-item {
+.accountInfo .account-col-right .account-col-item.data-v-08c9993d {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -110,18 +110,18 @@
           -ms-flex-pack: justify;
               justify-content: space-between;
 }
-.accountInfo .account-col-right .account-col-item text:nth-child(1) {
+.accountInfo .account-col-right .account-col-item text.data-v-08c9993d:nth-child(1) {
         font-size: 22rpx;
         margin-right: 20rpx;
 }
-.sw-main {
+.sw-main.data-v-08c9993d {
   -webkit-box-sizing: borde-box;
           box-sizing: borde-box;
   padding: 0 1%;
   /* 排序列表样式*/
   /* 信息列表样式*/
 }
-.sw-main .sortBox {
+.sw-main .sortBox.data-v-08c9993d {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 20rpx 40rpx;
@@ -135,7 +135,7 @@
             justify-content: space-between;
     background: white;
 }
-.sw-main .sortBox .sort-item {
+.sw-main .sortBox .sort-item.data-v-08c9993d {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -146,25 +146,25 @@
               align-items: center;
       height: 40rpx;
 }
-.sw-main .sortBox .sort-item image {
+.sw-main .sortBox .sort-item image.data-v-08c9993d {
         width: 16rpx;
         margin-left: 6rpx;
 }
-.sw-main .uni-list {
+.sw-main .uni-list.data-v-08c9993d {
     margin-top: 10rpx;
     background: none;
 }
-.sw-main .uni-list::before, .sw-main .uni-list::after {
+.sw-main .uni-list.data-v-08c9993d::before, .sw-main .uni-list.data-v-08c9993d::after {
       display: none;
 }
-.sw-main .uni-list .uni-list-cell {
+.sw-main .uni-list .uni-list-cell.data-v-08c9993d {
       background: white;
       margin-bottom: 10rpx;
 }
-.sw-main .uni-list .uni-list-cell::after {
+.sw-main .uni-list .uni-list-cell.data-v-08c9993d::after {
         display: none;
 }
-.sw-main .uni-list .uni-media-list-logo {
+.sw-main .uni-list .uni-media-list-logo.data-v-08c9993d {
       width: 60rpx;
       height: 60rpx;
       display: -webkit-box;
@@ -176,13 +176,13 @@
           -ms-flex-align: center;
               align-items: center;
 }
-.sw-main .uni-list .uni-media-list-body {
+.sw-main .uni-list .uni-media-list-body.data-v-08c9993d {
       height: 70rpx;
 }
-.sw-main .uni-list .uni-media-list-text-top {
+.sw-main .uni-list .uni-media-list-text-top.data-v-08c9993d {
       font-size: 24rpx;
 }
-.sw-main .uni-list .uni-media-list-text-bottom {
+.sw-main .uni-list .uni-media-list-text-bottom.data-v-08c9993d {
       font-size: 20rpx;
 }
 

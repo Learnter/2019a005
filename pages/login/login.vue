@@ -74,7 +74,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   page {
     background: RGBA(65, 160, 105, 1);
     position: relative;
