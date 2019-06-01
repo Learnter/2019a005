@@ -1,8 +1,14 @@
 {
   "pages": [
+    "pages/search/search",
+    "pages/category/category",
+    "pages/category/stGoods/stGoods",
+    "pages/codeShow/codeShow",
     "pages/tabBar/onGoods/onGoods",
+    "pages/category/totalShow/totalShow",
+    "pages/register/merchant-register/merchant-register",
+    "pages/login/merchant-login/merchant-login",
     "pages/tabBar/shCart/payment/payment",
-    "pages/codePhoto/codePhoto",
     "pages/packet/packet",
     "pages/tabBar/shCart/pay-bill/pay-bill",
     "pages/tabBar/swCenter/exchange-center/exchange-center",
@@ -13,7 +19,6 @@
     "pages/tabBar/swCenter/swCenter",
     "pages/category/detail/detail",
     "pages/news/news",
-    "pages/category/category",
     "pages/tabBar/offStores/offStores",
     "pages/login/login",
     "pages/register/register",

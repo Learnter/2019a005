@@ -1,218 +1,104 @@
 <template>
-	<view class="categoryPage">
-		<view class="headBox">
-			<!-- 首页头部 -->
-			<image class="bgImage" src="../../static/ga005_26.png" mode="widthFix"></image>
-			<view class="contentBox">
-				<view class="con_text">
-					<!-- <text>OPAY</text> -->
-					<h2>OPAY</h2>
-					<view class="con_buttom">
-						<view class="conImg">
-							<image src="../../static/2019_a005_27.png" mode="widthFix"></image>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-    <view class="main">
-      
-      <view class="bannerBox">
-      	<!-- 轮播组件 -->
-      	<uni-swiper-dot :info="info" :current="current" :mode="mode" :dots-styles="dotsStyles">
-      		<swiper class="swiper-box" @change="change" autoplay="true" circular="true">
-      			<swiper-item v-for="(item ,index) in info" :key="index">
-      				<view :class="item.colorClass" class="swiper-item">
-      					<image :src="item.url" mode="widthFix" style="width:100%" />
-      				</view>
-      			</swiper-item>
-      		</swiper>
-      	</uni-swiper-dot>
-      </view>
-      
-      <view class="sortBox">
-        <view class="sort-item">
-          <text class="text-xm-size">价格</text>
-          <image src="../../static/ga005_131.png" mode="widthFix"></image>
+  <!--分类页面-->
+	<view class="category">
+		
+    <view class="headBox">
+    	<!-- 首页头部 -->
+    	<image class="bgImage" src="../../static/ga005_26_1.png" mode="widthFix"></image>
+    	<view class="contentBox">
+    		<view class="con_text">
+    			<!-- <text>OPAY</text> -->
+    			<h2>OPAY</h2>
+    			<view class="con_buttom">
+            <uni-icon type="arrowleft" size="30" color="white"></uni-icon>
+    				<view class="conImg">
+    					<image src="../../static/2019_a005_27.png" mode="widthFix"></image>
+    				</view>
+            <text>搜索</text>
+    			</view>
+    		</view>
+    	</view>
+    </view>
+    <view class="cate-main">
+        <view class="page-body">
+        	<scroll-view class="nav-left" scroll-y :style="'height:'+height+'px'">
+        		<view class="nav-left-item" @click="categoryClickMain(item,index)" :key="index" :class="index==categoryActive?'active':''"
+        		    v-for="(item,index) in categoryList">
+        			{{item.NAME}}
+        		</view>
+        	</scroll-view>
+        	<scroll-view class="nav-right" scroll-y :scroll-top="scrollTop" @scroll="scroll" :style="'height:'+height+'px'" scroll-with-animation>
+        		<view :id="index===0?'first':''" class="nav-right-item" v-for="(item,index) in subCategoryList" :key="index">
+        			<image :src="item.LOGO" />
+        			<view>{{item.NAME}}</view>
+        		</view>
+        		<page-foot :name="name" v-if="subCategoryList.length > 1"></page-foot>
+        	</scroll-view>
         </view>
-        <view class="sort-item">
-          <text class="text-xm-size">销量</text>
-          <image src="../../static/ga005_131.png" mode="widthFix"></image>
-        </view>
-        <view class="sort-item">
-          <text class="text-xm-size">热度</text>
-          <image src="../../static/ga005_131.png" mode="widthFix"></image>
-        </view>
-        <view class="sort-item">
-          <text class="text-xm-size">时间</text>
-          <image src="../../static/ga005_131.png" mode="widthFix"></image>
-        </view>
-      </view>
-      
-      <view class="category-list">
-         <view class="category-li" @tap="toDetail">
-           <image src="../../static/ga005_40.png" mode="widthFix" style="width:30%"></image>
-           <view class="cate-li-right">
-             <view class="li-r-top">
-               <view class="li-r-top-left">
-                 <text>￥199</text>
-                 <text class=" text-del-style text-sx-size">￥199</text>
-               </view>
-               <view class="li-r-top-right">
-                 <text class="good-text">秒杀</text>
-                 <text class="good-text">秒杀</text>
-               </view> 
-             </view>
-             <view class="li-r-bottom">
-               <h3>我的标题.....</h3>
-               <p>.............</p>
-               <p>.............</p>
-             </view>
-           </view>
-         </view>
-         <view class="category-li">
-           <image src="../../static/ga005_40.png" mode="widthFix" style="width:30%"></image>
-           <view class="cate-li-right">
-             <view class="li-r-top">
-               <view class="li-r-top-left">
-                 <text>￥199</text>
-                 <text class="text-del-style text-sx-size">￥199</text>
-               </view>
-               <view class="li-r-top-right">
-                 <text class="good-text">秒杀</text>
-                 <text class="good-text">秒杀</text>
-               </view> 
-             </view>
-             <view class="li-r-bottom">
-               <h3>我的标题.....</h3>
-               <p>.............</p>
-               <p>.............</p>
-             </view>
-           </view>
-         </view>
-         <view class="category-li">
-           <image src="../../static/ga005_40.png" mode="widthFix" style="width:30%"></image>
-           <view class="cate-li-right">
-             <view class="li-r-top">
-               <view class="li-r-top-left">
-                 <text>￥199</text>
-                 <text class="text-sx-size text-del-style">￥199</text>
-               </view>
-               <view class="li-r-top-right">
-                 <text class="good-text">秒杀</text>
-                 <text class="good-text">秒杀</text>
-               </view> 
-             </view>
-             <view class="li-r-bottom">
-               <h3>我的标题.....</h3>
-               <p>.............</p>
-               <p>.............</p>
-             </view>
-           </view>
-         </view>
-         <view class="category-li">
-           <image src="../../static/ga005_40.png" mode="widthFix" style="width:30%"></image>
-           <view class="cate-li-right">
-             <view class="li-r-top">
-               <view class="li-r-top-left">
-                 <text>￥199</text>
-                 <text class="text-sx-size text-del-style">￥199</text>
-               </view>
-               <view class="li-r-top-right">
-                 <text class="good-text">秒杀</text>
-                 <text class="good-text">秒杀</text>
-               </view> 
-             </view>
-             <view class="li-r-bottom">
-               <h3>我的标题.....</h3>
-               <p>.............</p>
-               <p>.............</p>
-             </view>
-           </view>
-         </view>
-      </view>
-      
     </view>
 	</view>
 </template>
 
 <script>
-	import uniSwiperDot from '@/components/uni-swiper-dot/uni-swiper-dot.vue'
-	
+  import uniIcon from '@/components/uni-icon/uni-icon.vue'
 	export default {
 		data() {
 			return {
-				background: ['color1', 'color2', 'color3'],
-				indicatorDots: true,
-				autoplay: true,
-				interval: 2000,
-				duration: 500,
-				msg: [
-					"公告A",
-					"公告B",
-					"公告C"
-				],
-				info: [{
-						colorClass: 'uni-bg-red',
-						url: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg',
-						content: '内容 A'
-					},
-					{
-						colorClass: 'uni-bg-green',
-						url: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/muwu.jpg',
-						content: '内容 B'
-					},
-					{
-						colorClass: 'uni-bg-blue',
-						url: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/cbd.jpg',
-						content: '内容 C'
-					}
-				],
-				modeIndex: -1,
-				styleIndex: -1,
-				current: 0,
-				mode: 'long',
-				dotsStyles: {
-					backgroundColor: 'rgba(83, 200, 249,0.3)',
-					border: '1px rgba(83, 200, 249,0.3) solid',
-					color: '#fff',
-					selectedBackgroundColor: 'rgba(83, 200, 249,0.9)',
-					selectedBorder: '1px rgba(83, 200, 249,0.9) solid',
-					width: 10,
-					height: 2
-				}
+				categoryList: [],
+				subCategoryList: [],
+				height: 0,
+				categoryActive: 0,
+				scrollTop: 0,
+				scrollHeight: 0,
+				name: "七月_"
 			}
 		},
 		methods: {
-			change(e) {
-				this.current = e.detail.current
+			scroll(e) {
+				this.scrollHeight = e.detail.scrollHeight;
 			},
-      toDetail(){
-        //跳转到详情页面
-        uni.navigateTo({
-          url:"detail/detail"
-        })
-      }
+			categoryClickMain(categroy, index) {
+				this.categoryActive = index;
+				this.subCategoryList = categroy.subCategoryList;
+				this.scrollTop = -this.scrollHeight * index;
+			},
+			getCategory() {
+				for (var i = 1; i < 21; i++) {
+					var subList = [];
+					for (var j = 1; j < 31; j++) {
+						subList.push({
+							"NAME": "分类" + i + ":商品" + j,
+							"LOGO": "http://placehold.it/50x50"
+						})
+					}
+					this.categoryList.push({
+						"NAME": "分类" + i,
+						"subCategoryList": subList
+					})
+				}
+				this.subCategoryList = this.categoryList[0].subCategoryList;
+			}
 		},
-		components: {
-			uniSwiperDot
-		}
+		onLoad: function () {
+			this.getCategory();
+			this.height = uni.getSystemInfoSync().windowHeight -140;
+		},
+    components:{
+      uniIcon
+    }
 	}
 </script>
 
-<style lang="scss" scoped>
-   
-   .text-sx-size{
-     font-size:20upx;
-     margin:0 8upx;
-   }
-   
+<style lang="scss">
+  
+  .category{
+    box-sizing:border-box;
+    overflow:hidden;
+  }
+  
+  /* 头部的样式*/
   .headBox {
-  	position: absolute;
-  	left:0;
-  	top:0;
-  	right:0;
-  	width:100%;
+  	height:140px;
   
   	.bgImage {
   		width: 100%;
@@ -222,95 +108,86 @@
   	.contentBox {
   		position: absolute;
   		left: 0;
+      right: 0;
   		top: 100upx;
-  		right: 0;
   		z-index: 2;
   
   		.con_text {
   			padding: 0 30upx;
   			color: white;
-  
+        
   			.con_buttom {
-  				background-color: white;
-  				width: 100%;
-  				box-sizing: border-box;
-  				padding: 10upx 0 10upx 20upx;
-  				height: 50upx;
-  				display: flex;
-  				justify-content: flex-start;
-  				align-items: center;
-  				border-radius: 10upx;
-  				margin-top: 30upx;
-  
+          margin-top:20upx;
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
   				.conImg {
-  					height: 30upx;
-  					width: 30upx;
+            background:white;
+            width:500upx;
+            height:50upx;
+            padding-left:10upx;
+            border-radius:10upx;
+            image{
+              position:relative;
+              width:40upx;
+              top:50%;
+              transform:translateY(-50%);
+            }
   				}
   			}
   		}
   	}
-  } 
-  
-  .main{
-    padding: 480upx 20upx 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    .bannerBox {
-			width: 100%;
-			border-radius: 20upx;
-			overflow: hidden;
-			box-shadow: 0upx 10upx 10upx rgba(0, 0, 0, 0.2);
-			margin-bottom: 20upx;
-			margin-top: -240upx;
-
-			.swiper-box {
-				height: 300upx;
-			}
-		}
-
-    .sortBox{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:40upx;
-      border:1px solid #E6E6E6;
-      .sort-item{
-        width:23%;
-        background:white;
-        display:flex;  
-        justify-content:center;
-        align-items:center;
-        padding:16upx 0;
-        image{
-          width:16upx;
-          margin-left:4upx;
-        }
-      }
-    }
-    .category-li{
-      display:flex;
-      background:white;
-      border:1px solid lightgray;
-      margin-top:16upx;
-      border-radius: 0 10upx 10upx 0;
-      .cate-li-right{
-        flex:1;
-        box-sizing:border-box;
-        padding:10upx 20upx;
-        border-left:1px solid lightgray;
-        display:flex;
-        flex-direction:column;
-        justify-content:space-between;
-        .li-r-top{
-          display:flex;
-          align-items:center;
-        }
-      }
-    }
   }
   
+  .cate-main{
+    
+  /* 分类导航样式*/
+  .page-body {
+    display: flex;
+    margin:0upx 10upx 0upx 10upx;
+  }
+  
+  .nav {
+  	display: flex;
+  	width: 100%;
+  }
+  
+  .nav-left {
+  	width: 30%;
+    
+  }
+  
+  .nav-left-item {
+  	height: 100upx;
+  	border-right: solid 1px #E0E0E0;
+  	border-bottom: solid 1px #E0E0E0;
+  	font-size: 30upx;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  }
+  
+  .nav-right {
+  	width: 70%;
+  }
+  
+  .nav-right-item {
+  	width: 28%;
+  	height: 220upx;
+  	float: left;
+  	text-align: center;
+  	padding: 11upx;
+  	font-size: 28upx;
+  }
+  
+  .nav-right-item image {
+  	width: 100upx;
+  	height: 100upx;
+  }
+  
+  .active {
+  	color: #007AFF;
+  }
 
+}
 </style>

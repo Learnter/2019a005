@@ -1,5 +1,6 @@
 <template>
-	<view class="storePage">
+	<view class="offStores">
+    <!-- 线下门店页面 -->
 		<view class="headBox">
 			<!-- 首页头部 -->
 			<image class="bgImage" src="../../../static/ga005_26.png" mode="widthFix"></image>

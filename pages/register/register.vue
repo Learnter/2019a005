@@ -7,7 +7,7 @@
       </view>
       <view class="fordlBox">
         <em class="fordTips">
-          WECOME REGISTER OPAY
+         WELCOME REGISTER OPAY
         </em>
         <form @submit="formSubmit">
           <view class="forinpuBox">

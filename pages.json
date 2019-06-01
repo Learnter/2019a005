@@ -1,25 +1,73 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    {
-      "path": "pages/tabBar/onGoods/onGoods",
-      "style": {
+  {
+      "path" : "pages/search/search",
+      "style" : {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+  },
+  {
+         "path" : "pages/category/category",
+         "style": {
+           "app-plus": {
+             "titleNView": false
+           }
+         }
+      },
+  {
+    "path": "pages/category/stGoods/stGoods",
+    "style": {
+      "app-plus": { //去除app 头部导航栏
+        "titleNView": false
+      }
+    }
+  },
+  {
+    "path": "pages/codeShow/codeShow",
+    "style": {
+      "app-plus": { //去除app 头部导航栏
+        "titleNView": false
+      }
+    }
+  },
+  {
+    "path": "pages/tabBar/onGoods/onGoods",
+    "style": {
+      "app-plus": { //去除app 头部导航栏
+        "titleNView": false
+      }
+    }
+  },
+  {
+      "path" : "pages/category/totalShow/totalShow",
+      "style" : {
         "app-plus": { //去除app 头部导航栏
           "titleNView": false
         }
       }
+  },
+  {
+      "path" : "pages/register/merchant-register/merchant-register",
+      "style" : {
+        "app-plus": { //去除app 头部导航栏
+          "titleNView": false
+        }
+      }
+  },
+  {
+        "path" : "pages/login/merchant-login/merchant-login",
+        "style" : {
+          "app-plus": { //去除app 头部导航栏
+            "titleNView": false
+          }
+        }
     },
     {
       "path": "pages/tabBar/shCart/payment/payment",
       "style": {
         "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/codePhoto/codePhoto",
-      "style": {
-        "app-plus": { //去除app 头部导航栏
           "titleNView": false
         }
       }
@@ -105,15 +153,6 @@
         }
       }
     },
-
-    {
-      "path": "pages/category/category",
-      "style": {
-        "app-plus": { //去除app 头部导航栏
-          "titleNView": false
-        }
-      }
-    },
     {
       "path": "pages/tabBar/offStores/offStores",
       "style": {
@@ -145,8 +184,8 @@
           "titleNView": false
         }
       }
-    }
-  ],
+    }        
+    ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
