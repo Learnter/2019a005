@@ -24,24 +24,24 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-page.data-v-7b688102 {
+page.data-v-fc4a4534 {
   background: RGBA(65, 160, 105, 1);
   position: relative;
 }
-.pgetopBg.data-v-7b688102 {
+.pgetopBg.data-v-fc4a4534 {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
 }
-.reglogoBox.data-v-7b688102 {
+.reglogoBox.data-v-fc4a4534 {
   text-align: center;
   padding-top: 250rpx;
 }
-.reglogo.data-v-7b688102 {
+.reglogo.data-v-fc4a4534 {
   width: 80rpx;
 }
-.fordlBox.data-v-7b688102 {
+.fordlBox.data-v-fc4a4534 {
   width: 74%;
   margin: 0 auto;
   margin-top: 60rpx;
@@ -59,7 +59,7 @@ page.data-v-7b688102 {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.forinpuBox.data-v-7b688102 {
+.forinpuBox.data-v-fc4a4534 {
   height: 100rpx;
   background: RGBA(137, 185, 147, 1);
   border-radius: 20rpx;
@@ -67,14 +67,14 @@ page.data-v-7b688102 {
   position: relative;
   overflow: hidden;
 }
-.forinpuBox image.data-v-7b688102 {
+.forinpuBox image.data-v-fc4a4534 {
   width: 60rpx;
   height: 60rpx;
   position: absolute;
   top: 20rpx;
   left: 30rpx;
 }
-.forinpuBox input.data-v-7b688102 {
+.forinpuBox input.data-v-fc4a4534 {
   height: 100%;
   line-height: 100rpx;
   border: none;
@@ -82,7 +82,7 @@ page.data-v-7b688102 {
   margin: 0rpx;
   padding: 0rpx 20rpx 0rpx 100rpx;
 }
-.fortextBox.data-v-7b688102 {
+.fortextBox.data-v-fc4a4534 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -95,14 +95,14 @@ page.data-v-7b688102 {
   font-size: 20rpx;
   color: RGBA(202, 219, 200, 1);
 }
-.forinpuBox .btn.data-v-7b688102 {
+.forinpuBox .btn.data-v-fc4a4534 {
   background: RGBA(137, 185, 147, 1);
   height: 100%;
   font-size: 30rpx;
   line-height: 100rpx;
   color: RGBA(202, 219, 200, 1);
 }
-.subBtn.data-v-7b688102 {
+.subBtn.data-v-fc4a4534 {
   margin-top: 80rpx;
 }
 

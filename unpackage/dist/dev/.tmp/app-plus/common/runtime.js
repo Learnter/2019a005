@@ -102,11 +102,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/uni-swiper-dot/uni-swiper-dot":1,"components/uni-number-box/uni-number-box":1};
+/******/ 		var cssChunks = {"components/uni-tag/uni-tag":1,"components/uni-icon/uni-icon":1,"components/uni-swiper-dot/uni-swiper-dot":1,"components/uni-number-box/uni-number-box":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/uni-swiper-dot/uni-swiper-dot":"components/uni-swiper-dot/uni-swiper-dot","components/uni-number-box/uni-number-box":"components/uni-number-box/uni-number-box"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/uni-tag/uni-tag":"components/uni-tag/uni-tag","components/uni-icon/uni-icon":"components/uni-icon/uni-icon","components/uni-swiper-dot/uni-swiper-dot":"components/uni-swiper-dot/uni-swiper-dot","components/uni-number-box/uni-number-box":"components/uni-number-box/uni-number-box"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
