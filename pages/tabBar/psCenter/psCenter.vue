@@ -26,7 +26,7 @@
 
         <view class="useRight">
           <text>立刻领取
-            <image src="../../../static/ga005_128.png" mode="widthFix" style="width:8upx;margin-left:10upx"></image>
+            <image src="../../../static/ga005_128.png" mode="widthFix" style="width:8upx;margin-left:10upx" ></image>
           </text>
         </view>
       </view>

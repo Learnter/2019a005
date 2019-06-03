@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/tabBar/onGoods/onGoods",
     "pages/search/search",
     "pages/category/category",
     "pages/category/stGoods/stGoods",
     "pages/codeShow/codeShow",
-    "pages/tabBar/onGoods/onGoods",
     "pages/category/totalShow/totalShow",
     "pages/register/merchant-register/merchant-register",
     "pages/login/merchant-login/merchant-login",
@@ -20,7 +21,6 @@
     "pages/category/detail/detail",
     "pages/news/news",
     "pages/tabBar/offStores/offStores",
-    "pages/login/login",
     "pages/register/register",
     "pages/tabBar/psCenter/psCenter"
   ],
@@ -69,5 +69,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap44.json"
 }

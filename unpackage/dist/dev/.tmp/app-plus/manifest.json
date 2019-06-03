@@ -87,7 +87,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "1.9.9",
+      "compilerVersion": "1.9.8",
       "control": "v8"
     },
     "secondwebview": {

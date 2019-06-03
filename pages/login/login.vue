@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <view class="login">
     <image src="../../static/ga005_121.png" mode="widthFix" class="pgetopBg"></image>
     <view class="registerPage">
       <view class="reglogoBox">
@@ -8,20 +8,18 @@
       <view class="fordlBox">
         <form @submit="formSubmit">
           <view class="forinpuBox">
-              <image src="../../static/ga005_122.png" mode=""></image>
-              <input type="text" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员手机号" maxlength="11" v-model="account">
+            <image src="../../static/ga005_122.png" mode=""></image>
+            <input type="text" placeholder-style="color:#BFDFCB" placeholder="会员手机号" maxlength="11" v-model="user.account">
           </view>
           <view class="forinpuBox">
-              <image src="../../static/ga005_123.png" mode=""></image>
-              <input type="password" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员密码" v-model="password">
+            <image src="../../static/ga005_123.png" mode=""></image>
+            <input type="password" placeholder-style="color:#BFDFCB" placeholder="会员密码" v-model="user.password">
           </view>
           <view class="fortextBox">
-            <text>注册</text>
+            <navigator url="/pages/register/register">注册</navigator>
             <text>忘记密码</text>
           </view>
-          <view class="forinpuBox subBtn">
-              <button class="btn" formType="submit">立即登录</button>
-          </view>
+          <button class="forinpuBox btn" formType="submit">立即登录</button>
         </form>
       </view>
     </view>
@@ -33,50 +31,60 @@
   export default {
     data() {
       return {
-          account:"",
-          password:""
-      };
-    },
-    methods:{
-      formSubmit(){
-        console.log("用户的账号:"+this.account,"用户的密码:"+this.password);
-        // 原生请求 
-        // uni.request({
-        //   url:"http://2019a005api.jiafuw.com/v1/user/login",
-        //   method:"POST",
-        //   data:{
-        //     account:"18888888888",
-        //     password:"888888"
-        //   },
-        //    success: (res) => {
-        //     console.log("请求成功");
-        //     console.log(res.data);
-        //   },
-        //   fail: (res) => {
-        //     console.log("请求失败");
-        //     console.log(res)
-        //   }
-        // })
-          
-        
-        // 封装好的请求  
-        var data = {
-          account:"18888888888",
-          password:"888888"
+        user:{
+          account:'',
+          password:''
         }
-        var url = "user/login"
+      }  
+    },
+    methods: {
+      formSubmit() {  
         
-      this.$Request.post(url,data).then((res) => {
-         console.log(res.data.token);
-      })
+        /* 账号/密码非空判断*/
+        if (!(/^1[34578]\d{9}$/).test(this.user.account) ) {
+          uni.showToast({
+            title: "请正确输入用户名!",
+            icon: "none"
+          })
+          return false;
+        } else if (!(/^[a-zA-Z0-9]{6,}$/).test(this.user.password)) {/* 密码规则最少需要6位数*/
+          uni.showToast({
+            title: "密码输入有误!",
+            icon: "none"
+          })
+          return false;
+        }
+
+        var url = "user/login";
+        this.$Request.post(url, this.user).then(res => {
+          /* 请求成功*/
+          if (res && res.code === 200) {
+            uni.showToast({
+              title: "登录成功",
+              icon: "success"
+            })
+            
+            setTimeout(function() {
+              uni.switchTab({
+               url: "/pages/tabBar/onGoods/onGoods"
+             })
+            }, 500)
+          } else {
+            /* 账号或密码有误*/
+            uni.showToast({
+              title: res.msg,
+              icon: "none"
+            })
+          }
+        });
       }
     }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   page {
-    background: RGBA(65, 160, 105, 1);
+    background: #47A16B;
     position: relative;
   }
 
@@ -93,26 +101,25 @@
   }
 
   .reglogo {
-    // width: 40px;
-    width:80upx;
+    width: 80upx;
   }
 
   .fordlBox {
     width: 74%;
     margin: 0 auto;
-    margin-top:60upx;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    margin-top: 60upx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .forinpuBox {
     height: 100upx;
-    background: RGBA(137, 185, 147, 1);
+    background: #7FBE98;
     border-radius: 20upx;
     margin-bottom: 20upx;
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
   }
 
   .forinpuBox image {
@@ -128,26 +135,25 @@
     line-height: 100upx;
     border: none;
     background: none;
-    margin: 0upx;
     padding: 0upx 20upx 0upx 100upx;
   }
-  .fortextBox{
-    display:flex;
-    justify-content:space-between;
-    padding:0 20upx;
-    font-size:20upx;
-    color:RGBA(202, 219, 200, 1);
-  }
- .forinpuBox .btn{
-   background: RGBA(137, 185, 147, 1);
-   height:100%;
-   font-size:30upx;
-   line-height:100upx;
-   color:RGBA(202, 219, 200, 1);
- }
- 
- .subBtn{
-   margin-top:80upx;
- }
 
+  .fortextBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20upx;
+    font-size: 20upx;
+    color: #BFDFCB;
+    margin-bottom: 60upx;
+  }
+
+  .btn {
+    background: #7FBE98;
+    font-size: 30upx;
+    color: #BFDFCB;
+    letter-spacing: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>

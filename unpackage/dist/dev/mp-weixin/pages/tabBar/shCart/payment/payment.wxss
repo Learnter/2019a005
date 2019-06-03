@@ -25,7 +25,7 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 头部返回栏样式*/
-.returnTitle.data-v-dfd51852 {
+.returnTitle.data-v-1f182f1a {
   position: relative;
   background: white;
   font-size: 32rpx;
@@ -33,7 +33,7 @@
   text-align: center;
   margin-bottom: 10rpx;
 }
-.returnTitle .returnBtn.data-v-dfd51852 {
+.returnTitle .returnBtn.data-v-1f182f1a {
     left: 30rpx;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -41,33 +41,33 @@
             transform: translateY(-50%);
 }
 /* 收件人信息样式 */
-.play-main.data-v-dfd51852 {
+.play-main.data-v-1f182f1a {
   padding: 0 1%;
   /* 地址栏样式 */
 }
-.play-main .user-info.data-v-dfd51852 {
+.play-main .user-info.data-v-1f182f1a {
     background: white;
     padding: 0 30rpx;
     margin-top: 20rpx;
 }
-.play-main .user-info .user-person.data-v-dfd51852 {
+.play-main .user-info .user-person.data-v-1f182f1a {
       padding: 20rpx 0 10rpx;
 }
-.play-main .user-info .user-person .user-person-name.data-v-dfd51852 {
+.play-main .user-info .user-person .user-person-name.data-v-1f182f1a {
         margin-right: 20rpx;
 }
-.play-main .user-info .user-addre.data-v-dfd51852 {
+.play-main .user-info .user-addre.data-v-1f182f1a {
       padding: 10rpx 0 20rpx;
 }
-.play-main .addressBox.data-v-dfd51852 {
+.play-main .addressBox.data-v-1f182f1a {
     margin: 30rpx 0;
 }
-.play-main .addressBox .address-nav.data-v-dfd51852 {
+.play-main .addressBox .address-nav.data-v-1f182f1a {
       margin-bottom: 6rpx;
       padding: 0 30rpx;
       background: white;
 }
-.play-main .addressBox .address-nav .address-top.data-v-dfd51852 {
+.play-main .addressBox .address-nav .address-top.data-v-1f182f1a {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -82,10 +82,10 @@
                 justify-content: space-between;
         height: 70rpx;
 }
-.play-main .addressBox .address-nav .address-top image.data-v-dfd51852 {
+.play-main .addressBox .address-nav .address-top image.data-v-1f182f1a {
           width: 30rpx;
 }
-.play-main .addressBox .address-content.data-v-dfd51852 {
+.play-main .addressBox .address-content.data-v-1f182f1a {
       background: white;
       min-height: 300rpx;
       display: -webkit-box;
@@ -101,7 +101,7 @@
           -ms-flex-align: center;
               align-items: center;
 }
-.play-main .addressBox .address-content .null-content.data-v-dfd51852 {
+.play-main .addressBox .address-content .null-content.data-v-1f182f1a {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -113,21 +113,21 @@
         font-size: 22rpx;
         color: #C1C1C1;
 }
-.play-main .addressBox .address-content .null-content image.data-v-dfd51852 {
+.play-main .addressBox .address-content .null-content image.data-v-1f182f1a {
           margin-right: 30rpx;
 }
 /* 购物清单列表的样式 */
-.product-title.data-v-dfd51852 {
+.product-title.data-v-1f182f1a {
   display: block;
   padding: 0 30rpx;
   background: white;
   height: 56rpx;
   line-height: 56rpx;
 }
-.uni-media-list-logo.data-v-dfd51852 {
+.uni-media-list-logo.data-v-1f182f1a {
   border: 2rpx solid #C1C1C1;
 }
-.uni-media-list-body.data-v-dfd51852 {
+.uni-media-list-body.data-v-1f182f1a {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -139,7 +139,7 @@
           align-items: flex-end;
   /* 右边的单物品金额的样式*/
 }
-.uni-media-list-body .uni-media-list-body-left.data-v-dfd51852 {
+.uni-media-list-body .uni-media-list-body-left.data-v-1f182f1a {
     height: 100%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -156,14 +156,14 @@
             justify-content: space-between;
     overflow: hidden;
 }
-.uni-media-list-body .pay-money.data-v-dfd51852 {
+.uni-media-list-body .pay-money.data-v-1f182f1a {
     font-size: 20rpx;
     -webkit-flex-shrink: 0;
         -ms-flex-negative: 0;
             flex-shrink: 0;
 }
 /* 物品总金额的样式*/
-.total-money.data-v-dfd51852 {
+.total-money.data-v-1f182f1a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -179,7 +179,7 @@
   margin: 30rpx 0;
 }
 /* 支付按钮的样式*/
-.pay-btn.data-v-dfd51852 {
+.pay-btn.data-v-1f182f1a {
   width: 340rpx;
   font-size: 28rpx;
   color: white;

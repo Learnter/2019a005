@@ -39,27 +39,7 @@
       };
     },
     methods:{
-      formSubmit(){
-        console.log("用户的账号:"+this.account,"用户的密码:"+this.password);
-        // 原生请求 
-        // uni.request({
-        //   url:"http://2019a005api.jiafuw.com/v1/user/login",
-        //   method:"POST",
-        //   data:{
-        //     account:"18888888888",
-        //     password:"888888"
-        //   },
-        //    success: (res) => {
-        //     console.log("请求成功");
-        //     console.log(res.data);
-        //   },
-        //   fail: (res) => {
-        //     console.log("请求失败");
-        //     console.log(res)
-        //   }
-        // })
-          
-        
+      formSubmit(){        
         // 封装好的请求  
         var data = {
           account:"18888888888",
@@ -146,6 +126,9 @@
    font-size:30upx;
    color:#BFDFCB;
    letter-spacing:5px;
+   display:flex;
+   justify-content:center;
+   align-items:center;
  }
  
   /* 商家注册/查询样式*/

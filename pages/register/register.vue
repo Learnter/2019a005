@@ -12,62 +12,101 @@
         <form @submit="formSubmit">
           <view class="forinpuBox">
               <image src="../../static/ga005_122.png" mode="widthFix"></image>
-              <input type="text" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员手机号" maxlength="11" name="userPhone">
+              <input type="text" placeholder-style="color:#BFDFCB" placeholder="会员手机号" maxlength="11" v-model="user.mobile" >
           </view>
           <view class="forinpuBox">
               <image src="../../static/ga005_123.png" mode="widthFix"></image>
-              <input type="password" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="会员密码" name="userPassword">
+              <input type="password" placeholder-style="color:#BFDFCB" placeholder="会员密码" v-model="user.password">
           </view>
           <view class="forinpuBox">
               <image src="../../static/ga005_123.png" mode="widthFix"></image>
-              <input type="password" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="再次输入密码" name="agianPassword">
+              <input type="password" placeholder-style="color:#BFDFCB" placeholder="再次输入密码" v-model="user.again_psd">
           </view>
           <view class="forinpuBox">
               <image src="../../static/ga005_124.png" mode="widthFix"></image>
-              <input type="text" placeholder-style="color:RGBA(202, 219, 200, 1)" placeholder="输入邀请码" name="InvitationCode">          
+              <input type="text" placeholder-style="color:#BFDFCB" placeholder="输入邀请码" v-model="user.reg_code">          
           </view>
-          <view class="forinpuBox subBtn">
-              <button class="btn" formType="submit">立即登录</button>
-          </view>
+          <button class=" forinpuBox btn" formType="submit">立即注册</button>
         </form>
       </view>
     </view>
   </view>
-
 </template>
 
 <script>
   export default {
     data() {
       return {
-        
+        user:{
+          mobile:'',
+          password:'',
+          again_psd:'',
+          reg_code:''
+        }
       };
     },
     methods:{
-      // http://2019a005api.jiafuw.com
-      formSubmit(ev){
-        uni.request({
-         // url:"https://www.dshui.cc/goodswap/allCtgy?&token=",
-         url:"http://2019a005api.jiafuw.com/v1/user/login",
-         data:{
-           token:""
-         },
-         success: (res) => {
-          console.log("请求成功");
-          console.log(res.data);
-          },
-         fail:function(res){
-           console.log("请求失败");
-         }
+      formSubmit(){
+        
+        var url,data;
+        data = this.user;
+        url = "user/reg";
+        
+        /*输入框非空判断*/
+        if(!(/^1[34578]\d{9}$/).test(data.mobile)){
+          uni.showToast({
+            title:"请输入有效的手机号码",
+            icon:"none"
+          })
+          return false;
+        }else if(!(/^[a-zA-Z0-9]{6,}$/).test(data.password)){
+          uni.showToast({
+            title:"密码格式最少需要字母*数字!",
+            icon:"none"
+          })
+          return false;
+        }else if(data.again_psd !== data.password){
+          uni.showToast({
+            title:"两次密码输入不一致!",
+            icon:"none"
+          })
+          return false;
+        }else if(!(/^[a-zA-Z0-9]{4}$/).test(data.reg_code)){
+          uni.showToast({
+            title:"邀请码输入有误!",
+            icon:"none"
+          })
+          return false;
+        } 
+        this.$Request.post(url, data).then( res => {
+          if(res && res.code === 200){
+            uni.showToast({
+              title:"注册成功",
+              icon:"success"
+            })
+            /* 注册成功后页面跳转*/
+            setTimeout(function() {
+              uni.switchTab({
+               url: "/pages/tabBar/onGoods/onGoods"
+             })
+            }, 500)
+            
+          }else{
+            // 注册错误信息
+            uni.showToast({
+              title:res.msg,
+              icon:"none"
+            })
+          }
         })
       }
     }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   page {
-    background: RGBA(65, 160, 105, 1);
+    background: #47A16B;
     position: relative;
   }
 
@@ -84,7 +123,6 @@
   }
 
   .reglogo {
-    // width: 40px;
     width:80upx;
   }
 
@@ -103,7 +141,7 @@
    }
   .forinpuBox {
     height:100upx;
-    background: RGBA(137, 185, 147, 1);
+    background:#7FBE98;
     border-radius: 16upx;
     margin-bottom: 20upx;
     position: relative;
@@ -121,21 +159,19 @@
     line-height: 100upx;
     border: none;
     background: none;
-    margin: 0upx;
     padding: 0upx 20upx 0upx 100upx;
-    // color:#ffffff;
   }
   
- .forinpuBox .btn{
-   background: RGBA(137, 185, 147, 1);
-   height:100%;
-   font-size:30upx;
-   line-height:100upx;
-   color:RGBA(202, 219, 200, 1);
- }
  
- .subBtn{
-   margin-top:100upx;
+ .btn {
+   margin-top:80upx;
+   background: #7FBE98;
+   font-size: 30upx;
+   color: #BFDFCB;
+   letter-spacing: 5px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
  }
 
 </style>

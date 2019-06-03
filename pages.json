@@ -1,6 +1,22 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
   {
+    "path": "pages/login/login",
+    "style": {
+      "app-plus": {
+        "titleNView": false
+      }
+    }
+  },
+  {
+    "path": "pages/tabBar/onGoods/onGoods",
+    "style": {
+      "app-plus": { //去除app 头部导航栏
+        "titleNView": false
+      }
+    }
+  },
+  {
       "path" : "pages/search/search",
       "style" : {
         "app-plus": {
@@ -8,14 +24,14 @@
         }
       }
   },
-  {
+   {
          "path" : "pages/category/category",
          "style": {
            "app-plus": {
              "titleNView": false
            }
          }
-      },
+      }, 
   {
     "path": "pages/category/stGoods/stGoods",
     "style": {
@@ -26,14 +42,6 @@
   },
   {
     "path": "pages/codeShow/codeShow",
-    "style": {
-      "app-plus": { //去除app 头部导航栏
-        "titleNView": false
-      }
-    }
-  },
-  {
-    "path": "pages/tabBar/onGoods/onGoods",
     "style": {
       "app-plus": { //去除app 头部导航栏
         "titleNView": false
@@ -161,14 +169,7 @@
         }
       }
     },
-    {
-      "path": "pages/login/login",
-      "style": {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
+    
     {
       "path": "pages/register/register",
       "style": {

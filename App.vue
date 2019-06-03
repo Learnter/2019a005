@@ -20,9 +20,7 @@
 		min-height: 100%;
     background:#F7F5F4;  
     letter-spacing:1px;
-    overflow:auto;
     }
-    
     view{
         line-height:1;        
     }
