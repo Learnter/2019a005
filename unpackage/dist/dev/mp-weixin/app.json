@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/tabBar/onGoods/onGoods",
+    "pages/login/login",
     "pages/search/search",
     "pages/category/category",
     "pages/category/stGoods/stGoods",
@@ -70,5 +70,5 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap44.json"
+  "sitemapLocation": "sitemap68.json"
 }

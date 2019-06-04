@@ -1,17 +1,17 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
   {
-    "path": "pages/login/login",
+    "path": "pages/tabBar/onGoods/onGoods",
     "style": {
-      "app-plus": {
+      "app-plus": { //去除app 头部导航栏
         "titleNView": false
       }
     }
   },
   {
-    "path": "pages/tabBar/onGoods/onGoods",
+    "path": "pages/login/login",
     "style": {
-      "app-plus": { //去除app 头部导航栏
+      "app-plus": {
         "titleNView": false
       }
     }
@@ -192,7 +192,6 @@
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
-    /* "usingComponents": true */
   },
   "tabBar": {
     "color": "#7A7E83",

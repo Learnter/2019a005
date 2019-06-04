@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "uni-swiper-dot": "/components/uni-swiper-dot/uni-swiper-dot"
+    "uni-swiper-dot": "/components/uni-swiper-dot/uni-swiper-dot",
+    "uni-load-more": "/components/uni-load-more/uni-load-more"
   }
 }

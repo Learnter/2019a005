@@ -1702,7 +1702,7 @@ image {
 /* 删除下划线样式*/
 .text-del-style {
   position: relative;
-  font-size: 28rpx;
+  font-size: 22rpx;
   margin-top: 4rpx;
   color: rgba(0, 0, 0, 0.2);
 }

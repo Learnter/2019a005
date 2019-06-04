@@ -88,13 +88,13 @@
    	color: white;
    	background: red;
    	margin-right: 8upx;
-   	padding: 2upx 6upx;
+   	padding: 2upx 6upx; 
    }
    
    /* 删除下划线样式*/
    .text-del-style {
     position:relative;
-   	font-size: 28upx;
+   	font-size: 22upx;
    	margin-top: 4upx;
     color: rgba(0, 0, 0, 0.2);
     &::after{

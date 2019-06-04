@@ -7367,6 +7367,7 @@ module.exports = {
     header = header || "application/json";
     url = this.config("APIHOST") + url;
     return new Promise(function (succ, error) {
+
       uni.request({
         url: url,
         data: data,
