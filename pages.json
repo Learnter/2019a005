@@ -106,7 +106,7 @@
     },
 
     {
-      "path": "pages/tabBar/shCart/user-orders/user-orders",
+      "path": "pages/tabBar/shCart/user-orders/user-orders",//用户订单页面
       "style": {
         "app-plus": {
           "titleNView": false
@@ -114,7 +114,7 @@
       }
     },
     {
-      "path": "pages/tabBar/swCenter/user-bill/user-bill",
+      "path": "pages/tabBar/swCenter/user-bill/user-bill", //用户账单页面
       "style": {
         "app-plus": {
           "titleNView": false
@@ -122,7 +122,7 @@
       }
     },
     {
-      "path": "pages/tabBar/swCenter/user-assets/user-assets",
+      "path": "pages/tabBar/swCenter/user-assets/user-assets", //用户资产页面
       "style": {
         "app-plus": {
           "titleNView": false
@@ -130,7 +130,7 @@
       }
     },
     {
-      "path": "pages/tabBar/shCart/shCart",
+      "path": "pages/tabBar/shCart/shCart",//购物车页面
       "style": {
         "app-plus": {
           "titleNView": false
@@ -138,7 +138,7 @@
       }
     },
     {
-      "path": "pages/tabBar/swCenter/swCenter",
+      "path": "pages/tabBar/swCenter/swCenter",//交换中心页面
       "style": {
         "app-plus": {
           "titleNView": false
@@ -146,7 +146,7 @@
       }
     },
     {
-      "path": "pages/category/detail/detail",
+      "path": "pages/category/detail/detail", //产品详情页
       "style": {
         "app-plus": { //去除app 头部导航栏
           "titleNView": false
@@ -154,7 +154,7 @@
       }
     },
     {
-      "path": "pages/news/news",
+      "path": "pages/news/news", //新闻页面
       "style": {
         "app-plus": {
           "titleNView": false
@@ -162,7 +162,7 @@
       }
     },
     {
-      "path": "pages/tabBar/offStores/offStores",
+      "path": "pages/tabBar/offStores/offStores", //线下门店页面
       "style": {
         "app-plus": {
           "titleNView": false
@@ -171,7 +171,7 @@
     },
     
     {
-      "path": "pages/register/register",
+      "path": "pages/register/register", //用户注册页面
       "style": {
         "app-plus": { //去除app 头部导航栏
           "titleNView": false
@@ -179,13 +179,21 @@
       }
     },
     {
-      "path": "pages/tabBar/psCenter/psCenter",
+      "path": "pages/tabBar/psCenter/psCenter", //个人中心页面
       "style": {
         "app-plus": {
           "titleNView": false
         }
       }
     }        
+        ,{
+            "path" : "pages/tabBar/psCenter/systemNotice/systemNotice",
+            "style" : {
+               "app-plus": {
+                "titleNView": false
+              }
+            }
+        }
     ],
   "globalStyle": {
     "navigationBarTextStyle": "black",

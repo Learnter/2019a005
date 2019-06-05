@@ -33,9 +33,11 @@
       </view>
       
       <view class="sortBox">
-        <view class="sort-item">
+        <view class="sort-item" @tap="sortBtn" >
           <text class="text-xm-size">区域</text>
-          <image src="../../../static/ga005_131.png" mode="widthFix"></image>
+          <image v-if="index == 0" src="../../../static/ga005_131.png" mode="widthFix"></image>
+          <image v-if="index == 1" src="../../../static/ga005_132.png" mode="widthFix"></image>
+          <image v-if="index == 2" src="../../../static/ga005_133.png" mode="widthFix"></image>
         </view>
         <view class="sort-item">
           <text class="text-xm-size">销量</text>
@@ -53,58 +55,13 @@
       
       <!-- 商家店铺列表 -->
       <view class="storeBox">
-        <view class="store-item">
+        <view class="store-item" v-for="(item,index) in 6" :key="index">
           <image src="../../../static/ga005_79.png" mode="widthFix"></image>
           <view class="item-tips">
             <view class="i-t-top">
               <h3>标题111111111111111111111111111111111111111111111111111111111111111111</h3>
               <p>地址.......</p>
-              <p>评价:......</p>
-            </view>
-            <view class="i-t-bottom">
-              <text>服务好</text>
-              <text>质量好</text>
-            </view>
-          </view>
-        </view>
-        
-        <view class="store-item">
-          <image src="../../../static/ga005_80.png" mode="widthFix"></image>
-          <view class="item-tips">
-            <view class="i-t-top">
-              <h3>标题111111111111111111111111111111111111111111111111111111111111111111</h3>
-              <p>地址.......</p>
-              <p>评价:......</p>
-            </view>
-            <view class="i-t-bottom">
-              <text>服务好</text>
-              <text>质量好</text>
-            </view>
-          </view>
-        </view>
-        
-        <view class="store-item">
-          <image src="../../../static/ga005_81.png" mode="widthFix"></image>
-          <view class="item-tips">
-            <view class="i-t-top">
-              <h3>标题111111111111111111111111111111111111111111111111111111111111111111</h3>
-              <p>地址.......</p>
-              <p>评价:......</p>
-            </view>
-            <view class="i-t-bottom">
-              <text>服务好</text>
-              <text>质量好</text>
-            </view>
-          </view>
-        </view>
-        
-        <view class="store-item">
-          <image src="../../../static/ga005_82.png" mode="widthFix"></image>
-          <view class="item-tips">
-            <view class="i-t-top">
-              <h3>标题.........</h3>
-              <p>地址.......</p>
-              <p>评价:......</p>
+              <p class="uni-inline-item">评价:<uni-rate :disabled="true" :size="18" :is-fill="false" :value="3.5"/></p>
             </view>
             <view class="i-t-bottom">
               <text>服务好</text>
@@ -114,13 +71,15 @@
         </view>
       </view>
       
+     <uni-load-more :status="status" color="#007aff" />
     </view>
 	</view>
 </template>
 
 <script>
-	import uniSwiperDot from '@/components/uni-swiper-dot/uni-swiper-dot.vue'
-	
+	import uniSwiperDot from '@/components/uni-swiper-dot/uni-swiper-dot.vue';
+  import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue';
+  import uniRate from '@/components/uni-rate/uni-rate.vue';
 	export default {
 		data() {
 			return {
@@ -162,17 +121,27 @@
 					selectedBorder: '1px rgba(83, 200, 249,0.9) solid',
 					width: 10,
 					height: 2
-				}
+				},
+        status:"more",
+        index:0
 			}
 		},
 		methods: {
 			change(e) {
 				this.current = e.detail.current
-			}
+			},
+      sortBtn(){
+        this.index >= 2 ? this.index = 0 : this.index++;
+      }
 		},
 		components: {
-			uniSwiperDot
-		}
+			uniSwiperDot,
+      uniLoadMore,
+      uniRate
+		},
+     onReachBottom() {
+      console.log("上拉加载");
+    }
 	}
 </script>
 

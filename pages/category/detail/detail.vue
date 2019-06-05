@@ -3,7 +3,9 @@
     <view class="detailPage">
 
       <view class="big-Piture">
-        <image class="returnBtn" src="../../../static/ga005_64.png" mode="widthFix"></image>
+        <navigator open-type="navigateBack" hover-class="none">
+            <image class="returnBtn" src="../../../static/ga005_64.png" mode="widthFix"></image>
+        </navigator>
         <image class="b-p-photo" src="../../../static/ga005_77.png" mode="widthFix"></image>
       </view>
 
@@ -61,6 +63,7 @@
 </script>
 
 <style lang="scss" scoped>
+  
   .text-del-style {
     color: #E2E0DD;
   }

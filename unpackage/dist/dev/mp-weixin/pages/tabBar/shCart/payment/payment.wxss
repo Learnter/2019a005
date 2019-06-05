@@ -24,22 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-/* 头部返回栏样式*/
-.returnTitle.data-v-1f182f1a {
-  position: relative;
-  background: white;
-  font-size: 32rpx;
-  padding: 30rpx 0;
-  text-align: center;
-  margin-bottom: 10rpx;
-}
-.returnTitle .returnBtn.data-v-1f182f1a {
-    left: 30rpx;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-}
 /* 收件人信息样式 */
 .play-main.data-v-1f182f1a {
   padding: 0 1%;

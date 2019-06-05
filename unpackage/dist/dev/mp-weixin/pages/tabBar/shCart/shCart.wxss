@@ -38,22 +38,6 @@
 .checkbox-group.data-v-6d0eefe2 {
   display: inline;
 }
-/* 头部返回栏样式*/
-.returnTitle.data-v-6d0eefe2 {
-  position: relative;
-  background: white;
-  font-size: 32rpx;
-  padding: 30rpx 0;
-  text-align: center;
-  margin-bottom: 10rpx;
-}
-.returnTitle .returnBtn.data-v-6d0eefe2 {
-    left: 30rpx;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-}
 /* 店铺产品样式*/
 .storeInfo.data-v-6d0eefe2 {
   margin-bottom: 30rpx;

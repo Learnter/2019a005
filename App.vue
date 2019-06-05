@@ -94,14 +94,13 @@
    /* 删除下划线样式*/
    .text-del-style {
     position:relative;
-   	font-size: 22upx;
-   	margin-top: 4upx;
-    color: rgba(0, 0, 0, 0.2);
+   	font-size: 26upx;
+    color:#C1C1C1;
+    line-height:1.2;
     &::after{
-      content:"";
+      content:" ";
       display:block;
-      width:100%;
-      border:1upx solid rgba(0, 0, 0, 0.2);
+      border:1upx solid #C1C1C1;
       position:absolute;
       top:50%;
       left:0;

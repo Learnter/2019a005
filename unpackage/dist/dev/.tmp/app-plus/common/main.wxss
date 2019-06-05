@@ -1702,15 +1702,14 @@ image {
 /* 删除下划线样式*/
 .text-del-style {
   position: relative;
-  font-size: 28rpx;
-  margin-top: 4rpx;
-  color: rgba(0, 0, 0, 0.2);
+  font-size: 26rpx;
+  color: #C1C1C1;
+  line-height: 1.2;
 }
 .text-del-style::after {
-    content: "";
+    content: " ";
     display: block;
-    width: 100%;
-    border: 1rpx solid rgba(0, 0, 0, 0.2);
+    border: 1rpx solid #C1C1C1;
     position: absolute;
     top: 50%;
     left: 0;

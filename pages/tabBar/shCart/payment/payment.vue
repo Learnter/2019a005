@@ -2,11 +2,9 @@
   <!-- 支付页面-->
   <view class="playment">
 
-    <!-- 头部返回栏-->
-    <view class="returnTitle">
-      <image class="returnBtn" src="../../../../static/ga005_64.png" mode="widthFix"></image>
-      <text>结算</text>
-    </view>
+   <return-nav>
+     <text>结算</text>
+   </return-nav>
 
     <!-- 收货人地址-->
     <view class="play-main">
@@ -130,22 +128,7 @@
 
 <style lang="scss" scoped>
   
-  /* 头部返回栏样式*/
-  .returnTitle {
-    position: relative;
-    background: white;
-    font-size: 32upx;
-    padding: 30upx 0;
-    text-align: center;
-    margin-bottom: 10upx;
-
-    .returnBtn {
-      left: 30upx;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-
+  
   /* 收件人信息样式 */
   .play-main {
     padding: 0 1%;

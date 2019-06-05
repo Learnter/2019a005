@@ -7479,7 +7479,8 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\App.vue"));
 var _httpApi = _interopRequireDefault(__webpack_require__(/*! ./common/js/httpApi */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\httpApi.js"));
 var _httpRequest = _interopRequireDefault(__webpack_require__(/*! ./common/js/httpRequest */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\httpRequest.js"));
-var _cache = _interopRequireDefault(__webpack_require__(/*! ./common/js/cache */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\cache.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _cache = _interopRequireDefault(__webpack_require__(/*! ./common/js/cache */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\cache.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var returnNav = function returnNav() {return __webpack_require__.e(/*! import() | components/returnNav */ "components/returnNav").then(__webpack_require__.bind(null, /*! ./components/returnNav.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\returnNav.vue"));};
+
 
 _vue.default.config.productionTip = false;
 
@@ -7487,6 +7488,8 @@ _vue.default.prototype.$api = _httpApi.default;
 _vue.default.prototype.$Request = _httpRequest.default;
 _vue.default.prototype.$Sysconf = _httpRequest.default.config;
 _vue.default.prototype.$SysCache = _cache.default;
+
+_vue.default.component("return-nav", returnNav);
 
 _App.default.mpType = 'app';
 
@@ -7749,6 +7752,23 @@ createPage(_onGoods.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _psCenter = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/psCenter/psCenter.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\psCenter\\psCenter.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_psCenter.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FpsCenter%2FsystemNotice%2FsystemNotice\"}":
+/*!*********************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FpsCenter%2FsystemNotice%2FsystemNotice"} ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _systemNotice = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/psCenter/systemNotice/systemNotice.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\psCenter\\systemNotice\\systemNotice.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_systemNotice.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),

@@ -1,4 +1,5 @@
 <template>
+  <!-- 个人中心页面-->
   <view>
     <!-- 顶部背景模块-->
     <view class="headBg">
@@ -19,16 +20,16 @@
         </view>
       </view>
       <view class="userBox">
-        <view class="useLeft">
-          <text class="text-w-color">注册会员</text>
-          <text class="text-w-color">马上抽取加速红包</text>
-        </view>
-
-        <view class="useRight">
-          <text>立刻领取
-            <image src="../../../static/ga005_128.png" mode="widthFix" style="width:8upx;margin-left:10upx" ></image>
-          </text>
-        </view>
+            <view class="useLeft">
+              <text class="text-w-color">注册会员</text>
+              <text class="text-w-color">马上抽取加速红包</text>
+            </view>
+            
+            <view class="useRight">
+              <p>立刻领取
+                <image src="../../../static/ga005_128.png" mode="widthFix" style="width:8upx;margin-left:10upx" ></image>
+              </p>
+            </view>
       </view>
     </view>
     
@@ -63,10 +64,12 @@
 
           <view class="item-right">
             <image src="../../../static/ga005_98.png" style="width:20upx;height:100upx;"></image>
-            <view class="right-logo">
-              <image src="../../../static/ga005_99.png" mode="widthFix"></image>
-              <p class="text-sm-size">我的订单</p>
-            </view>
+            <navigator url="/pages/tabBar/shCart/user-orders/user-orders" hover-class="none">
+              <view class="right-logo">
+                <image src="../../../static/ga005_99.png" mode="widthFix"></image>
+                <p class="text-sm-size">我的订单</p>
+              </view>
+           </navigator> 
           </view>
         </view>
 
@@ -96,10 +99,12 @@
 
           <view class="item-right">
             <image src="../../../static/ga005_98.png" style="width:20upx;height:100upx;"></image>
-            <view class="right-logo">
-              <image src="../../../static/ga005_100.png" mode="widthFix"></image>
-              <p class="text-sm-size">我的钱包</p>
-            </view>
+            <navigator url="/pages/tabBar/swCenter/user-assets/user-assets" hover-class="none">
+                <view class="right-logo">
+                  <image src="../../../static/ga005_100.png" mode="widthFix"></image>
+                  <p class="text-sm-size">我的钱包</p>
+                </view>
+            </navigator>
           </view>
         </view>
         
@@ -130,10 +135,12 @@
 
           <view class="item-right">
             <image src="../../../static/ga005_98.png" style="width:20upx;height:100upx;"></image>
-            <view class="right-logo">
-              <image src="../../../static/ga005_106.png" mode="widthFix"></image>
-              <p class="text-sm-size">我的账单</p>
-            </view>
+            <navigator url="/pages/tabBar/swCenter/user-bill/user-bill" hover-class="none">
+              <view class="right-logo">
+                <image src="../../../static/ga005_106.png" mode="widthFix"></image>
+                <p class="text-sm-size">我的账单</p>
+              </view>
+           </navigator> 
           </view>
         </view>
       </view>
@@ -182,7 +189,9 @@
                  <!-- 平台公告模块-->
               <view class="sever-top">
                 <h3>平台公告</h3>
-                <image src="../../../static/ga005_115.png" mode="widthFix" class="more-Icon"></image>
+                <navigator url="/pages/tabBar/psCenter/systemNotice/systemNotice">
+                  <image src="../../../static/ga005_115.png" mode="widthFix" class="more-Icon"></image>
+                </navigator>
               </view>
               <view class="noc-item">
                 <view class="noc-item-li">
@@ -209,7 +218,9 @@
           <view class="severBox">
               <view class="sever-top">
                 <h3>新闻资讯</h3>
-                <image src="../../../static/ga005_115.png" mode="widthFix" class="more-Icon"></image>
+                <navigator url="/pages/news/news">
+                    <image src="../../../static/ga005_115.png" mode="widthFix" class="more-Icon"></image>
+                </navigator>
               </view>
               <view class="noc-item">
                 <view class="noc-item-li">
@@ -304,9 +315,9 @@
       }
 
       .useRight {
-        text {
+        p{
           color: #FF6100;
-          padding: 0 20upx;
+          padding: 6upx 20upx;
           border-radius: 20upx;
           background: white;
 

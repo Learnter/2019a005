@@ -89,9 +89,9 @@
 .headBg .userBox .useLeft text.data-v-1c9ef4ef:nth-child(1) {
         border-right: 4rpx solid white;
 }
-.headBg .userBox .useRight text.data-v-1c9ef4ef {
+.headBg .userBox .useRight ._p.data-v-1c9ef4ef {
       color: #FF6100;
-      padding: 0 20rpx;
+      padding: 6rpx 20rpx;
       border-radius: 20rpx;
       background: white;
 }

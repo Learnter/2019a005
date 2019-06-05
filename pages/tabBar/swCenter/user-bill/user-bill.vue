@@ -3,12 +3,10 @@
   <!-- 用户账单页面-->
   <view class="user-assets">
 
-    <!-- 头部返回栏-->
-    <view class="returnTitle">
-      <image class="returnBtn" src="../../../../static/ga005_64.png" mode="widthFix"></image>
-      <text>我的账单</text>
-    </view>
-
+    <return-nav>
+         <text>我的账单</text> 
+    </return-nav>
+    
     <view class="sw-main">     
       <!-- 排序列表-->
       <view class="sortBox">

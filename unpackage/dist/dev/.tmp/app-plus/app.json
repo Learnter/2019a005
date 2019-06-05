@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/tabBar/onGoods/onGoods",
+    "pages/login/login",
     "pages/search/search",
     "pages/category/category",
     "pages/category/stGoods/stGoods",
@@ -74,6 +74,6 @@
     "autoclose": false
   },
   "appname": "2019a005",
-  "compilerVersion": "1.9.8",
+  "compilerVersion": "1.9.9",
   "usingComponents": {}
 }

@@ -1,244 +1,28 @@
 <template>
   <!-- 红包/礼包专区-->
 	<view class="packetPage">
-    <image class="returnBtn" src="../../static/ga005_64.png" mode="widthFix"></image>
+    <navigator open-type="navigateBack" hover-class="none" style="display:block;">
+      <image class="returnBtn" src="../../static/ga005_64.png" mode="widthFix"></image>
+    </navigator>
     <image src="../../static/ga005_72.png" mode="widthFix"></image>
     <button class="packet-btn">红包专区</button>
     <view class="packet-main">
       <view class="packet-item">
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill" ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
+          <view class="packet-item-li" v-for="(item,index) in 20 " :key="index"> 
+            <navigator url="/pages/category/detail/detail">
+              <view class="packet-view">
+                <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill" ></image>
               </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_42.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
+              <view class="packet-item-li-bottom">
+                <view class="packet-itme-li-bottom-top">
+                  <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
+                  <text>￥688</text>
+                </view>
+                 <label>原价:<text>￥300</text></label>
               </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
+            </navigator>  
           </view>
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_44.png" mode="aspectFill" ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_44.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_45.png" mode="aspectFill"></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill" ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill" ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill" ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill" ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-                    <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-                    <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-                    <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-                    <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-                    <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-                    <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-                    <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-                    <view class="packet-item-li" > 
-            <view class="packet-view">
-              <image class="paket-view-image" src="../../static/ga005_41.png" mode="aspectFill"  ></image>
-            </view>
-            <view class="packet-item-li-bottom">
-              <view class="packet-itme-li-bottom-top">
-                <image class="packet-bg" src="../../static/ga005_48.png" mode="widthFix"></image>
-                <text>￥688</text>
-              </view>
-               <label>原价:<text>￥300</text></label>
-            </view>
-          </view>
-          
-          
-                
+                   
       </view>
     </view>
 	</view>

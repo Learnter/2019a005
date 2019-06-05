@@ -26,7 +26,7 @@
           <swiper class="swiper-box" @change="change" autoplay="true" circular="true">
             <swiper-item v-for="(item ,index) in info" :key="index">
               <view class="swiper-item">
-                <image :src="item.url" mode="widthFix" style="width:100%" />
+                <image :src="item.url" mode="widthFix"/>
               </view>
             </swiper-item>
           </swiper>
@@ -115,16 +115,20 @@
         <!-- 秒杀区 -->
         <view class="s_title">
           <h2>秒杀精品</h2>
-          <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+          <navigator url="/pages/category/stGoods/stGoods">
+                <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+          </navigator>
         </view>
 
         <view class="s_list">
           <view class="s_li"  v-for="(item,index) in spikeGoodsList" :key="index">
-            <view class="s_li_head">
-              <image lazy-load :src="item.picture" class="fImg"></image>
-              <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
-            </view>
-            <text class="text-del-style uni-ellipsis">￥{{item.market_price }}</text>
+            <navigator url="/pages/category/detail/detail">
+              <view class="s_li_head">
+                <image lazy-load :src="item.picture" class="fImg"></image>
+                <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
+              </view>
+              <text class="text-del-style uni-ellipsis">￥{{item.market_price }}</text>
+            </navigator>
           </view>
         </view>  
       </view>
@@ -133,15 +137,19 @@
         <!-- 发现区 -->
         <view class="s_title">
           <h2>发现好货</h2>
-          <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+          <navigator url="/pages/category/stGoods/stGoods">
+             <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+          </navigator>
         </view>
         <view class="s_list">
           <view class="s_li" v-for="(item,index) in goodGoodsList" :key="index">
-            <view class="s_li_head">
-              <image lazy-load :src="item.picture" class="fImg"></image>
-              <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
-            </view>
-            <text class="text-del-style uni-ellipsis">￥{{item.market_price}}</text>
+            <navigator url="/pages/category/detail/detail" >
+              <view class="s_li_head">
+                <image lazy-load :src="item.picture" class="fImg"></image>
+                <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
+              </view>
+              <text class="text-del-style uni-ellipsis">￥{{item.market_price}}</text>
+           </navigator>
           </view>
         </view>
       </view>
@@ -155,7 +163,9 @@
                 <image src="../../../static/ga005_48.png" mode="widthFix" class="tickets-Icon"></image>
                 <h2>礼包专区</h2>
               </view>
-              <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+              <navigator url="/pages/packet/packet">
+                <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+              </navigator>
             </view>
             <p style="color:red;" class="tickets-p">天天换礼品</p>
           </view>
@@ -165,7 +175,9 @@
                 <image src="../../../static/ga005_49.png" mode="widthFix" class="tickets-Icon"></image>
                 <h2>红包专区</h2>
               </view>
-              <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+              <navigator url="/pages/packet/packet">
+                <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+              </navigator>
             </view>
             <p style="color:green" class="tickets-p">日日有红包</p>
           </view>
@@ -174,22 +186,26 @@
         <view class="s_list">
           <view class="s_list_item">
             <view class="s_item_li" v-for="(item,index) in giftPackageGoodsList" :key="index">
-              <image lazy-load :src="item.picture" class="fImg"></image>
-              <view class="giftImg uni-ellipsis">
-                <image src="../../../static/ga005_48.png" mode="widthFix" class="tickets-Icon"></image>
-                <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
-              </view>
-              <text class="text-del-style uni-ellipsis">￥{{item.market_price}}</text>
+              <navigator url="/pages/category/detail/detail">
+                <image lazy-load :src="item.picture" class="fImg"></image>
+                <view class="giftImg uni-ellipsis">
+                  <image src="../../../static/ga005_48.png" mode="widthFix" class="tickets-Icon"></image>
+                  <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
+                </view>
+                <text class="text-del-style uni-ellipsis">￥{{item.market_price}}</text>
+             </navigator> 
             </view>
           </view>
           <view class="s_list_item">
             <view class="s_item_li" v-for="(item,index) in redEnvelopeGoodsList" :key="index">
-              <image lazy-load :src="item.picture" class="fImg"></image>
-              <view class="giftImg uni-ellipsis">
-                <image src="../../../static/ga005_49.png" mode="widthFix" class="tickets-Icon"></image>
-                <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
-              </view>
-              <text class="text-del-style uni-ellipsis">￥{{item.market_price}}</text>
+              <navigator url="/pages/category/detail/detail">
+                <image lazy-load :src="item.picture" class="fImg"></image>
+                <view class="giftImg uni-ellipsis">
+                  <image src="../../../static/ga005_49.png" mode="widthFix" class="tickets-Icon"></image>
+                  <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
+                </view>
+                <text class="text-del-style uni-ellipsis">￥{{item.market_price}}</text>
+              </navigator>
             </view>
           </view>
         </view>
@@ -208,10 +224,10 @@
           <view class="goodImg">
             <image lazy-load :src="item.picture" mode="aspectFill"></image>
           </view>
-          <view class="uni-bg-green" style="height:20upx;">
+          <view class="text-bg-green" style="height:14upx;">
           </view>
           <view class="goodTips">
-            <h2 class="uni-ellipsis">{{item.goods_name}}</h2>
+            <h3 class="uni-ellipsis">{{item.goods_name}}</h3>
             <view>
               <view class="tipTop">
                 <view class="t_top_left uni-ellipsis">
@@ -330,7 +346,6 @@
 </script>
 
 <style lang="scss" scoped>
-  
   .s_list_item {
     width: 49%;
     display: flex;
@@ -462,7 +477,8 @@
         overflow: hidden;
         box-sizing: border-box;
         border-radius: 20upx 20upx 0 0;
-        padding-left: 20upx;
+        padding:0 20upx;
+        height:80upx;
       }
     }
 
@@ -541,13 +557,12 @@
 
     /*广告专区*/
     .pitureBox {
-      width: 100%;
+      overflow:hidden;
       margin-bottom: 10upx;
-
       image {
         width: 100%;
         border-radius: 20upx;
-        box-shadow: 0 0 20upx rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 10upx rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -559,16 +574,16 @@
       flex-wrap: wrap;
 
       .goodLi {
-        width: 48%;
+        width: 49%;
         overflow: hidden;
         background: white;
         margin-bottom: 20upx;
         border-radius: 20upx;
-        box-shadow: 0 0 20upx rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 10upx rgba(0, 0, 0, 0.1);
 
         .goodImg {
-          padding:16upx;
           box-sizing: border-box;
+          padding:16upx;
           height:300upx;
           overflow: hidden;
         }

@@ -1,7 +1,7 @@
 <template>
 	<view>
     <image class="returnBtn" src="../../static/ga005_64.png" mode="widthFix"></image>
-		<image class="newsImg" src="../../static/ga005_120.png" mode="scaleToFill"></image>
+		<image class="newsImg" src="../../static/ga005_120.png" mode="widthFix"></image>
     <view class="newsContent">
       <view class="newsTip">
         <h3>我是标题栏</h3>
@@ -10,14 +10,14 @@
       <view class="textBox">
         <textarea value="" placeholder="正文内容..............."  placeholder-style="font-size:8upx" />
       </view>
-      <view class="discussBox">
-        <input type="text" value="" placeholder="发表您的评论" placeholder-style="text-align:center"/>
-        <view class="disImg">
-          <image src="../../static/ga005_95.png" mode="widthFix"></image>
-          <image src="../../static/ga005_130.png" mode="widthFix"></image>
-        </view>
-      </view>  
     </view>
+    <view class="discussBox uni-inline-item">
+      <input type="text" value="" placeholder="发表您的评论" placeholder-style="text-align:center"/>
+      <view class="disImg">
+        <image src="../../static/ga005_95.png" mode="widthFix"></image>
+        <image src="../../static/ga005_130.png" mode="widthFix"></image>
+      </view>
+    </view>  
 	</view>
 </template>
 
@@ -41,10 +41,6 @@
       left:20px;
       z-index:1;
       width:66upx;
-    }
-    .newsImg{
-      width:100%;
-      box-sizing: border-box;
     }
     .newsContent{
       margin-top:16upx;
@@ -77,10 +73,14 @@
       width:100%;
     }
     .discussBox{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      height:80upx;
       background:white;
-      display:flex;
-      justify-content: space-between;
-      padding:16upx 24upx;
+      padding:0 20upx;
+      justify-content:space-between;
     }
     .discussBox input{
       background:#E6E6E6;
@@ -95,7 +95,7 @@
       image{
         width:40upx;
         &:nth-child(1){
-          margin-right:20upx;
+          margin-right:30upx;
         }
       }
     }

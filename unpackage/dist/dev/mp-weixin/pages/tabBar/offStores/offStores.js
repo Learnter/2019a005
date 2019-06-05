@@ -8,48 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniSwiperDot = function uniSwiperDot() {return __webpack_require__.e(/*! import() | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then(__webpack_require__.bind(null, /*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-swiper-dot\\uni-swiper-dot.vue"));};var _default =
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniSwiperDot = function uniSwiperDot() {return __webpack_require__.e(/*! import() | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then(__webpack_require__.bind(null, /*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-swiper-dot\\uni-swiper-dot.vue"));};var uniLoadMore = function uniLoadMore() {return __webpack_require__.e(/*! import() | components/uni-load-more/uni-load-more */ "components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/components/uni-load-more/uni-load-more.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-load-more\\uni-load-more.vue"));};var uniRate = function uniRate() {return __webpack_require__.e(/*! import() | components/uni-rate/uni-rate */ "components/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! @/components/uni-rate/uni-rate.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-rate\\uni-rate.vue"));};var _default =
 
 
 
@@ -171,17 +130,28 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         selectedBackgroundColor: 'rgba(83, 200, 249,0.9)',
         selectedBorder: '1px rgba(83, 200, 249,0.9) solid',
         width: 10,
-        height: 2 } };
+        height: 2 },
 
+      status: "more",
+      index: 0 };
 
   },
   methods: {
     change: function change(e) {
       this.current = e.detail.current;
+    },
+    sortBtn: function sortBtn() {
+      this.index >= 2 ? this.index = 0 : this.index++;
     } },
 
   components: {
-    uniSwiperDot: uniSwiperDot } };exports.default = _default;
+    uniSwiperDot: uniSwiperDot,
+    uniLoadMore: uniLoadMore,
+    uniRate: uniRate },
+
+  onReachBottom: function onReachBottom() {
+    console.log("上拉加载");
+  } };exports.default = _default;
 
 /***/ }),
 

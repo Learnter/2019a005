@@ -7348,6 +7348,7 @@ module.exports = {
     header = header || "application/json";
     url = this.config("APIHOST") + url;
     return new Promise(function (succ, error) {
+
       uni.request({
         url: url,
         data: data,
@@ -7389,7 +7390,7 @@ module.exports = {
           "token": userInfo.token },
 
         success: function success(result) {
-          console.log(result, " at common\\js\\httpRequest.js:73");
+          console.log(result, " at common\\js\\httpRequest.js:74");
           // token 验证失败 自动退出
           if (result.data.code == 1004 || result.data.code == 1104 || result.data.code == 1003 || result.data.code == 1006) {
             _cache.default.remove('app_user_info');
