@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "user-bill-return-nav-default": "/pages/tabBar/swCenter/user-bill/user-bill-return-nav-default"
-  }
-}

@@ -98,7 +98,7 @@
 		display: inline-flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		height:60upx;
+		height:40upx;
 		position: relative
 	}
 

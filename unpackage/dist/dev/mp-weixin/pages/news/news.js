@@ -31,14 +31,34 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
 var _default =
 {
   data: function data() {
-    return {};
-
+    return {
+      ID: 0,
+      detailInfo: "" };
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    fetchData: function fetchData() {var _this = this;
+      var url = "notice/detail";
+      var data = {
+        'id': this.ID };
+
+      this.$Request.get(url, data).then(function (res) {
+        if (res && res.code == 200 && res.data.length !== 0) {
+          _this.detailInfo = res.data;
+        }
+      });
+    } },
+
+  onLoad: function onLoad(options) {
+    this.ID = options.id;
+    this.fetchData();
+  } };exports.default = _default;
 
 /***/ }),
 

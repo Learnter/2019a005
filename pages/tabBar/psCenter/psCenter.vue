@@ -15,21 +15,23 @@
         </view>
 
         <view class="info-right">
-          <image src="../../../static/ga005_91.png" mode="widthFix" style="width:60upx;"></image>
+          <image src="../../../static/ga005_91.png" mode="widthFix"></image>
           <p class="text-w-color text-xm-size">客服</p>
         </view>
       </view>
       <view class="userBox">
-            <view class="useLeft">
-              <text class="text-w-color">注册会员</text>
-              <text class="text-w-color">马上抽取加速红包</text>
-            </view>
-            
-            <view class="useRight">
-              <p>立刻领取
-                <image src="../../../static/ga005_128.png" mode="widthFix" style="width:8upx;margin-left:10upx" ></image>
-              </p>
-            </view>
+        <view class="uni-list-cell">
+          <view class="useLeft">
+            <text class="text-w-color">注册会员</text>
+            <text class="text-w-color">马上抽取加速红包</text>
+          </view>
+          
+          <view class="useRight">
+            <p>立刻领取
+              <image src="../../../static/ga005_128.png" mode="widthFix"></image>
+            </p>
+          </view>
+        </view>   
       </view>
     </view>
     
@@ -63,7 +65,7 @@
           </view>
 
           <view class="item-right">
-            <image src="../../../static/ga005_98.png" style="width:20upx;height:100upx;"></image>
+            <image class="item-right-img" src="../../../static/ga005_98.png" ></image>
             <navigator url="/pages/tabBar/shCart/user-orders/user-orders" hover-class="none">
               <view class="right-logo">
                 <image src="../../../static/ga005_99.png" mode="widthFix"></image>
@@ -98,7 +100,7 @@
           </view>
 
           <view class="item-right">
-            <image src="../../../static/ga005_98.png" style="width:20upx;height:100upx;"></image>
+            <image class="item-right-img" src="../../../static/ga005_98.png"></image>
             <navigator url="/pages/tabBar/swCenter/user-assets/user-assets" hover-class="none">
                 <view class="right-logo">
                   <image src="../../../static/ga005_100.png" mode="widthFix"></image>
@@ -112,29 +114,29 @@
         <view class="order-item">
           <view class="item-left">
             <view class="left-li">
-              <image src="../../../static/ga005_101.png" mode="widthFix" style="width:50upx;"></image>
+              <image src="../../../static/ga005_101.png" mode="widthFix" ></image>
               <p class="text-xm-size">兑换</p>
             </view>
             <view class="left-li">
-              <image src="../../../static/ga005_102.png" mode="widthFix" style="width:50upx;"></image>
+              <image src="../../../static/ga005_102.png" mode="widthFix" ></image>
               <p class="text-xm-size">交换</p>
             </view>
             <view class="left-li">
-              <image src="../../../static/ga005_103.png" mode="widthFix" style="width:50upx;"></image>
+              <image src="../../../static/ga005_103.png" mode="widthFix" ></image>
               <p class="text-xm-size">银行卡</p>
             </view>
             <view class="left-li">
-              <image src="../../../static/ga005_104.png" mode="widthFix" style="width:50upx;"></image>
+              <image src="../../../static/ga005_104.png" mode="widthFix" ></image>
               <p class="text-xm-size">收款码</p>
             </view>
             <view class="left-li">
-              <image src="../../../static/ga005_105.png" mode="widthFix" style="width:50upx;"></image>
+              <image src="../../../static/ga005_105.png" mode="widthFix" ></image>
               <p class="text-xm-size">转账</p>
             </view>
           </view>
 
           <view class="item-right">
-            <image src="../../../static/ga005_98.png" style="width:20upx;height:100upx;"></image>
+            <image class="item-right-img" src="../../../static/ga005_98.png"></image>
             <navigator url="/pages/tabBar/swCenter/user-bill/user-bill" hover-class="none">
               <view class="right-logo">
                 <image src="../../../static/ga005_106.png" mode="widthFix"></image>
@@ -186,7 +188,7 @@
       
       <view class="noc-item">
           <view class="severBox">
-                 <!-- 平台公告模块-->
+              <!-- 平台公告模块-->
               <view class="sever-top">
                 <h3>平台公告</h3>
                 <navigator url="/pages/tabBar/psCenter/systemNotice/systemNotice">
@@ -194,21 +196,14 @@
                 </navigator>
               </view>
               <view class="noc-item">
-                <view class="noc-item-li">
-                    <image src="../../../static/ga005_129.png" mode="widthFix" style="width:40%"></image>
+                <view class="noc-item-li" v-for="(item,index) in noticeInfo " :key="index">
+                  <navigator class="nav-to uni-inline-item " :url="'/pages/tabBar/psCenter/systemNotice/systemNotice?id=' + item.id " >
+                    <image :src="item.thumb" mode="scaleToFill" ></image>
                     <view class="noc-introduces">
-                      <h3>标题............</h3>
-                      <p>.................</p>
-                      <p>.................</p>
+                      <h3>{{item.title}}</h3>
+                      <p>{{item.desc}}</p>
                     </view>
-                </view>
-                <view class="noc-item-li">
-                    <image src="../../../static/ga005_129.png" mode="widthFix" style="width:40%"></image>
-                    <view class="noc-introduces">
-                     <h3>标题............</h3>
-                      <p>.................</p>
-                      <p>.................</p>
-                    </view>
+                  </navigator>
                 </view>
               </view> 
             </view>
@@ -223,21 +218,14 @@
                 </navigator>
               </view>
               <view class="noc-item">
-                <view class="noc-item-li">
-                    <image src="../../../static/ga005_116.png" mode="widthFix" style="width:40%"></image>
-                    <view class="noc-introduces">
-                     <h3>标题............</h3>
-                      <p>.................</p>
-                      <p>.................</p>
-                    </view>
-                </view>
-                <view class="noc-item-li">
-                    <image src="../../../static/ga005_117.png" mode="widthFix" style="width:40%"></image>
-                    <view class="noc-introduces">
-                      <h3>标题............</h3>
-                      <p>.................</p>
-                      <p>.................</p>
-                    </view>
+                <view class="noc-item-li" v-for="(item,index) in newsInfo" :key="index">
+                  <navigator class="nav-to uni-inline-item " :url="'/pages/news/news?id=' + item.id ">
+                      <image :src="item.thumb" mode="scaleToFill" ></image>
+                      <view class="noc-introduces">
+                       <h3>{{item.title}}</h3>
+                        <p>{{item.desc}}</p>
+                      </view>
+                  </navigator>
                 </view>
               </view> 
             </view>
@@ -250,15 +238,48 @@
   export default {
     data() {
       return {
-
+          newsInfo:"",
+          noticeInfo:""
       }
     },
+    onLoad() {
+      this.fetchNewData();
+      this.fetchNoticeData();
+    },
     methods: {
-
+      fetchNewData(){
+        var url = "news/getList";
+        var data = {
+          page:1,
+          rows:2
+        }
+        this.$Request.get(url,data).then(res => {
+          if(res && res.code == 200 && res.data.length !== 0){
+            this.newsInfo = res.data;
+            console.log(res);
+          }
+        })
+      },
+      fetchNoticeData(){
+        var url = "notice/getList";
+        var data = {
+          page:1,
+          row:10
+        };
+         this.$Request.get(url,data).then(res => {
+          if(res && res.code == 200 && res.data.length !== 0){
+            this.noticeInfo = res.data;
+          }
+        })
+      }
     }
   }
 </script>
 <style lang="scss" scoped>
+  
+ .uni-list-cell{
+   position:static;
+ }
   
   .text-w-color{
     color:white;
@@ -294,8 +315,6 @@
       bottom: 0;
       width: 90%;
       height: 120upx;
-      display: flex;
-      justify-content: space-between;
       padding: 30upx 40upx 0;
       box-sizing: border-box;
       left: 50%;
@@ -320,7 +339,10 @@
           padding: 6upx 20upx;
           border-radius: 20upx;
           background: white;
-
+          image{
+            width:8upx;
+            margin-left:10upx;
+          }
         }
       }
     }
@@ -369,7 +391,6 @@
   .ps_main {
     padding: 500upx 16upx 0;
 
-    .orders {
       .order-item {
         display: flex;
         box-sizing: border-box;
@@ -405,6 +426,11 @@
           height: 100upx;
           display: flex;
           justify-content: space-between;
+          
+          .item-right-img{
+            width:20upx;
+            height:100upx;
+          }
 
           .right-logo {
             display: flex;
@@ -420,8 +446,7 @@
             }
           }
         }
-      }
-    }     
+     }     
     .severBox{
       background:white;
       border-radius:30upx;
@@ -451,12 +476,27 @@
         .noc-item-li{
           display:flex;
           align-items:center;
+          height:160upx;
           border:1px solid #C1C1C1;
           margin-bottom:16upx;
-          border-radius:10upx;
-          .noc-introduces{
-            margin-left:30upx;
-          }
+          border-radius: 0 10upx 10upx 0;
+          .nav-to{
+            width:100%;
+            height:100%;
+            image{
+             width:200upx;
+             border-right:1px solid #C1C1C1;
+            }
+            .noc-introduces{  
+              flex:1;
+              height:100%;
+              box-sizing:border-box;
+              padding:30upx;
+              display:flex;
+              flex-direction:column;
+              justify-content:space-between;
+            }
+          } 
         }
       }    
     }

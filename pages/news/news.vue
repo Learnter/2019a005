@@ -1,14 +1,17 @@
 <template>
 	<view>
     <image class="returnBtn" src="../../static/ga005_64.png" mode="widthFix"></image>
-		<image class="newsImg" src="../../static/ga005_120.png" mode="widthFix"></image>
+    <view class="newsImg">
+      <image v-if="detailInfo.thumb" :src="detailInfo.thumb" mode="widthFix"></image>
+      <image v-else src="../../static/ga005_120.png" mode="widthFix"></image>
+    </view>
     <view class="newsContent">
       <view class="newsTip">
-        <h3>我是标题栏</h3>
-        <h5>我是标题内容</h5>
+        <h3>{{detailInfo.title}}</h3>
+        <h5>{{detailInfo.desc}}</h5>
       </view>
-      <view class="textBox">
-        <textarea value="" placeholder="正文内容..............."  placeholder-style="font-size:8upx" />
+      <view class="textBox" v-html="detailInfo.content">
+          正文内容.................
       </view>
     </view>
     <view class="discussBox uni-inline-item">
@@ -25,16 +28,37 @@
 	export default {
 		data() {
 			return {
-				
+				ID:0,
+        detailInfo:""
 			}
 		},
 		methods: {
-			
-		}
+			fetchData(){
+         var url= "notice/detail";
+         var data= {
+           'id':this.ID
+         }
+        this.$Request.get(url,data).then(res => {
+         if(res && res.code == 200 && res.data.length !== 0){
+           this.detailInfo = res.data;
+          }
+        })
+      }
+		},
+    onLoad(options) {
+     this.ID = options.id;
+     this.fetchData();
+    }
 	}
 </script>
 
 <style lang="scss" scoped>
+  
+  .newsImg{
+    width:100%;
+    min-height:650upx;
+  }
+  
     .returnBtn{
       position:absolute;
       top:20px;
@@ -43,37 +67,32 @@
       width:66upx;
     }
     .newsContent{
-      margin-top:16upx;
-      padding:20upx 30upx;
-      width:100%;
-      box-sizing:border-box;
-     
+      margin:20upx 10upx 100upx;
     }
       
     .newsTip{
       background:white;
-      color: #2C405A;
       display:flex;
       flex-direction:column; 
       justify-content:space-between;
       margin-bottom:20upx;
       padding: 10upx 20upx;
+      min-height:70upx;
       h3{
         margin-bottom:16upx;
+        font-size:32upx;
       }
-
     }
+    
     .textBox{
       background:white;
-      padding: 10upx 20upx;
+      padding: 30upx 20upx;
       box-sizing:border-box;
-      margin-bottom:20upx;
+      min-height:400upx;
     }
-    .textBox textarea{
-      width:100%;
-    }
+    
     .discussBox{
-      position:absolute;
+      position:fixed;
       bottom:0;
       left:0;
       right:0;
@@ -93,7 +112,7 @@
       display:flex;
       align-items:center;
       image{
-        width:40upx;
+        width:60upx;
         &:nth-child(1){
           margin-right:30upx;
         }

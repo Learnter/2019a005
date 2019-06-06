@@ -244,26 +244,44 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
-    return {};
-
+    return {
+      newsInfo: "",
+      noticeInfo: "" };
 
   },
-  methods: {} };exports.default = _default;
+  onLoad: function onLoad() {
+    this.fetchNewData();
+    this.fetchNoticeData();
+  },
+  methods: {
+    fetchNewData: function fetchNewData() {var _this = this;
+      var url = "news/getList";
+      var data = {
+        page: 1,
+        rows: 2 };
+
+      this.$Request.get(url, data).then(function (res) {
+        if (res && res.code == 200 && res.data.length !== 0) {
+          _this.newsInfo = res.data;
+          console.log(res);
+        }
+      });
+    },
+    fetchNoticeData: function fetchNoticeData() {var _this2 = this;
+      var url = "notice/getList";
+      var data = {
+        page: 1,
+        row: 10 };
+
+      this.$Request.get(url, data).then(function (res) {
+        if (res && res.code == 200 && res.data.length !== 0) {
+          _this2.noticeInfo = res.data;
+        }
+      });
+    } } };exports.default = _default;
 
 /***/ }),
 
