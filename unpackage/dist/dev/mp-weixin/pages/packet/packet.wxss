@@ -24,11 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.returnBtn.data-v-e73a7824 {
+.returnBtn.data-v-80a0d15c {
   left: 35rpx;
   top: 40rpx;
 }
-.packet-btn.data-v-e73a7824 {
+.packet-btn.data-v-80a0d15c {
   position: absolute;
   z-index: 5;
   top: 80rpx;
@@ -44,7 +44,7 @@
   background: #FFAA3B;
   font-family: 楷体;
 }
-.packet-main.data-v-e73a7824 {
+.packet-main.data-v-80a0d15c {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -52,7 +52,7 @@
   right: 0;
   bottom: 0;
 }
-.packet-main .packet-item.data-v-e73a7824 {
+.packet-main .packet-item.data-v-80a0d15c {
     padding: 280rpx 30rpx 0;
     display: -webkit-box;
     display: -webkit-flex;
@@ -67,7 +67,7 @@
         -ms-flex-direction: row;
             flex-direction: row;
 }
-.packet-main .packet-item .packet-item-li.data-v-e73a7824 {
+.packet-main .packet-item .packet-item-li.data-v-80a0d15c {
       width: 170rpx;
       margin-bottom: 20rpx;
       display: -webkit-box;
@@ -80,16 +80,16 @@
           -ms-flex-direction: column;
               flex-direction: column;
 }
-.packet-main .packet-item .packet-item-li .packet-view.data-v-e73a7824 {
+.packet-main .packet-item .packet-item-li .packet-view.data-v-80a0d15c {
         height: 170rpx;
         padding: 10rpx;
         margin: 12rpx 0;
 }
-.packet-main .packet-item .packet-item-li .packet-view .paket-view-image.data-v-e73a7824 {
+.packet-main .packet-item .packet-item-li .packet-view .paket-view-image.data-v-80a0d15c {
           border: 1px solid #C1C1C1;
           height: 100%;
 }
-.packet-main .packet-item .packet-item-li-bottom.data-v-e73a7824 {
+.packet-main .packet-item .packet-item-li-bottom.data-v-80a0d15c {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -102,11 +102,11 @@
       font-size: 22rpx;
       padding: 0 10rpx;
 }
-.packet-main .packet-item .packet-item-li-bottom .packet-itme-li-bottom-top.data-v-e73a7824 {
+.packet-main .packet-item .packet-item-li-bottom .packet-itme-li-bottom-top.data-v-80a0d15c {
         margin-bottom: 10rpx;
         font-size: 24rpx;
 }
-.packet-main .packet-item .packet-item-li-bottom .packet-itme-li-bottom-top .packet-bg.data-v-e73a7824 {
+.packet-main .packet-item .packet-item-li-bottom .packet-itme-li-bottom-top .packet-bg.data-v-80a0d15c {
           width: 30rpx;
           margin-right: 10rpx;
 }

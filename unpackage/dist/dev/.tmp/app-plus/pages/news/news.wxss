@@ -24,28 +24,22 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.returnBtn.data-v-57bc37e4 {
+.newsImg.data-v-1b880972 {
+  width: 100%;
+  min-height: 650rpx;
+}
+.returnBtn.data-v-1b880972 {
   position: absolute;
   top: 20px;
   left: 20px;
   z-index: 1;
   width: 66rpx;
 }
-.newsImg.data-v-57bc37e4 {
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.newsContent.data-v-1b880972 {
+  margin: 20rpx 10rpx 100rpx;
 }
-.newsContent.data-v-57bc37e4 {
-  margin-top: 16rpx;
-  padding: 20rpx 30rpx;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.newsTip.data-v-57bc37e4 {
+.newsTip.data-v-1b880972 {
   background: white;
-  color: #2C405A;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -61,33 +55,33 @@
           justify-content: space-between;
   margin-bottom: 20rpx;
   padding: 10rpx 20rpx;
+  min-height: 70rpx;
 }
-.newsTip ._h3.data-v-57bc37e4 {
+.newsTip ._h3.data-v-1b880972 {
     margin-bottom: 16rpx;
+    font-size: 32rpx;
 }
-.textBox.data-v-57bc37e4 {
+.textBox.data-v-1b880972 {
   background: white;
-  padding: 10rpx 20rpx;
+  padding: 30rpx 20rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-bottom: 20rpx;
+  min-height: 400rpx;
 }
-.textBox textarea.data-v-57bc37e4 {
-  width: 100%;
-}
-.discussBox.data-v-57bc37e4 {
+.discussBox.data-v-1b880972 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
   background: white;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  padding: 0 20rpx;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 16rpx 24rpx;
 }
-.discussBox input.data-v-57bc37e4 {
+.discussBox input.data-v-1b880972 {
   background: #E6E6E6;
   border-radius: 10rpx;
   padding: 0 14rpx;
@@ -95,7 +89,7 @@
           box-sizing: border-box;
   overflow: hidden;
 }
-.disImg.data-v-57bc37e4 {
+.disImg.data-v-1b880972 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -105,10 +99,10 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.disImg image.data-v-57bc37e4 {
-    width: 40rpx;
+.disImg image.data-v-1b880972 {
+    width: 60rpx;
 }
-.disImg image.data-v-57bc37e4:nth-child(1) {
-      margin-right: 20rpx;
+.disImg image.data-v-1b880972:nth-child(1) {
+      margin-right: 30rpx;
 }
 

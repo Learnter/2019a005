@@ -1,6 +1,7 @@
 {
   "titleNView": false,
   "usingComponents": {
+    "return-nav": "/components/returnNav",
     "uni-number-box": "/components/uni-number-box/uni-number-box"
   }
 }

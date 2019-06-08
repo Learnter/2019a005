@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/tabBar/shCart/shCart",
     "pages/tabBar/onGoods/onGoods",
     "pages/login/login",
     "pages/search/search",
@@ -16,7 +17,6 @@
     "pages/tabBar/shCart/user-orders/user-orders",
     "pages/tabBar/swCenter/user-bill/user-bill",
     "pages/tabBar/swCenter/user-assets/user-assets",
-    "pages/tabBar/shCart/shCart",
     "pages/tabBar/swCenter/swCenter",
     "pages/category/detail/detail",
     "pages/news/news",

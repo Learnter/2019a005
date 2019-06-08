@@ -1,9 +1,9 @@
 <template>
 	<view class="returnNav">
 		<view class="returnTitle">
-      <navigator open-type="navigateBack">
+     <!-- <navigator open-type="navigateBack"> -->
         <image class="returnBtn" src="../../../../static/ga005_64.png" mode="widthFix"></image>
-      </navigator>
+      <!-- </navigator> -->
       <slot></slot>
 		</view>
 	</view>

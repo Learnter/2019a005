@@ -1,0 +1,2 @@
+setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"returnBtn { left: ",[0,40],"; top: ",[0,40],"; }\n",],undefined,{path:"./pages/tabBar/psCenter/systemNotice/systemNotice.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/tabBar/psCenter/systemNotice/systemNotice.wxml') } }));
