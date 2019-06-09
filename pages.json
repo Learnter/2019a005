@@ -1,5 +1,13 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+   {
+    "path": "pages/tabBar/onGoods/onGoods",
+    "style": {
+      "app-plus": { //去除app 头部导航栏
+        "titleNView": false
+      }
+    }
+  },
 	 {
 	  "path": "pages/tabBar/shCart/shCart",//购物车页面
 	  "style": {
@@ -8,14 +16,6 @@
 	    }
 	  }
 	},
-  {
-    "path": "pages/tabBar/onGoods/onGoods",
-    "style": {
-      "app-plus": { //去除app 头部导航栏
-        "titleNView": false
-      }
-    }
-  },
   {
     "path": "pages/login/login",
     "style": {
@@ -169,7 +169,6 @@
         }
       }
     },
-    
     {
       "path": "pages/register/register", //用户注册页面
       "style": {
@@ -187,7 +186,7 @@
       }
     }        
         ,{
-            "path" : "pages/tabBar/psCenter/systemNotice/systemNotice",
+            "path" : "pages/tabBar/psCenter/systemNotice/systemNotice", //系统公告页面
             "style" : {
                "app-plus": {
                 "titleNView": false

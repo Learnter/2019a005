@@ -2,8 +2,7 @@
 	<view>
     <image class="returnBtn" src="../../static/ga005_64.png" mode="widthFix"></image>
     <view class="newsImg">
-      <image v-if="detailInfo.thumb" :src="detailInfo.thumb" mode="widthFix"></image>
-      <image v-else src="../../static/ga005_120.png" mode="widthFix"></image>
+      <image :src="detailInfo.thumb" mode="widthFix"></image>
     </view>
     <view class="newsContent">
       <view class="newsTip">
@@ -40,9 +39,13 @@
          }
         this.$Request.get(url,data).then(res => {
          if(res && res.code == 200 && res.data.length !== 0){
+           console.log(res.data);
            this.detailInfo = res.data;
           }
         })
+      },
+      errLoad(e){
+        console.log(e);
       }
 		},
     onLoad(options) {
@@ -57,6 +60,7 @@
   .newsImg{
     width:100%;
     min-height:650upx;
+    background:#E6E6E6;
   }
   
     .returnBtn{

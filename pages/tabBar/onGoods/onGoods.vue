@@ -26,7 +26,7 @@
           <swiper class="swiper-box" @change="change" autoplay="true" circular="true">
             <swiper-item v-for="(item ,index) in info" :key="index">
               <view class="swiper-item">
-                <image :src="item.url" mode="widthFix"/>
+                <image :src="item.url" mode="widthFix" />
               </view>
             </swiper-item>
           </swiper>
@@ -116,13 +116,13 @@
         <view class="s_title">
           <h2>秒杀精品</h2>
           <navigator url="/pages/category/stGoods/stGoods">
-                <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+            <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
           </navigator>
         </view>
 
         <view class="s_list">
-          <view class="s_li"  v-for="(item,index) in spikeGoodsList" :key="index">
-            <navigator url="/pages/category/detail/detail">
+          <view class="s_li" v-for="(item,index) in spikeGoodsList" :key="index">
+            <navigator :url="'/pages/category/detail/detail?id='+ item.goods_id ">
               <view class="s_li_head">
                 <image lazy-load :src="item.picture" class="fImg"></image>
                 <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
@@ -130,7 +130,7 @@
               <text class="text-del-style uni-ellipsis">￥{{item.market_price }}</text>
             </navigator>
           </view>
-        </view>  
+        </view>
       </view>
 
       <view class="seckill">
@@ -138,18 +138,18 @@
         <view class="s_title">
           <h2>发现好货</h2>
           <navigator url="/pages/category/stGoods/stGoods">
-             <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
+            <image src="../../../static/2019_a005_43.png" mode="widthFix" class="more-Icon"></image>
           </navigator>
         </view>
         <view class="s_list">
           <view class="s_li" v-for="(item,index) in goodGoodsList" :key="index">
-            <navigator url="/pages/category/detail/detail" >
+             <navigator :url="'/pages/category/detail/detail?id='+ item.goods_id ">
               <view class="s_li_head">
                 <image lazy-load :src="item.picture" class="fImg"></image>
                 <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
               </view>
               <text class="text-del-style uni-ellipsis">￥{{item.market_price}}</text>
-           </navigator>
+            </navigator>
           </view>
         </view>
       </view>
@@ -186,19 +186,19 @@
         <view class="s_list">
           <view class="s_list_item">
             <view class="s_item_li" v-for="(item,index) in giftPackageGoodsList" :key="index">
-              <navigator url="/pages/category/detail/detail">
+               <navigator :url="'/pages/category/detail/detail?id='+ item.goods_id ">
                 <image lazy-load :src="item.picture" class="fImg"></image>
                 <view class="giftImg uni-ellipsis">
                   <image src="../../../static/ga005_48.png" mode="widthFix" class="tickets-Icon"></image>
                   <text class="textSize uni-ellipsis">￥{{item.shop_price * 1}}</text>
                 </view>
                 <text class="text-del-style uni-ellipsis">￥{{item.market_price}}</text>
-             </navigator> 
+              </navigator>
             </view>
           </view>
           <view class="s_list_item">
             <view class="s_item_li" v-for="(item,index) in redEnvelopeGoodsList" :key="index">
-              <navigator url="/pages/category/detail/detail">
+               <navigator :url="'/pages/category/detail/detail?id='+ item.goods_id ">
                 <image lazy-load :src="item.picture" class="fImg"></image>
                 <view class="giftImg uni-ellipsis">
                   <image src="../../../static/ga005_49.png" mode="widthFix" class="tickets-Icon"></image>
@@ -221,24 +221,26 @@
       <view class="goodsBox">
         <!-- 商品列表区 -->
         <view class="goodLi" v-for="(item,index) in goodsList" :key="index">
-          <view class="goodImg">
-            <image lazy-load :src="item.picture" mode="aspectFill"></image>
-          </view>
-          <view class="text-bg-green" style="height:14upx;">
-          </view>
-          <view class="goodTips">
-            <h3 class="uni-ellipsis">{{item.goods_name}}</h3>
-            <view>
-              <view class="tipTop">
-                <view class="t_top_left uni-ellipsis">
-                  <text class="tip-text-margin">￥{{item.shop_price * 1}}</text>
-                  <text class="good-text" v-if="item.is_spike">秒杀</text>
-                </view>
-                <text class="t_top_right">购买</text>
-              </view>
-              <text class="text-del-style">￥{{item.market_price}}</text>
+          <navigator :url="'/pages/category/detail/detail?id='+ item.goods_id " hover-class="none">
+            <view class="goodImg">
+              <image lazy-load :src="item.picture" mode="aspectFill"></image>
             </view>
-          </view>
+            <view class="text-bg-green" style="height:14upx;">
+            </view>
+            <view class="goodTips">
+              <h3 class="uni-ellipsis">{{item.goods_name}}</h3>
+              <view>
+                <view class="tipTop">
+                  <view class="t_top_left uni-ellipsis">
+                    <text class="tip-text-margin">￥{{item.shop_price * 1}}</text>
+                    <text class="good-text" v-if="item.is_spike">秒杀</text>
+                  </view>
+                  <text class="t_top_right"  @click.stop="buy" >购买</text>
+                </view>
+                <text class="text-del-style">￥{{item.market_price}}</text>
+              </view>
+            </view>
+          </navigator>
         </view>
       </view>
     </view>
@@ -252,7 +254,7 @@
   export default {
     data() {
       return {
-        status:"more",
+        status: "more",
         indicatorDots: true,
         autoplay: true,
         interval: 2000,
@@ -271,13 +273,14 @@
           height: 2
         },
         dataInfo: '',
-         msg: [],//公告栏数据
-        info: [],//轮播数据
+        msg: [], //公告栏数据
+        info: [], //轮播数据
+        isBuy:false,//是否点击购买按钮
       }
     },
     onLoad() {
       this.fetchData();
-      this.fetchGoodData(); 
+      this.fetchGoodData();
       this.fetchNoticeData();
     },
     computed: {
@@ -286,16 +289,16 @@
       },
       redEnvelopeGoodsList() { //红包商品数据
         var newArr;
-        if(this.dataInfo.redEnvelopeGoodsList){
-          newArr = this.dataInfo.redEnvelopeGoodsList.slice(0,2); 
-        } 
+        if (this.dataInfo.redEnvelopeGoodsList) {
+          newArr = this.dataInfo.redEnvelopeGoodsList.slice(0, 2);
+        }
         return newArr;
       },
       giftPackageGoodsList() { //礼包商品数据
         var newArr;
-        if(this.dataInfo.giftPackageGoodsList){
-          newArr = this.dataInfo.giftPackageGoodsList.slice(0,2); 
-        } 
+        if (this.dataInfo.giftPackageGoodsList) {
+          newArr = this.dataInfo.giftPackageGoodsList.slice(0, 2);
+        }
         return newArr;
       },
       goodGoodsList() { //好货推荐数据
@@ -318,20 +321,27 @@
         })
       },
       fetchGoodData() {
-        var url = "goods/index";  //后台地址
+        var url = "goods/index"; //后台地址
         this.$Request.get(url).then(res => {
           if (res.code == 200 && res.data) {
+            console.log(res.data);
             this.dataInfo = res.data;
           }
         })
       },
-      fetchNoticeData(){
-        var url = "goods/noticeList";//公告栏地址
-         this.$Request.get(url).then(res => {
+      fetchNoticeData() {
+        var url = "goods/noticeList"; //公告栏地址
+        this.$Request.get(url).then(res => {
           if (res.code == 200 && res.data) {
             console.log(res);
             this.msg = res.data;
           }
+        })
+      },
+      buy(){
+        uni.showToast({
+          title:"购买成功",
+          icon:"success"
         })
       }
     },
@@ -477,8 +487,8 @@
         overflow: hidden;
         box-sizing: border-box;
         border-radius: 20upx 20upx 0 0;
-        padding:0 20upx;
-        height:80upx;
+        padding: 0 20upx;
+        height: 80upx;
       }
     }
 
@@ -500,7 +510,7 @@
           width: 48%;
         }
       }
-      
+
       .fImg {
         width: 100%;
         height: 170upx;
@@ -557,8 +567,9 @@
 
     /*广告专区*/
     .pitureBox {
-      overflow:hidden;
+      overflow: hidden;
       margin-bottom: 10upx;
+
       image {
         width: 100%;
         border-radius: 20upx;
@@ -583,8 +594,8 @@
 
         .goodImg {
           box-sizing: border-box;
-          padding:16upx;
-          height:300upx;
+          padding: 16upx;
+          height: 300upx;
           overflow: hidden;
         }
 
@@ -616,7 +627,7 @@
               padding: 2upx 10upx;
               border: 1px solid rgba(0, 0, 0, 0.1);
               border-radius: 10upx;
-              flex-shrink:0;
+              flex-shrink: 0;
             }
           }
         }

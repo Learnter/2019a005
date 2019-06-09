@@ -15,20 +15,31 @@
 <style lang="scss">
 	/*每个页面公共css */
   @import './common/css/uni.css';
+  
 	page {
 		height: auto;
 		min-height: 100%;
     background:#F7F5F4;  
     letter-spacing:1px;
     }
+    
     view{
-        line-height:1;        
+        line-height:1.2;        
     }
       
     image{
       width:100%;
 			height:100%;
+      will-change: transform;
     }
+    
+    /*详情页content返回的html图片居中*/
+    /* #ifdef H5 */
+      img{
+        width:100%;
+      }
+    /* #endif */
+    
     
     .returnBtn {
       position: absolute;

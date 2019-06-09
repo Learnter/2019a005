@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.orderBox .order-navs.data-v-4c6bee19 {
+.orderBox .order-navs.data-v-6a6bf296 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -37,12 +37,12 @@
   line-height: 80rpx;
   margin-bottom: 10rpx;
 }
-.orderBox .order-detail.data-v-4c6bee19 {
+.orderBox .order-detail.data-v-6a6bf296 {
   position: relative;
   background: white;
   min-height: 500rpx;
 }
-.orderBox .order-detail .not-order.data-v-4c6bee19 {
+.orderBox .order-detail .not-order.data-v-6a6bf296 {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -65,11 +65,11 @@
     color: #C2BEBE;
     font-size: 32rpx;
 }
-.orderBox .order-detail .not-order .not-order-img.data-v-4c6bee19 {
+.orderBox .order-detail .not-order .not-order-img.data-v-6a6bf296 {
       width: 200rpx;
       margin-bottom: 20rpx;
 }
-.recommendBox.data-v-4c6bee19 {
+.recommendBox.data-v-6a6bf296 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -84,7 +84,7 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-.recommendBox .recommend-info.data-v-4c6bee19 {
+.recommendBox .recommend-info.data-v-6a6bf296 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -99,10 +99,10 @@
             align-items: center;
     height: 80rpx;
 }
-.recommendBox .recommend-info .recommend-info-title.data-v-4c6bee19 {
+.recommendBox .recommend-info .recommend-info-title.data-v-6a6bf296 {
       margin-left: 20rpx;
 }
-.recommendBox .recommend-goods.data-v-4c6bee19 {
+.recommendBox .recommend-goods.data-v-6a6bf296 {
     padding: 0 30rpx;
     display: -webkit-box;
     display: -webkit-flex;
@@ -116,7 +116,7 @@
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 }
-.recommendBox .recommend-goods .goodLi.data-v-4c6bee19 {
+.recommendBox .recommend-goods .goodLi.data-v-6a6bf296 {
       width: 48%;
       overflow: hidden;
       background: white;
@@ -125,13 +125,13 @@
       -webkit-box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
               box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
 }
-.recommendBox .recommend-goods .goodLi .goodImg.data-v-4c6bee19 {
+.recommendBox .recommend-goods .goodLi .goodImg.data-v-6a6bf296 {
         padding: 5% 5% 0;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         overflow: hidden;
 }
-.recommendBox .recommend-goods .goodLi .goodTips.data-v-4c6bee19 {
+.recommendBox .recommend-goods .goodLi .goodTips.data-v-6a6bf296 {
         height: 200rpx;
         display: -webkit-box;
         display: -webkit-flex;
@@ -150,7 +150,7 @@
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
 }
-.recommendBox .recommend-goods .goodLi .goodTips .tipTop.data-v-4c6bee19 {
+.recommendBox .recommend-goods .goodLi .goodTips .tipTop.data-v-6a6bf296 {
           display: -webkit-box;
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -164,7 +164,7 @@
               -ms-flex-align: center;
                   align-items: center;
 }
-.recommendBox .recommend-goods .goodLi .goodTips .tipTop .t_top_left.data-v-4c6bee19 {
+.recommendBox .recommend-goods .goodLi .goodTips .tipTop .t_top_left.data-v-6a6bf296 {
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -174,10 +174,10 @@
                 -ms-flex-align: center;
                     align-items: center;
 }
-.recommendBox .recommend-goods .goodLi .goodTips .tipTop .t_top_left .tip-text-margin.data-v-4c6bee19 {
+.recommendBox .recommend-goods .goodLi .goodTips .tipTop .t_top_left .tip-text-margin.data-v-6a6bf296 {
               margin-right: 10rpx;
 }
-.recommendBox .recommend-goods .goodLi .goodTips .tipTop .t_top_right.data-v-4c6bee19 {
+.recommendBox .recommend-goods .goodLi .goodTips .tipTop .t_top_right.data-v-6a6bf296 {
             font-size: 22rpx;
             padding: 2rpx 10rpx;
             border: 2rpx solid rgba(0, 0, 0, 0.1);
