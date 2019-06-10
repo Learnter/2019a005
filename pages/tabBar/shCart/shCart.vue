@@ -50,18 +50,18 @@
                 <view class="price">￥{{row.price}}</view>
                 <view class="price-number">
                   <view class="number">
-                    <view class="sub" @tap.stop="sub(index)">
+                    <view class="sub" @tap.stop="sub(index,storeIndex)">
                       <view class="icon jian"></view>
                     </view>
                     <view class="input" @tap.stop="discard">
                       <input type="number" v-model="row.number" @input="sum($event,index)" disabled="true" />
                     </view>
-                    <view class="add" @tap.stop="add(index)">
+                    <view class="add" @tap.stop="add(index,storeIndex)">
                       <view class="icon jia"></view>
                     </view>
                   </view>
                   <view class="order-price">合计:
-                    <text class="price">￥{{row.price}}</text>
+                    <text class="price">￥{{row.price * row.number}}</text>
                   </view>
                 </view>
               </view>
@@ -245,20 +245,6 @@
         this.sum();
       },
 
-      //店铺按钮选择
-      selectedStore(index) {
-        this.goodsList[index].selected = !this.goodsList[index].selected;
-        
-        var goods = this.goodsList[index].goods;
-        
-        for(var i = 0; i < goods.length;i++){
-          
-          goods[i].selected = this.goodsList[index].selected;
-          
-        }
-      },
-
-
       //加入商品 参数 goods:商品数据
       joinGoods(goods) {
         /*
@@ -395,52 +381,80 @@
       },
       // 选中商品
       selected(index,storeIndex) {
-        console.log(index,storeIndex);
         this.goodsList[storeIndex].goods[index].selected = this.goodsList[storeIndex].goods[index].selected ? false : true;
-        // let i = this.selectedList.indexOf(this.goodsList[index].id);
-        // i > -1 ? this.selectedList.splice(i, 1) : this.selectedList.push(this.goodsList[index].id);
-        // this.isAllselected = this.selectedList.length == this.goodsList.length;
-        // this.sum();
+        this.sum();
       },
+			//店铺按钮选择
+			selectedStore(index) {
+				
+			 let storeSelecte =  this.goodsList[index].selected = !this.goodsList[index].selected;
+			  
+			  var goods = this.goodsList[index].goods;
+			  
+			  for(var i = 0; i < goods.length;i++){
+			    
+			    goods[i].selected = storeSelecte;
+			    
+			  }
+				this.sum();
+			},
       //全选
       allSelect() {
-        let len = this.goodsList.length;
-        let arr = [];
-        for (let i = 0; i < len; i++) {
-          this.goodsList[i].selected = this.isAllselected ? false : true;
-          arr.push(this.goodsList[i].id);
-        }
-        this.selectedList = this.isAllselected ? [] : arr;
-        this.isAllselected = this.isAllselected || this.goodsList.length == 0 ? false : true;
+        // let len = this.goodsList.length;
+        // let arr = [];
+        // for (let i = 0; i < len; i++) {
+        //   this.goodsList[i].selected = this.isAllselected ? false : true;
+        //   arr.push(this.goodsList[i].id);
+        // }
+        // this.selectedList = this.isAllselected ? [] : arr;
+        // this.isAllselected = this.isAllselected || this.goodsList.length == 0 ? false : true;
+				let allSelect = this.isAllselected = !this.isAllselected;
+				
+				this.goodsList.forEach( item => {
+					 item.selected = allSelect;
+					 item.goods.forEach(childItem => {
+						 childItem.selected = allSelect;
+					 })
+				})
+				
         this.sum();
       },
       // 减少数量
-      sub(index) {
-        if (this.goodsList[index].number <= 1) {
+      sub(index,storeIndex) {
+        if (this.goodsList[storeIndex].goods[index].number <= 1) {
           return;
         }
-        this.goodsList[index].number--;
-        this.sum();
+       this.goodsList[storeIndex].goods[index].number--;
+       this.sum();
       },
       // 增加数量
-      add(index) {
-        this.goodsList[index].number++;
+      add(index,storeIndex) {
+        this.goodsList[storeIndex].goods[index].number++;
         this.sum();
       },
       // 合计
       sum(e, index) {
         this.sumPrice = 0;
-        let len = this.goodsList.length;
-        for (let i = 0; i < len; i++) {
-          if (this.goodsList[i].selected) {
-            if (e && i == index) {
-              this.sumPrice = this.sumPrice + (e.detail.value * this.goodsList[i].price);
-            } else {
-              this.sumPrice = this.sumPrice + (this.goodsList[i].number * this.goodsList[i].price);
-            }
-          }
-        }
-        this.sumPrice = this.sumPrice.toFixed(2);
+        // let len = this.goodsList.length;
+        // for (let i = 0; i < len; i++) {
+        //   if (this.goodsList[i].selected) {
+        //     if (e && i == index) {
+        //       this.sumPrice = this.sumPrice + (e.detail.value * this.goodsList[i].price);
+        //     } else {
+        //       this.sumPrice = this.sumPrice + (this.goodsList[i].number * this.goodsList[i].price);
+        //     }
+        //   }
+        // }
+        // this.sumPrice = this.sumPrice.toFixed(2);
+				
+				this.goodsList.forEach( item => {
+					 item.goods.forEach(childItem => {
+						 if(childItem.selected){
+							 this.sumPrice += childItem.price*childItem.number;
+						 } 
+					 })
+				})
+				
       },
       discard() {
         //丢弃

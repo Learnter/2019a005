@@ -57,7 +57,7 @@
         <text>购物车</text>
       </view>
       <view class="shop-btn">
-        <view >
+        <view @tap="insertCart">
           <text style="background:#E8651B;">加入购物车</text>
         </view>
         <view>
@@ -91,14 +91,14 @@
     				</view>
     			</view>
     		</view>
-    		<view v-for="(item,index) in detailInfo.spec_data" :key="index" class="attr-list">
+    		<view v-for="(item,parentIndex) in detailInfo.spec_data" :key="parentIndex" class="attr-list">
     			<text>{{item.name}}</text>
     			<view class="item-list">
     				<text 
     					v-for="(childItem, childIndex) in item.child" 
     					:key="childIndex" class="tit"
               :class="{selected: childItem.selected}"
-    					@click="selectSpec(childIndex,childItem.id,index)"
+    					@click="selectSpec(childIndex,childItem.id,parentIndex)"
     				>
     					{{childItem.name}}
     				</text>
@@ -106,7 +106,7 @@
     		</view>
         <view class="buyCount">
             <text>购买数量</text>
-            <uni-number-box @change=""></uni-number-box>
+            <uni-number-box @change="buyCount"></uni-number-box>
         </view>
     		<button class="btn" @click="toggleSpec">完成</button>
     	</view>
@@ -154,34 +154,41 @@
       	}
       },
       //选择规格
-      selectSpec(childIndex,childId,index){
+      selectSpec(childIndex,childId,parentIndex){
          
-       let list = this.detailInfo.spec_data[index].child;
+       let list = this.detailInfo.spec_data[parentIndex].child;
 
+				// 按钮点击切换
         list.forEach( item => {
-          if(item.id === childId){
-            this.$set(item,'selected',true);
-          }else if(item.id !== childId){
-             this.$set(item,'selected',false);
-          }
+           if(item.id === childId && !item.selected){
+						 this.$set(item,'selected',true);
+					 }else{
+						 this.$set(item,'selected',false);
+					 }
         })
-       
-        this.specSelected.forEach(item=>{
-        	if(item.id === childId){
-        		this.$set(item, 'selected', false);
-            var seleIndex = this.specSelected.indexOf(item);
-            this.specSelected.splice(seleIndex,1);
-        	}
-        })   
-        
-         // this.specSelected = [];
-                
-        this.detailInfo.spec_data[index].forEach(item=>{ 
-        	if(item.child.selected === true){ 
-        		this.specSelected.push(item.child); 
-        	} 
-        }) 
+				
+				//存储已选择
+				// 每次点击按钮 先清空specSelected  再遍历child中selected为true的对象  添加到specSelected数组中
+				this.specSelected = []; 
+				this.detailInfo.spec_data.forEach(item=>{ 
+					item.child.forEach( childItem => {
+						 if(childItem.selected === true){
+							 	this.specSelected.push(childItem); 
+						 }
+					})
+				})
       },
+			//选择购买数量
+			buyCount(e){
+				console.log(e);
+			},
+			//加入购物车
+			insertCart(){
+				uni.showToast({
+					title:"已加入购物车!",
+					icon:"success"
+				})
+			},
       stopPrevent(){}
     },
     components:{
