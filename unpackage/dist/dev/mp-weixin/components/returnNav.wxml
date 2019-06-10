@@ -1,1 +1,1 @@
-<view class="returnNav" bind:__l="__l"><view class="returnTitle"><image class="returnBtn" src="../../../../static/ga005_64.png" mode="widthFix"></image><slot></slot></view></view>
+<view class="returnNav" bind:__l="__l"><view class="returnTitle"><navigator open-type="navigateBack"><image class="returnBtn" src="../../../../static/ga005_64.png" mode="widthFix"></image></navigator><slot></slot></view></view>

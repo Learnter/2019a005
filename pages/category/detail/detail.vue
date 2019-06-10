@@ -6,7 +6,7 @@
         <navigator open-type="navigateBack" hover-class="none">
             <image class="returnBtn" src="../../../static/ga005_64.png" mode="widthFix"></image>
         </navigator>
-        <image class="b-p-photo"  :src="detailInfo.picture" mode="aspectFit"></image>
+        <image class="b-p-photo"  :src="detailInfo.picture" mode="scaleToFill"></image>
       </view>
 
       <view class="detailNav">
@@ -36,8 +36,10 @@
       <view class="commentBtn uni-inline-item">
         <text style="color:#00d693">评价</text>
         <view>
-          <text style="margin-right:0">查看全部评论</text>
-          <uni-icon type="arrowright" size="20"></uni-icon>
+          <navigator url="/pages/category/comment/comment" hover-class="none">
+            <text style="margin-right:0">查看全部评论</text>
+            <uni-icon type="arrowright" size="20"></uni-icon>
+          </navigator>
         </view>
       </view>
       
@@ -55,8 +57,14 @@
         <text>购物车</text>
       </view>
       <view class="shop-btn">
-        <text>加入购物车</text>
-        <text>立即购买</text>
+        <view >
+          <text style="background:#E8651B;">加入购物车</text>
+        </view>
+        <view>
+          <navigator url="/pages/tabBar/shCart/payment/payment">
+             <text style="background: #DF0024;">立即购买</text>
+          </navigator>
+        </view>
       </view>
     </view>
     
@@ -71,32 +79,35 @@
     	<view class="mask"></view>
     	<view class="layer attr-content" @click.stop="stopPrevent">
     		<view class="a-t">
-    			<image src="https://gd3.alicdn.com/imgextra/i3/0/O1CN01IiyFQI1UGShoFKt1O_!!0-item_pic.jpg_400x400.jpg"></image>
+    			<image :src="detailInfo.picture" ></image>
     			<view class="right">
-    				<text class="price">¥328.00</text>
-    				<text class="stock">库存：188件</text>
+    				<text class="price">¥{{detailInfo.shop_price }}</text>
+    				<text class="stock">库存:{{detailInfo.stock}}</text>
     				<view class="selected">
-    					已选：
+    					已选:
     					<text class="selected-text" v-for="(sItem, sIndex) in specSelected" :key="sIndex">
     						{{sItem.name}}
     					</text>
     				</view>
     			</view>
     		</view>
-    		<view v-for="(item,index) in specList" :key="index" class="attr-list">
+    		<view v-for="(item,index) in detailInfo.spec_data" :key="index" class="attr-list">
     			<text>{{item.name}}</text>
     			<view class="item-list">
     				<text 
-    					v-for="(childItem, childIndex) in specChildList" 
-    					v-if="childItem.pid === item.id"
+    					v-for="(childItem, childIndex) in item.child" 
     					:key="childIndex" class="tit"
-    					:class="{selected: childItem.selected}"
-    					@click="selectSpec(childIndex, childItem.pid)"
+              :class="{selected: childItem.selected}"
+    					@click="selectSpec(childIndex,childItem.id,index)"
     				>
     					{{childItem.name}}
     				</text>
     			</view>
     		</view>
+        <view class="buyCount">
+            <text>购买数量</text>
+            <uni-number-box @change=""></uni-number-box>
+        </view>
     		<button class="btn" @click="toggleSpec">完成</button>
     	</view>
     </view>
@@ -105,70 +116,14 @@
 </template>
 
 <script>
-  import uniIcon from '@/components/uni-icon/uni-icon.vue'
+  import uniIcon from '@/components/uni-icon/uni-icon.vue';
+  import uniNumberBox from '@/components/uni-number-box/uni-number-box.vue';
   export default {
     data() {
       return {
         detailInfo:" ",
         specClass: 'none',
-        specSelected:[],
-        specList: [
-        	{
-        		id: 1,
-        		name: '尺寸',
-        	},
-        	{	
-        		id: 2,
-        		name: '颜色',
-        	},
-        ],
-        specChildList: [
-        	{
-        		id: 1,
-        		pid: 1,
-        		name: 'XS',
-        	},
-        	{
-        		id: 2,
-        		pid: 1,
-        		name: 'S',
-        	},
-        	{
-        		id: 3,
-        		pid: 1,
-        		name: 'M',
-        	},
-        	{
-        		id: 4,
-        		pid: 1,
-        		name: 'L',
-        	},
-        	{
-        		id: 5,
-        		pid: 1,
-        		name: 'XL',
-        	},
-        	{
-        		id: 6,
-        		pid: 1,
-        		name: 'XXL',
-        	},
-        	{
-        		id: 7,
-        		pid: 2,
-        		name: '白色',
-        	},
-        	{
-        		id: 8,
-        		pid: 2,
-        		name: '珊瑚粉',
-        	},
-        	{
-        		id: 9,
-        		pid: 2,
-        		name: '草木绿',
-        	},
-        ]
+        specSelected:[]
       };
     },
     onLoad(e) {
@@ -198,18 +153,59 @@
       		this.specClass = 'show';
       	}
       },
+      //选择规格
+      selectSpec(childIndex,childId,index){
+         
+       let list = this.detailInfo.spec_data[index].child;
+
+        list.forEach( item => {
+          if(item.id === childId){
+            this.$set(item,'selected',true);
+          }else if(item.id !== childId){
+             this.$set(item,'selected',false);
+          }
+        })
+       
+        this.specSelected.forEach(item=>{
+        	if(item.id === childId){
+        		this.$set(item, 'selected', false);
+            var seleIndex = this.specSelected.indexOf(item);
+            this.specSelected.splice(seleIndex,1);
+        	}
+        })   
+        
+         // this.specSelected = [];
+                
+        this.detailInfo.spec_data[index].forEach(item=>{ 
+        	if(item.child.selected === true){ 
+        		this.specSelected.push(item.child); 
+        	} 
+        }) 
+      },
+      stopPrevent(){}
     },
     components:{
-      uniIcon
+      uniIcon,
+      uniNumberBox
     }
   }
 </script>
 
 <style lang="scss" scoped>
   
+  .buyCount{
+    margin: 8px 0px;
+    padding: 8px 0px;
+    border-top: 1px solid #F1F1F1;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  
   
   /* 规格选择弹窗 */
   .attr-content{
+    box-sizing:border-box;
   	padding: 10upx 30upx;
   	.a-t{
   		display: flex;
@@ -506,22 +502,20 @@
 
     .shop-btn {
       color: white;
-
+      display: flex;
+      align-items: center;
       text {
         padding: 8upx 20upx;
-        background: #BAD0BA;
         border-radius: 30upx;
         margin-left: 20upx;
 
-        &:nth-child(1) {
-          background: #E8651B;
-        }
-
-        ;
-
-        &:nth-child(2) {
-          background: #DF0024;
-        }
+//         &:nth-child(1) {
+//           background: #E8651B;
+//         }
+// 
+//         &:nth-child(2) {
+//           background: #DF0024;
+//         }
       }
     }
   }

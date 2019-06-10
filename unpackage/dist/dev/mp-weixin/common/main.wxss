@@ -1643,7 +1643,7 @@ page {
   letter-spacing: 1px;
 }
 view {
-  line-height: 1;
+  line-height: 1.2;
 }
 image {
   width: 100%;

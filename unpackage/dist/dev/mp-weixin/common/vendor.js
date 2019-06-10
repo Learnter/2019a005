@@ -7518,6 +7518,23 @@ createPage(_category.default);
 
 /***/ }),
 
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2Fcomment%2Fcomment\"}":
+/*!**************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fcategory%2Fcomment%2Fcomment"} ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _comment = _interopRequireDefault(__webpack_require__(/*! ./pages/category/comment/comment.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\category\\comment\\comment.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_comment.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
 /***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2Fdetail%2Fdetail\"}":
 /*!************************************************************************************************************!*\
   !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fcategory%2Fdetail%2Fdetail"} ***!

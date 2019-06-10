@@ -23,7 +23,8 @@
     "pages/tabBar/offStores/offStores",
     "pages/register/register",
     "pages/tabBar/psCenter/psCenter",
-    "pages/tabBar/psCenter/systemNotice/systemNotice"
+    "pages/tabBar/psCenter/systemNotice/systemNotice",
+    "pages/category/comment/comment"
   ],
   "subPackages": [],
   "window": {
@@ -72,5 +73,6 @@
   },
   "usingComponents": {
     "return-nav": "/components/returnNav"
-  }
+  },
+  "sitemapLocation": "sitemap69.json"
 }

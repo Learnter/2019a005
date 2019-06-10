@@ -93,16 +93,15 @@
 </script>
 <style>
 	@charset "UTF-8";
-
+	
 	.uni-numbox {
 		display: inline-flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		align-items:center;
-		height:40upx;
+		height: 70upx;
 		position: relative
 	}
-
+	
 	.uni-numbox:after {
 		content: '';
 		position: absolute;
@@ -117,15 +116,15 @@
 		border-radius: 12upx;
 		transform: scale(.5)
 	}
-
+	
 	.uni-numbox__minus,
 	.uni-numbox__plus {
 		margin: 0;
 		background-color: #f8f8f8;
-		width: 60upx;
+		width: 70upx;
 		font-size: 40upx;
 		height: 100%;
-		line-height: 60upx;
+		line-height: 70upx;
 		text-align: center;
 		display: inline-flex;
 		align-items: center;
@@ -133,16 +132,16 @@
 		color: #333;
 		position: relative
 	}
-
+	
 	.uni-numbox__value {
 		position: relative;
 		background-color: #fff;
-		width:70upx;
+		width: 80upx;
 		height: 100%;
 		text-align: center;
 		padding: 0
 	}
-
+	
 	.uni-numbox__value:after {
 		content: '';
 		position: absolute;
@@ -161,7 +160,7 @@
 		border-bottom-width: 0;
 		transform: scale(.5)
 	}
-
+	
 	.uni-numbox--disabled {
 		color: silver
 	}

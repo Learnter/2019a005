@@ -193,6 +193,10 @@
               }
             }
         }
+        ,{
+            "path" : "pages/category/comment/comment",
+            "style" : {}
+        }
     ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
