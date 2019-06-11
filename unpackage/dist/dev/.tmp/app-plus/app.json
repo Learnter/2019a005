@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/tabBar/shCart/shCart",
     "pages/tabBar/onGoods/onGoods",
+    "pages/category/comment/comment",
+    "pages/tabBar/shCart/shCart",
     "pages/login/login",
     "pages/search/search",
     "pages/category/category",

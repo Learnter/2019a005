@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniSwiperDot = function uniSwiperDot() {return __webpack_require__.e(/*! import() | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then(__webpack_require__.bind(null, /*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-swiper-dot\\uni-swiper-dot.vue"));};var uniLoadMore = function uniLoadMore() {return __webpack_require__.e(/*! import() | components/uni-load-more/uni-load-more */ "components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/components/uni-load-more/uni-load-more.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-load-more\\uni-load-more.vue"));};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniSwiperDot = function uniSwiperDot() {return __webpack_require__.e(/*! import() | components/uni-swiper-dot/uni-swiper-dot */ "components/uni-swiper-dot/uni-swiper-dot").then(__webpack_require__.bind(null, /*! @/components/uni-swiper-dot/uni-swiper-dot.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-swiper-dot\\uni-swiper-dot.vue"));};var uniLoadMore = function uniLoadMore() {return __webpack_require__.e(/*! import() | components/uni-load-more/uni-load-more */ "components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/components/uni-load-more/uni-load-more.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-load-more\\uni-load-more.vue"));};var _default =
 
 
 
@@ -264,7 +264,7 @@
 {
   data: function data() {
     return {
-      status: "more",
+      status: "noMore",
       indicatorDots: true,
       autoplay: true,
       interval: 2000,
@@ -284,8 +284,7 @@
 
       dataInfo: '',
       msg: [], //公告栏数据
-      info: [], //轮播数据
-      isBuy: false //是否点击购买按钮
+      swiperInfo: [] //轮播数据
     };
   },
   onLoad: function onLoad() {
@@ -298,18 +297,11 @@
       return this.dataInfo.goodsList;
     },
     redEnvelopeGoodsList: function redEnvelopeGoodsList() {//红包商品数据
-      var newArr;
-      if (this.dataInfo.redEnvelopeGoodsList) {
-        newArr = this.dataInfo.redEnvelopeGoodsList.slice(0, 2);
-      }
-      return newArr;
+      return this.dataInfo.redEnvelopeGoodsList;
     },
     giftPackageGoodsList: function giftPackageGoodsList() {//礼包商品数据
-      var newArr;
-      if (this.dataInfo.giftPackageGoodsList) {
-        newArr = this.dataInfo.giftPackageGoodsList.slice(0, 2);
-      }
-      return newArr;
+
+      return this.dataInfo.giftPackageGoodsList;
     },
     goodGoodsList: function goodGoodsList() {//好货推荐数据
       return this.dataInfo.goodGoodsList;
@@ -319,49 +311,41 @@
     } },
 
   methods: {
-    change: function change(e) {
+    //手动切换轮播
+    toggleSwiper: function toggleSwiper(e) {
       this.current = e.detail.current;
     },
+    //获取轮播图数据
     fetchData: function fetchData() {var _this = this;
       var url = "config/getInfo";
       this.$Request.get(url).then(function (res) {
         if (res.code == 200 && res.data.ads.user_index) {
-          _this.info = res.data.ads.user_index;
+          _this.swiperInfo = res.data.ads.user_index;
         }
       });
     },
+    //获取页面其他资源的数据
     fetchGoodData: function fetchGoodData() {var _this2 = this;
       var url = "goods/index"; //后台地址
       this.$Request.get(url).then(function (res) {
         if (res.code == 200 && res.data) {
-          console.log(res.data);
           _this2.dataInfo = res.data;
         }
       });
     },
+    //获取公告栏数据
     fetchNoticeData: function fetchNoticeData() {var _this3 = this;
       var url = "goods/noticeList"; //公告栏地址
       this.$Request.get(url).then(function (res) {
         if (res.code == 200 && res.data) {
-          console.log(res);
           _this3.msg = res.data;
         }
       });
-    },
-    buy: function buy() {
-      uni.showToast({
-        title: "购买成功",
-        icon: "success" });
-
     } },
 
-  onReachBottom: function onReachBottom() {
-    console.log("上拉加载");
-  },
   components: {
     uniSwiperDot: uniSwiperDot,
     uniLoadMore: uniLoadMore } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 

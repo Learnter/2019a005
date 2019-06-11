@@ -119,7 +119,7 @@
   components: {
     uniRate: uniRate,
     uniLoadMore: uniLoadMore } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -248,4 +248,3 @@ __webpack_require__.r(__webpack_exports__);
 /***/ })
 
 },[["C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2Fcomment%2Fcomment\"}","common/runtime","common/vendor"]]]);
-//# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/category/comment/comment.js.map

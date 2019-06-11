@@ -381,7 +381,16 @@
       },
       // 选中商品
       selected(index,storeIndex) {
+        
         this.goodsList[storeIndex].goods[index].selected = this.goodsList[storeIndex].goods[index].selected ? false : true;
+        
+        //门店商品全部点击完以后，需要将门店的选项按钮显示高亮
+        let allSelect =  this.goodsList[storeIndex].goods.every( item => {
+          return item.selected;
+        })
+        
+        this.goodsList[storeIndex].selected = allSelect;
+        
         this.sum();
       },
 			//店铺按钮选择
@@ -400,14 +409,7 @@
 			},
       //全选
       allSelect() {
-        // let len = this.goodsList.length;
-        // let arr = [];
-        // for (let i = 0; i < len; i++) {
-        //   this.goodsList[i].selected = this.isAllselected ? false : true;
-        //   arr.push(this.goodsList[i].id);
-        // }
-        // this.selectedList = this.isAllselected ? [] : arr;
-        // this.isAllselected = this.isAllselected || this.goodsList.length == 0 ? false : true;
+
 				let allSelect = this.isAllselected = !this.isAllselected;
 				
 				this.goodsList.forEach( item => {
@@ -433,20 +435,9 @@
         this.sum();
       },
       // 合计
-      sum(e, index) {
-        this.sumPrice = 0;
-        // let len = this.goodsList.length;
-        // for (let i = 0; i < len; i++) {
-        //   if (this.goodsList[i].selected) {
-        //     if (e && i == index) {
-        //       this.sumPrice = this.sumPrice + (e.detail.value * this.goodsList[i].price);
-        //     } else {
-        //       this.sumPrice = this.sumPrice + (this.goodsList[i].number * this.goodsList[i].price);
-        //     }
-        //   }
-        // }
-        // this.sumPrice = this.sumPrice.toFixed(2);
-				
+      sum() {
+        this.sumPrice = 0;		
+            
 				this.goodsList.forEach( item => {
 					 item.goods.forEach(childItem => {
 						 if(childItem.selected){
@@ -606,10 +597,6 @@
 
     .row {
       height: calc(22vw + 40upx);
-      // margin: 0 auto;
-
-      // border-radius: 15upx;
-      // box-shadow: 0upx 5upx 20upx rgba(0,0,0,0.1);
       display: flex;
       align-items: center;
       position: relative;
@@ -620,7 +607,6 @@
       .menu {
         .icon {
           color: #fff;
-          // font-size: 25upx;
         }
 
         position: absolute;

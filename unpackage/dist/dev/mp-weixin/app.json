@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/tabBar/onGoods/onGoods",
+    "pages/category/comment/comment",
     "pages/tabBar/shCart/shCart",
     "pages/login/login",
     "pages/search/search",
@@ -23,8 +24,7 @@
     "pages/tabBar/offStores/offStores",
     "pages/register/register",
     "pages/tabBar/psCenter/psCenter",
-    "pages/tabBar/psCenter/systemNotice/systemNotice",
-    "pages/category/comment/comment"
+    "pages/tabBar/psCenter/systemNotice/systemNotice"
   ],
   "subPackages": [],
   "window": {
@@ -74,5 +74,5 @@
   "usingComponents": {
     "return-nav": "/components/returnNav"
   },
-  "sitemapLocation": "sitemap69.json"
+  "sitemapLocation": "sitemap83.json"
 }

@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-icon\\uni-icon.vue"));};var uniNumberBox = function uniNumberBox() {return __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-number-box\\uni-number-box.vue"));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniIcon = function uniIcon() {return __webpack_require__.e(/*! import() | components/uni-icon/uni-icon */ "components/uni-icon/uni-icon").then(__webpack_require__.bind(null, /*! @/components/uni-icon/uni-icon.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-icon\\uni-icon.vue"));};var uniNumberBox = function uniNumberBox() {return __webpack_require__.e(/*! import() | components/uni-number-box/uni-number-box */ "components/uni-number-box/uni-number-box").then(__webpack_require__.bind(null, /*! @/components/uni-number-box/uni-number-box.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\uni-number-box\\uni-number-box.vue"));};var _default =
 
 
 
@@ -131,19 +131,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 {
   data: function data() {
     return {
+      productId: null,
       detailInfo: " ",
       specClass: 'none',
       specSelected: [] };
 
   },
   onLoad: function onLoad(e) {
-    this.fetchData(e);
+    this.productId = e.id;
+    this.fetchData();
   },
   methods: {
-    fetchData: function fetchData(e) {var _this = this;
+    fetchData: function fetchData() {var _this = this;
       var url = "goods/detail";
       var data = {
-        id: e.id };
+        id: this.productId };
 
       this.$Request.get(url, data).then(function (res) {
         if (res && res.code == 200 && res.data) {
@@ -164,39 +166,47 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       }
     },
     //选择规格
-    selectSpec: function selectSpec(childIndex, childId, index) {var _this3 = this;
+    selectSpec: function selectSpec(childIndex, childId, parentIndex) {var _this3 = this;
 
-      var list = this.detailInfo.spec_data[index].child;
+      var list = this.detailInfo.spec_data[parentIndex].child;
 
+      // 按钮点击切换
       list.forEach(function (item) {
-        if (item.id === childId) {
+        if (item.id === childId && !item.selected) {
           _this3.$set(item, 'selected', true);
-        } else if (item.id !== childId) {
+        } else {
           _this3.$set(item, 'selected', false);
         }
       });
 
-      this.specSelected.forEach(function (item) {
-        if (item.id === childId) {
-          _this3.$set(item, 'selected', false);
-          var seleIndex = _this3.specSelected.indexOf(item);
-          _this3.specSelected.splice(seleIndex, 1);
-        }
+      //存储已选择
+      // 每次点击按钮 先清空specSelected  再遍历child中selected为true的对象  添加到specSelected数组中
+      this.specSelected = [];
+      this.detailInfo.spec_data.forEach(function (item) {
+        item.child.forEach(function (childItem) {
+          if (childItem.selected === true) {
+            _this3.specSelected.push(childItem);
+          }
+        });
       });
+    },
+    //选择购买数量
+    buyCount: function buyCount(e) {
+      console.log(e);
+    },
+    //加入购物车
+    insertCart: function insertCart() {
+      uni.showToast({
+        title: "已加入购物车!",
+        icon: "success" });
 
-      // this.specSelected = [];
-
-      this.detailInfo.spec_data[index].forEach(function (item) {
-        if (item.child.selected === true) {
-          _this3.specSelected.push(item.child);
-        }
-      });
     },
     stopPrevent: function stopPrevent() {} },
 
   components: {
     uniIcon: uniIcon,
     uniNumberBox: uniNumberBox } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 

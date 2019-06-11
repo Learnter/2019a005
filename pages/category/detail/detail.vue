@@ -36,7 +36,7 @@
       <view class="commentBtn uni-inline-item">
         <text style="color:#00d693">评价</text>
         <view>
-          <navigator url="/pages/category/comment/comment" hover-class="none">
+          <navigator :url="'/pages/category/comment/comment?id=' + detailInfo.goods_id" hover-class="none">
             <text style="margin-right:0">查看全部评论</text>
             <uni-icon type="arrowright" size="20"></uni-icon>
           </navigator>
@@ -121,19 +121,21 @@
   export default {
     data() {
       return {
+        productId:null,
         detailInfo:" ",
         specClass: 'none',
         specSelected:[]
       };
     },
     onLoad(e) {
-      this.fetchData(e);
+      this.productId = e.id;
+      this.fetchData();
     },
     methods:{
-      fetchData(e){
+      fetchData(){
         var url = "goods/detail";
         var data = {
-          id:e.id
+          id:this.productId
         }  
         this.$Request.get(url,data).then( res => {
           if(res && res.code == 200 && res.data){

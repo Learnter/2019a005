@@ -22,9 +22,9 @@
 
       <view class="bannerBox">
         <!-- 轮播组件 -->
-        <uni-swiper-dot :info="info" :current="current" :mode="mode" :dots-styles="dotsStyles">
-          <swiper class="swiper-box" @change="change" autoplay="true" circular="true">
-            <swiper-item v-for="(item ,index) in info" :key="index">
+        <uni-swiper-dot :info="swiperInfo" :current="current" :mode="mode" :dots-styles="dotsStyles">
+          <swiper class="swiper-box" @change="toggleSwiper" autoplay="true" circular="true">
+            <swiper-item v-for="(item ,index) in swiperInfo" :key="index">
               <view class="swiper-item">
                 <image :src="item.url" mode="widthFix" />
               </view>
@@ -235,7 +235,7 @@
                     <text class="tip-text-margin">￥{{item.shop_price * 1}}</text>
                     <text class="good-text" v-if="item.is_spike">秒杀</text>
                   </view>
-                  <text class="t_top_right"  @click.stop="buy" >购买</text>
+                  <text class="t_top_right" >购买</text>
                 </view>
                 <text class="text-del-style">￥{{item.market_price}}</text>
               </view>
@@ -244,7 +244,7 @@
         </view>
       </view>
     </view>
-    <uni-load-more :status="status" color="#007aff" />
+    <uni-load-more :status="status" color="#cccc" />
   </view>
 </template>
 
@@ -254,7 +254,7 @@
   export default {
     data() {
       return {
-        status: "more",
+        status: "noMore",
         indicatorDots: true,
         autoplay: true,
         interval: 2000,
@@ -274,8 +274,7 @@
         },
         dataInfo: '',
         msg: [], //公告栏数据
-        info: [], //轮播数据
-        isBuy:false,//是否点击购买按钮
+        swiperInfo: [], //轮播数据
       }
     },
     onLoad() {
@@ -288,18 +287,11 @@
         return this.dataInfo.goodsList;
       },
       redEnvelopeGoodsList() { //红包商品数据
-        var newArr;
-        if (this.dataInfo.redEnvelopeGoodsList) {
-          newArr = this.dataInfo.redEnvelopeGoodsList.slice(0, 2);
-        }
-        return newArr;
+        return this.dataInfo.redEnvelopeGoodsList;
       },
       giftPackageGoodsList() { //礼包商品数据
-        var newArr;
-        if (this.dataInfo.giftPackageGoodsList) {
-          newArr = this.dataInfo.giftPackageGoodsList.slice(0, 2);
-        }
-        return newArr;
+
+        return this.dataInfo.giftPackageGoodsList;
       },
       goodGoodsList() { //好货推荐数据
         return this.dataInfo.goodGoodsList;
@@ -309,45 +301,38 @@
       }
     },
     methods: {
-      change(e) {
+      //手动切换轮播
+      toggleSwiper(e) {
         this.current = e.detail.current
       },
+      //获取轮播图数据
       fetchData() {
         var url = "config/getInfo"
         this.$Request.get(url).then(res => {
           if (res.code == 200 && res.data.ads.user_index) {
-            this.info = res.data.ads.user_index;
+            this.swiperInfo = res.data.ads.user_index;
           }
         })
       },
+      //获取页面其他资源的数据
       fetchGoodData() {
         var url = "goods/index"; //后台地址
         this.$Request.get(url).then(res => {
           if (res.code == 200 && res.data) {
-            console.log(res.data);
             this.dataInfo = res.data;
           }
         })
       },
+      //获取公告栏数据
       fetchNoticeData() {
         var url = "goods/noticeList"; //公告栏地址
         this.$Request.get(url).then(res => {
           if (res.code == 200 && res.data) {
-            console.log(res);
             this.msg = res.data;
           }
         })
-      },
-      buy(){
-        uni.showToast({
-          title:"购买成功",
-          icon:"success"
-        })
       }
-    },
-    onReachBottom() {
-      console.log("上拉加载");
-    },
+     },
     components: {
       uniSwiperDot,
       uniLoadMore

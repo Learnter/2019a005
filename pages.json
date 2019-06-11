@@ -8,6 +8,15 @@
       }
     }
   },
+  {
+      "path" : "pages/category/comment/comment",
+      "style" : {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+  },
+  
 	 {
 	  "path": "pages/tabBar/shCart/shCart",//购物车页面
 	  "style": {
@@ -192,10 +201,6 @@
                 "titleNView": false
               }
             }
-        }
-        ,{
-            "path" : "pages/category/comment/comment",
-            "style" : {}
         }
     ],
   "globalStyle": {

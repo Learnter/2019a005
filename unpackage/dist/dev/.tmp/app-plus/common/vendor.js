@@ -466,7 +466,7 @@ function getData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6540,7 +6540,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6561,14 +6561,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -6637,7 +6637,7 @@ var patch = function(oldVnode, vnode) {
         });
         var diffData = diff(data, mpData);
         if (Object.keys(diffData).length) {
-            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
                 console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
                     ']差量更新',
                     JSON.stringify(diffData));
@@ -7119,10 +7119,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\common\\js\\cache.js":
-/*!*****************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/common/js/cache.js ***!
-  \*****************************************************************************/
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\cache.js":
+/*!*************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/common/js/cache.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7217,10 +7217,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\common\\js\\config.js":
-/*!******************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/common/js/config.js ***!
-  \******************************************************************************/
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\config.js":
+/*!**************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/common/js/config.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7234,10 +7234,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\common\\js\\httpApi.js":
-/*!*******************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/common/js/httpApi.js ***!
-  \*******************************************************************************/
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\httpApi.js":
+/*!***************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/common/js/httpApi.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7309,16 +7309,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\common\\js\\httpRequest.js":
-/*!***********************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/common/js/httpRequest.js ***!
-  \***********************************************************************************/
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\httpRequest.js":
+/*!*******************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/common/js/httpRequest.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {var _config = _interopRequireDefault(__webpack_require__(/*! ./config */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\common\\js\\config.js"));
-var _cache = _interopRequireDefault(__webpack_require__(/*! ./cache */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\common\\js\\cache.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {var _config = _interopRequireDefault(__webpack_require__(/*! ./config */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\config.js"));
+var _cache = _interopRequireDefault(__webpack_require__(/*! ./cache */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\cache.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 module.exports = {
   config: function config(name) {
@@ -7447,20 +7447,20 @@ module.exports = {
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js":
-/*!******************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js ***!
-  \******************************************************************/
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js":
+/*!**************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\App.vue"));
-var _httpApi = _interopRequireDefault(__webpack_require__(/*! ./common/js/httpApi */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\common\\js\\httpApi.js"));
-var _httpRequest = _interopRequireDefault(__webpack_require__(/*! ./common/js/httpRequest */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\common\\js\\httpRequest.js"));
-var _cache = _interopRequireDefault(__webpack_require__(/*! ./common/js/cache */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\common\\js\\cache.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var returnNav = function returnNav() {return __webpack_require__.e(/*! import() | components/returnNav */ "components/returnNav").then(__webpack_require__.bind(null, /*! ./components/returnNav.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\components\\returnNav.vue"));};
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\App.vue"));
+var _httpApi = _interopRequireDefault(__webpack_require__(/*! ./common/js/httpApi */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\httpApi.js"));
+var _httpRequest = _interopRequireDefault(__webpack_require__(/*! ./common/js/httpRequest */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\httpRequest.js"));
+var _cache = _interopRequireDefault(__webpack_require__(/*! ./common/js/cache */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\common\\js\\cache.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var returnNav = function returnNav() {return __webpack_require__.e(/*! import() | components/returnNav */ "components/returnNav").then(__webpack_require__.bind(null, /*! ./components/returnNav.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\components\\returnNav.vue"));};
 
 
 _vue.default.config.productionTip = false;
@@ -7482,418 +7482,435 @@ createApp(app).$mount();
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2Fcategory\"}":
-/*!*********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Fcategory%2Fcategory"} ***!
-  \*********************************************************************************************************/
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2Fcategory\"}":
+/*!*****************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fcategory%2Fcategory"} ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _category = _interopRequireDefault(__webpack_require__(/*! ./pages/category/category.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\category\\category.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _category = _interopRequireDefault(__webpack_require__(/*! ./pages/category/category.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\category\\category.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_category.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2Fdetail%2Fdetail\"}":
-/*!****************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Fcategory%2Fdetail%2Fdetail"} ***!
-  \****************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _detail = _interopRequireDefault(__webpack_require__(/*! ./pages/category/detail/detail.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\category\\detail\\detail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_detail.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2FstGoods%2FstGoods\"}":
-/*!******************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Fcategory%2FstGoods%2FstGoods"} ***!
-  \******************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _stGoods = _interopRequireDefault(__webpack_require__(/*! ./pages/category/stGoods/stGoods.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\category\\stGoods\\stGoods.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_stGoods.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2FtotalShow%2FtotalShow\"}":
-/*!**********************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Fcategory%2FtotalShow%2FtotalShow"} ***!
-  \**********************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _totalShow = _interopRequireDefault(__webpack_require__(/*! ./pages/category/totalShow/totalShow.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\category\\totalShow\\totalShow.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_totalShow.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FcodeShow%2FcodeShow\"}":
-/*!*********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FcodeShow%2FcodeShow"} ***!
-  \*********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _codeShow = _interopRequireDefault(__webpack_require__(/*! ./pages/codeShow/codeShow.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\codeShow\\codeShow.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_codeShow.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Flogin%2Flogin\"}":
-/*!***************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Flogin%2Flogin"} ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _login = _interopRequireDefault(__webpack_require__(/*! ./pages/login/login.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\login\\login.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_login.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Flogin%2Fmerchant-login%2Fmerchant-login\"}":
-/*!*****************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Flogin%2Fmerchant-login%2Fmerchant-login"} ***!
-  \*****************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _merchantLogin = _interopRequireDefault(__webpack_require__(/*! ./pages/login/merchant-login/merchant-login.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\login\\merchant-login\\merchant-login.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_merchantLogin.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Fnews%2Fnews\"}":
-/*!*************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Fnews%2Fnews"} ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _news = _interopRequireDefault(__webpack_require__(/*! ./pages/news/news.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\news\\news.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_news.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Fpacket%2Fpacket\"}":
-/*!*****************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Fpacket%2Fpacket"} ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _packet = _interopRequireDefault(__webpack_require__(/*! ./pages/packet/packet.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\packet\\packet.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_packet.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Fregister%2Fmerchant-register%2Fmerchant-register\"}":
-/*!**************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Fregister%2Fmerchant-register%2Fmerchant-register"} ***!
-  \**************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _merchantRegister = _interopRequireDefault(__webpack_require__(/*! ./pages/register/merchant-register/merchant-register.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\register\\merchant-register\\merchant-register.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_merchantRegister.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Fregister%2Fregister\"}":
-/*!*********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Fregister%2Fregister"} ***!
-  \*********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _register = _interopRequireDefault(__webpack_require__(/*! ./pages/register/register.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\register\\register.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_register.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2Fsearch%2Fsearch\"}":
-/*!*****************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2Fsearch%2Fsearch"} ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _search = _interopRequireDefault(__webpack_require__(/*! ./pages/search/search.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\search\\search.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_search.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FoffStores%2FoffStores\"}":
-/*!********************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FoffStores%2FoffStores"} ***!
-  \********************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _offStores = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/offStores/offStores.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\offStores\\offStores.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_offStores.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FonGoods%2FonGoods\"}":
-/*!****************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FonGoods%2FonGoods"} ***!
-  \****************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _onGoods = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/onGoods/onGoods.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\onGoods\\onGoods.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_onGoods.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FpsCenter%2FpsCenter\"}":
-/*!******************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FpsCenter%2FpsCenter"} ***!
-  \******************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _psCenter = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/psCenter/psCenter.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\psCenter\\psCenter.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_psCenter.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FpsCenter%2FsystemNotice%2FsystemNotice\"}":
-/*!*************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FpsCenter%2FsystemNotice%2FsystemNotice"} ***!
-  \*************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _systemNotice = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/psCenter/systemNotice/systemNotice.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\psCenter\\systemNotice\\systemNotice.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_systemNotice.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2Fpay-bill%2Fpay-bill\"}":
-/*!***************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2Fpay-bill%2Fpay-bill"} ***!
-  \***************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _payBill = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/pay-bill/pay-bill.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\shCart\\pay-bill\\pay-bill.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_payBill.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2Fpayment%2Fpayment\"}":
-/*!*************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2Fpayment%2Fpayment"} ***!
-  \*************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _payment = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/payment/payment.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\shCart\\payment\\payment.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_payment.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2FshCart\"}":
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2Fcomment%2Fcomment\"}":
 /*!**************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2FshCart"} ***!
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fcategory%2Fcomment%2Fcomment"} ***!
   \**************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _shCart = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/shCart.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\shCart\\shCart.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_shCart.default);
+var _comment = _interopRequireDefault(__webpack_require__(/*! ./pages/category/comment/comment.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\category\\comment\\comment.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_comment.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2Fuser-orders%2Fuser-orders\"}":
-/*!*********************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2Fuser-orders%2Fuser-orders"} ***!
-  \*********************************************************************************************************************************/
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2Fdetail%2Fdetail\"}":
+/*!************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fcategory%2Fdetail%2Fdetail"} ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _userOrders = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/user-orders/user-orders.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\shCart\\user-orders\\user-orders.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_userOrders.default);
+var _detail = _interopRequireDefault(__webpack_require__(/*! ./pages/category/detail/detail.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\category\\detail\\detail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_detail.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2Fexchange-center%2Fexchange-center\"}":
-/*!*******************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2Fexchange-center%2Fexchange-center"} ***!
-  \*******************************************************************************************************************************************/
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2FstGoods%2FstGoods\"}":
+/*!**************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fcategory%2FstGoods%2FstGoods"} ***!
+  \**************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _exchangeCenter = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/exchange-center/exchange-center.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\swCenter\\exchange-center\\exchange-center.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_exchangeCenter.default);
+var _stGoods = _interopRequireDefault(__webpack_require__(/*! ./pages/category/stGoods/stGoods.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\category\\stGoods\\stGoods.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_stGoods.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2FswCenter\"}":
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fcategory%2FtotalShow%2FtotalShow\"}":
 /*!******************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2FswCenter"} ***!
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fcategory%2FtotalShow%2FtotalShow"} ***!
   \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _swCenter = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/swCenter.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\swCenter\\swCenter.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _totalShow = _interopRequireDefault(__webpack_require__(/*! ./pages/category/totalShow/totalShow.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\category\\totalShow\\totalShow.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_totalShow.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FcodeShow%2FcodeShow\"}":
+/*!*****************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FcodeShow%2FcodeShow"} ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _codeShow = _interopRequireDefault(__webpack_require__(/*! ./pages/codeShow/codeShow.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\codeShow\\codeShow.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_codeShow.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Flogin%2Flogin\"}":
+/*!***********************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Flogin%2Flogin"} ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _login = _interopRequireDefault(__webpack_require__(/*! ./pages/login/login.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\login\\login.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_login.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Flogin%2Fmerchant-login%2Fmerchant-login\"}":
+/*!*************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Flogin%2Fmerchant-login%2Fmerchant-login"} ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _merchantLogin = _interopRequireDefault(__webpack_require__(/*! ./pages/login/merchant-login/merchant-login.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\login\\merchant-login\\merchant-login.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_merchantLogin.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fnews%2Fnews\"}":
+/*!*********************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fnews%2Fnews"} ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _news = _interopRequireDefault(__webpack_require__(/*! ./pages/news/news.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\news\\news.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_news.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fpacket%2Fpacket\"}":
+/*!*************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fpacket%2Fpacket"} ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _packet = _interopRequireDefault(__webpack_require__(/*! ./pages/packet/packet.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\packet\\packet.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_packet.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fregister%2Fmerchant-register%2Fmerchant-register\"}":
+/*!**********************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fregister%2Fmerchant-register%2Fmerchant-register"} ***!
+  \**********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _merchantRegister = _interopRequireDefault(__webpack_require__(/*! ./pages/register/merchant-register/merchant-register.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\register\\merchant-register\\merchant-register.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_merchantRegister.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fregister%2Fregister\"}":
+/*!*****************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fregister%2Fregister"} ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _register = _interopRequireDefault(__webpack_require__(/*! ./pages/register/register.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\register\\register.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_register.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2Fsearch%2Fsearch\"}":
+/*!*************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2Fsearch%2Fsearch"} ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _search = _interopRequireDefault(__webpack_require__(/*! ./pages/search/search.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\search\\search.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_search.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FoffStores%2FoffStores\"}":
+/*!****************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FoffStores%2FoffStores"} ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _offStores = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/offStores/offStores.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\offStores\\offStores.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_offStores.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FonGoods%2FonGoods\"}":
+/*!************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FonGoods%2FonGoods"} ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _onGoods = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/onGoods/onGoods.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\onGoods\\onGoods.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_onGoods.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FpsCenter%2FpsCenter\"}":
+/*!**************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FpsCenter%2FpsCenter"} ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _psCenter = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/psCenter/psCenter.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\psCenter\\psCenter.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_psCenter.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FpsCenter%2FsystemNotice%2FsystemNotice\"}":
+/*!*********************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FpsCenter%2FsystemNotice%2FsystemNotice"} ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _systemNotice = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/psCenter/systemNotice/systemNotice.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\psCenter\\systemNotice\\systemNotice.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_systemNotice.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2Fpay-bill%2Fpay-bill\"}":
+/*!***********************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2Fpay-bill%2Fpay-bill"} ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _payBill = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/pay-bill/pay-bill.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\shCart\\pay-bill\\pay-bill.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_payBill.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2Fpayment%2Fpayment\"}":
+/*!*********************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2Fpayment%2Fpayment"} ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _payment = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/payment/payment.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\shCart\\payment\\payment.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_payment.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2FshCart\"}":
+/*!**********************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2FshCart"} ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _shCart = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/shCart.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\shCart\\shCart.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_shCart.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FshCart%2Fuser-orders%2Fuser-orders\"}":
+/*!*****************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FshCart%2Fuser-orders%2Fuser-orders"} ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _userOrders = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/shCart/user-orders/user-orders.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\shCart\\user-orders\\user-orders.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_userOrders.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2Fexchange-center%2Fexchange-center\"}":
+/*!***************************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2Fexchange-center%2Fexchange-center"} ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _exchangeCenter = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/exchange-center/exchange-center.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\swCenter\\exchange-center\\exchange-center.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_exchangeCenter.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2FswCenter\"}":
+/*!**************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2FswCenter"} ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _swCenter = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/swCenter.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\swCenter\\swCenter.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_swCenter.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2Fuser-assets%2Fuser-assets\"}":
-/*!***********************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2Fuser-assets%2Fuser-assets"} ***!
-  \***********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _userAssets = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/user-assets/user-assets.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\swCenter\\user-assets\\user-assets.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_userAssets.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2Fuser-bill%2Fuser-bill\"}":
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2Fuser-assets%2Fuser-assets\"}":
 /*!*******************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2Fuser-bill%2Fuser-bill"} ***!
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2Fuser-assets%2Fuser-assets"} ***!
   \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _userBill = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/user-bill/user-bill.vue */ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages\\tabBar\\swCenter\\user-bill\\user-bill.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _userAssets = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/user-assets/user-assets.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\swCenter\\user-assets\\user-assets.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_userAssets.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\main.js?{\"page\":\"pages%2FtabBar%2FswCenter%2Fuser-bill%2Fuser-bill\"}":
+/*!***************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/main.js?{"page":"pages%2FtabBar%2FswCenter%2Fuser-bill%2Fuser-bill"} ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _userBill = _interopRequireDefault(__webpack_require__(/*! ./pages/tabBar/swCenter/user-bill/user-bill.vue */ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages\\tabBar\\swCenter\\user-bill\\user-bill.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_userBill.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "C:\\Users\\Administrator\\Desktop\\GithubDemo\\2019a005\\pages.json":
-/*!*********************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/GithubDemo/2019a005/pages.json ***!
-  \*********************************************************************/
+/***/ "C:\\Users\\Administrator\\Desktop\\黄椿任文件夹\\2019a005\\pages.json":
+/*!*****************************************************************!*\
+  !*** C:/Users/Administrator/Desktop/黄椿任文件夹/2019a005/pages.json ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

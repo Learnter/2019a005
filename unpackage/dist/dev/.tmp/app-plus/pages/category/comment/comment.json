@@ -1,5 +1,7 @@
 {
+  "titleNView": false,
   "usingComponents": {
+    "return-nav": "/components/returnNav",
     "uni-rate": "/components/uni-rate/uni-rate",
     "uni-load-more": "/components/uni-load-more/uni-load-more"
   }

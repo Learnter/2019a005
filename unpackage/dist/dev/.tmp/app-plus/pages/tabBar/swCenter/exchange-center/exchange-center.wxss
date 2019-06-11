@@ -25,7 +25,7 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* 账号信息样式 */
-.accountInfo.data-v-3ae2b00d {
+.accountInfo.data-v-07dfb5a9 {
   background: white;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -44,7 +44,7 @@
           align-items: center;
   margin: 10rpx 0;
 }
-.accountInfo .account-left.data-v-3ae2b00d {
+.accountInfo .account-left.data-v-07dfb5a9 {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -59,31 +59,31 @@
         -ms-flex-pack: center;
             justify-content: center;
 }
-.accountInfo .account-left image.data-v-3ae2b00d {
+.accountInfo .account-left image.data-v-07dfb5a9 {
       width: 160rpx;
 }
-.accountInfo .account-left .account-balance.data-v-3ae2b00d {
+.accountInfo .account-left .account-balance.data-v-07dfb5a9 {
       position: absolute;
       font-size: 20rpx;
       top: 100rpx;
 }
 /* 红包转换盒子的样式*/
-.convertBox.data-v-3ae2b00d {
+.convertBox.data-v-07dfb5a9 {
   padding: 0 1% 20rpx;
 }
-.convertBox .convert-info.data-v-3ae2b00d {
+.convertBox .convert-info.data-v-07dfb5a9 {
     background: white;
     padding: 40rpx 0;
 }
-.convertBox .convert-info .convert-item.data-v-3ae2b00d {
+.convertBox .convert-info .convert-item.data-v-07dfb5a9 {
       width: 80%;
       margin: 0 auto;
 }
-.convertBox .convert-info .convert-item .convert-item-li.data-v-3ae2b00d {
+.convertBox .convert-info .convert-item .convert-item-li.data-v-07dfb5a9 {
         padding: 20rpx 0 20rpx;
         font-size: 32rpx;
 }
-.convertBox .convert-info .convert-item .convert-item-li input.data-v-3ae2b00d {
+.convertBox .convert-info .convert-item .convert-item-li input.data-v-07dfb5a9 {
           background: #E7E4E2;
           height: 70rpx;
           margin-top: 20rpx;
@@ -91,30 +91,30 @@
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
 }
-.convertBox .convert-info .convert-item .convert-tips.data-v-3ae2b00d {
+.convertBox .convert-info .convert-item .convert-tips.data-v-07dfb5a9 {
         font-size: 20rpx;
 }
-.convertBox .convert-info .convert-item .convert-tips.data-v-3ae2b00d::before {
+.convertBox .convert-info .convert-item .convert-tips.data-v-07dfb5a9::before {
           content: ".";
           display: inline;
           position: relative;
           top: -10rpx;
 }
-.convertBox .convert-btn.data-v-3ae2b00d {
+.convertBox .convert-btn.data-v-07dfb5a9 {
     margin: 40rpx auto;
     width: 400rpx;
     font-size: 30rpx;
     background: #41A069;
     letter-spacing: 10px;
 }
-.sw-main.data-v-3ae2b00d {
+.sw-main.data-v-07dfb5a9 {
   -webkit-box-sizing: borde-box;
           box-sizing: borde-box;
   padding: 0 1%;
   /* 排序列表样式*/
   /* 信息列表样式*/
 }
-.sw-main .assets-log.data-v-3ae2b00d {
+.sw-main .assets-log.data-v-07dfb5a9 {
     background: #E6E6E6;
     height: 70rpx;
     line-height: 70rpx;
@@ -122,7 +122,7 @@
     margin-bottom: 10rpx;
     text-align: center;
 }
-.sw-main .sortBox.data-v-3ae2b00d {
+.sw-main .sortBox.data-v-07dfb5a9 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 16rpx 30rpx;
@@ -136,7 +136,7 @@
             justify-content: space-between;
     background: white;
 }
-.sw-main .sortBox .sort-item.data-v-3ae2b00d {
+.sw-main .sortBox .sort-item.data-v-07dfb5a9 {
       font-size: 28rpx;
       display: -webkit-box;
       display: -webkit-flex;
@@ -148,25 +148,25 @@
               align-items: center;
       height: 40rpx;
 }
-.sw-main .sortBox .sort-item image.data-v-3ae2b00d {
+.sw-main .sortBox .sort-item image.data-v-07dfb5a9 {
         width: 16rpx;
         margin-left: 6rpx;
 }
-.sw-main .uni-list.data-v-3ae2b00d {
+.sw-main .uni-list.data-v-07dfb5a9 {
     margin-top: 8rpx;
     background: none;
 }
-.sw-main .uni-list.data-v-3ae2b00d::before, .sw-main .uni-list.data-v-3ae2b00d::after {
+.sw-main .uni-list.data-v-07dfb5a9::before, .sw-main .uni-list.data-v-07dfb5a9::after {
       display: none;
 }
-.sw-main .uni-list .uni-list-cell.data-v-3ae2b00d {
+.sw-main .uni-list .uni-list-cell.data-v-07dfb5a9 {
       background: white;
       margin-bottom: 10rpx;
 }
-.sw-main .uni-list .uni-list-cell.data-v-3ae2b00d::after {
+.sw-main .uni-list .uni-list-cell.data-v-07dfb5a9::after {
         display: none;
 }
-.sw-main .uni-list .uni-media-list-logo.data-v-3ae2b00d {
+.sw-main .uni-list .uni-media-list-logo.data-v-07dfb5a9 {
       width: 60rpx;
       height: 60rpx;
       display: -webkit-box;
@@ -178,13 +178,13 @@
           -ms-flex-align: center;
               align-items: center;
 }
-.sw-main .uni-list .uni-media-list-body.data-v-3ae2b00d {
+.sw-main .uni-list .uni-media-list-body.data-v-07dfb5a9 {
       height: 60rpx;
 }
-.sw-main .uni-list .uni-media-list-text-top.data-v-3ae2b00d {
+.sw-main .uni-list .uni-media-list-text-top.data-v-07dfb5a9 {
       font-size: 22rpx;
 }
-.sw-main .uni-list .uni-media-list-text-bottom.data-v-3ae2b00d {
+.sw-main .uni-list .uni-media-list-text-bottom.data-v-07dfb5a9 {
       font-size: 16rpx;
 }
 

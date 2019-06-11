@@ -255,20 +255,6 @@
       this.sum();
     },
 
-    //店铺按钮选择
-    selectedStore: function selectedStore(index) {
-      this.goodsList[index].selected = !this.goodsList[index].selected;
-
-      var goods = this.goodsList[index].goods;
-
-      for (var i = 0; i < goods.length; i++) {
-
-        goods[i].selected = this.goodsList[index].selected;
-
-      }
-    },
-
-
     //加入商品 参数 goods:商品数据
     joinGoods: function joinGoods(goods) {
       /*
@@ -405,52 +391,71 @@
     },
     // 选中商品
     selected: function selected(index, storeIndex) {
-      console.log(index, storeIndex);
+
       this.goodsList[storeIndex].goods[index].selected = this.goodsList[storeIndex].goods[index].selected ? false : true;
-      // let i = this.selectedList.indexOf(this.goodsList[index].id);
-      // i > -1 ? this.selectedList.splice(i, 1) : this.selectedList.push(this.goodsList[index].id);
-      // this.isAllselected = this.selectedList.length == this.goodsList.length;
-      // this.sum();
+
+      //门店商品全部点击完以后，需要将门店的选项按钮显示高亮
+      var allSelect = this.goodsList[storeIndex].goods.every(function (item) {
+        return item.selected;
+      });
+
+      this.goodsList[storeIndex].selected = allSelect;
+
+      this.sum();
+    },
+    //店铺按钮选择
+    selectedStore: function selectedStore(index) {
+
+      var storeSelecte = this.goodsList[index].selected = !this.goodsList[index].selected;
+
+      var goods = this.goodsList[index].goods;
+
+      for (var i = 0; i < goods.length; i++) {
+
+        goods[i].selected = storeSelecte;
+
+      }
+      this.sum();
     },
     //全选
     allSelect: function allSelect() {
-      var len = this.goodsList.length;
-      var arr = [];
-      for (var _i4 = 0; _i4 < len; _i4++) {
-        this.goodsList[_i4].selected = this.isAllselected ? false : true;
-        arr.push(this.goodsList[_i4].id);
-      }
-      this.selectedList = this.isAllselected ? [] : arr;
-      this.isAllselected = this.isAllselected || this.goodsList.length == 0 ? false : true;
+
+      var allSelect = this.isAllselected = !this.isAllselected;
+
+      this.goodsList.forEach(function (item) {
+        item.selected = allSelect;
+        item.goods.forEach(function (childItem) {
+          childItem.selected = allSelect;
+        });
+      });
+
       this.sum();
     },
     // 减少数量
-    sub: function sub(index) {
-      if (this.goodsList[index].number <= 1) {
+    sub: function sub(index, storeIndex) {
+      if (this.goodsList[storeIndex].goods[index].number <= 1) {
         return;
       }
-      this.goodsList[index].number--;
+      this.goodsList[storeIndex].goods[index].number--;
       this.sum();
     },
     // 增加数量
-    add: function add(index) {
-      this.goodsList[index].number++;
+    add: function add(index, storeIndex) {
+      this.goodsList[storeIndex].goods[index].number++;
       this.sum();
     },
     // 合计
-    sum: function sum(e, index) {
+    sum: function sum() {var _this2 = this;
       this.sumPrice = 0;
-      var len = this.goodsList.length;
-      for (var _i5 = 0; _i5 < len; _i5++) {
-        if (this.goodsList[_i5].selected) {
-          if (e && _i5 == index) {
-            this.sumPrice = this.sumPrice + e.detail.value * this.goodsList[_i5].price;
-          } else {
-            this.sumPrice = this.sumPrice + this.goodsList[_i5].number * this.goodsList[_i5].price;
+
+      this.goodsList.forEach(function (item) {
+        item.goods.forEach(function (childItem) {
+          if (childItem.selected) {
+            _this2.sumPrice += childItem.price * childItem.number;
           }
-        }
-      }
-      this.sumPrice = this.sumPrice.toFixed(2);
+        });
+      });
+
     },
     discard: function discard() {
       //丢弃
