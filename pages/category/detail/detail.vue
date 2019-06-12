@@ -1,5 +1,6 @@
 <template>
   <view>
+    <!-- 产品详情页面-->
     <view class="detailPage">
       
       <view class="big-Piture">
@@ -9,10 +10,10 @@
         <image class="b-p-photo"  :src="detailInfo.picture" mode="scaleToFill"></image>
       </view>
 
-      <view class="detailNav">
+      <view class="detailNav" v-if="specPrice">
         <view class="nav-left">
-          <text class="nav-l-price">￥{{detailInfo.shop_price * 1}}</text>
-          <text class="text-del-style">￥{{detailInfo.market_price}}</text>
+          <text class="nav-l-price">￥{{specPrice.shop_price}}</text>
+          <text class="text-del-style">￥{{specPrice.market_price}}</text>
         </view>
         <view class="nav-right">
           <text v-if="detailInfo.is_spike">秒杀</text>
@@ -29,7 +30,13 @@
       </view>
       
       <view class="seleBtn uni-inline-item" @click="toggleSpec">
-         <text>已选择</text> 
+        <view>
+          已选择:
+          <text class="selected-text text-color-red" v-for="(sItem, sIndex) in specSelected" :key="sIndex">
+          	{{sItem.name}}
+          </text>
+        </view>
+          
          <uni-icon type="arrowdown" size="20"></uni-icon>
       </view>
         
@@ -61,7 +68,7 @@
           <text style="background:#E8651B;">加入购物车</text>
         </view>
         <view>
-          <navigator url="/pages/tabBar/shCart/payment/payment">
+          <navigator url="/pages/tabBar/shCart/shCart" open-type="switchTab">
              <text style="background: #DF0024;">立即购买</text>
           </navigator>
         </view>
@@ -80,12 +87,12 @@
     	<view class="layer attr-content" @click.stop="stopPrevent">
     		<view class="a-t">
     			<image :src="detailInfo.picture" ></image>
-    			<view class="right">
-    				<text class="price">¥{{detailInfo.shop_price }}</text>
-    				<text class="stock">库存:{{detailInfo.stock}}</text>
+    			<view class="right" v-if="specPrice">
+    				<text class="price">¥{{specPrice.shop_price}}</text>
+    				<text class="stock">库存:{{specPrice.stock}}</text>
     				<view class="selected">
     					已选:
-    					<text class="selected-text" v-for="(sItem, sIndex) in specSelected" :key="sIndex">
+    					<text class="selected-text text-color-red" v-for="(sItem, sIndex) in specSelected" :key="sIndex">
     						{{sItem.name}}
     					</text>
     				</view>
@@ -111,7 +118,6 @@
     		<button class="btn" @click="toggleSpec">完成</button>
     	</view>
     </view>
-    
   </view>
 </template>
 
@@ -121,26 +127,54 @@
   export default {
     data() {
       return {
-        productId:null,
-        detailInfo:" ",
-        specClass: 'none',
-        specSelected:[]
+        productId:" ", //产品Id
+        detailInfo:" ", //页面数据 
+        specClass: 'none', //遮罩层切换
+        specSelected:[], //产品规格
+        buyNum:1, //购买数量,
+        specPriceData:{} //规格价格
       };
     },
-    onLoad(e) {
+    onLoad(e){
       this.productId = e.id;
-      this.fetchData();
+      this.fetchData(); 
+    },
+    computed:{
+      /* 缓存购买的产品规格*/
+      goodsSpec(){
+        let goodsSpec = [];
+        this.specSelected.forEach(item => {
+          goodsSpec.push(item.id);
+        })
+       return goodsSpec.join("_");
+      },
+      /*遮罩层 产品规格变换渲染不同的价格 及 库存*/
+      specPrice(){   
+       let specPrice  = this.specPriceData[this.goodsSpec];
+       return specPrice;
+      }
     },
     methods:{
+      //获取详情页面数据
       fetchData(){
-        var url = "goods/detail";
-        var data = {
+        let url = "goods/detail";
+        let data = {
           id:this.productId
         }  
         this.$Request.get(url,data).then( res => {
-          if(res && res.code == 200 && res.data){
+          
+          if(res && res.code == 200 && res.data ){
+            
             this.detailInfo = res.data.goodsInfo;
-            console.log(res);
+            
+            /* 规格价格信息*/
+            this.specPriceData = res.data.specPriceData;
+            
+            /* 获取产品规格的初始值*/
+            res.data.goodsInfo.spec_data.forEach(item => {
+                item.child[0].selected = true;
+                this.specSelected.push(item.child[0]);
+            })
           }
         })
       },
@@ -162,11 +196,7 @@
 
 				// 按钮点击切换
         list.forEach( item => {
-           if(item.id === childId && !item.selected){
-						 this.$set(item,'selected',true);
-					 }else{
-						 this.$set(item,'selected',false);
-					 }
+           item.id === childId ? this.$set(item,'selected',true) : this.$set(item,'selected',false);
         })
 				
 				//存储已选择
@@ -182,14 +212,30 @@
       },
 			//选择购买数量
 			buyCount(e){
-				console.log(e);
+				this.buyNum = e ;
 			},
 			//加入购物车
 			insertCart(){
-				uni.showToast({
-					title:"已加入购物车!",
-					icon:"success"
-				})
+        let url = "cart/addCart";
+        let data = {
+          goods_id:this.productId, 
+          buy_num:this.buyNum,
+          goods_spec:this.goodsSpec
+        }
+        
+        this.$Request.post(url,data).then( res => {
+          if(res && res.code == 200){
+            uni.showToast({
+              title:res.msg,
+              icon:"success"
+            })
+          }else{
+            uni.showToast({
+              title:res.msg,
+              icon:"none"
+            })
+          }
+        })
 			},
       stopPrevent(){}
     },
@@ -229,11 +275,8 @@
   			display: flex;
   			flex-direction: column;
   			padding-left: 24upx;
-  			// font-size: $font-sm + 2upx;
-  			// color: $font-color-base;
   			line-height: 42upx;
   			.price{
-  				// font-size: $font-lg;
   				color: $uni-color-primary;
   				margin-bottom: 10upx;
   			}
@@ -245,8 +288,6 @@
   	.attr-list{
   		display: flex;
   		flex-direction: column;
-  		// font-size: $font-base + 2upx;
-  		// color: $font-color-base;
   		padding-top: 30upx;
   		padding-left: 10upx;
   	}
@@ -265,8 +306,6 @@
   			min-width: 60upx;
   			height: 60upx;
   			padding: 0 20upx;
-  			// font-size: $font-base;
-  			// color: $font-color-dark;
   		}
   		.selected{
   			background: #fbebee;
@@ -325,7 +364,6 @@
   			line-height: 66upx;
   			border-radius: 100upx;
   			background: $uni-color-primary;
-  			// font-size: $font-base + 2upx;
   			color: #fff;
   			margin: 30upx auto 20upx;
   		}
@@ -466,6 +504,10 @@
     justify-content:space-between;
     padding:20upx 26upx;
     background:#F0F0F0;
+    .selected-text{
+      margin:0;
+      margin-left:10upx;
+    }
   }
   
   .commentBtn{
@@ -517,14 +559,6 @@
         padding: 8upx 20upx;
         border-radius: 30upx;
         margin-left: 20upx;
-
-//         &:nth-child(1) {
-//           background: #E8651B;
-//         }
-// 
-//         &:nth-child(2) {
-//           background: #DF0024;
-//         }
       }
     }
   }

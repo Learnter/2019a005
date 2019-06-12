@@ -55,20 +55,28 @@
           return false;
         }
 
-        var url = "user/login";
+        let url = "user/login";
         this.$Request.post(url, this.user).then(res => {
-          /* 请求成功*/
+          
+          /* 请求成功的提示信息*/
           if (res && res.code === 200) {
+            
             uni.showToast({
               title: "登录成功",
               icon: "success"
             })
             
+            /* 设置缓存信息*/
+            let token = res.data; //服务器返回的唯一标识符
+            this.$SysCache.put("app_user_info",token,86400); //86400为一天时间
+            
+            /* 登录成功后的跳转页面*/
             setTimeout(function() {
               uni.switchTab({
                url: "/pages/tabBar/onGoods/onGoods"
              })
             }, 500)
+            
           } else {
             /* 账号或密码有误*/
             uni.showToast({

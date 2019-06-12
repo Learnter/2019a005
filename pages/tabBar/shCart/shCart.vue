@@ -21,14 +21,14 @@
           </view>
 
           <view class="store-info">
-            {{item.title}}
+            {{item.name}}
           </view>
 
         </view>
 
-        <view class="row" v-for="(row,index) in item.goods" :key="index">
+        <view class="row" v-for="(row,index) in item.goods_list" :key="index">
           <!-- 删除按钮 -->
-          <view class="menu" @tap.stop="deleteGoods(row.id)">
+          <view class="menu" @tap.stop="deleteGoods(row.id,storeIndex)">
             <view class="icon shanchu"></view>
           </view>
           <!-- 商品 -->
@@ -43,34 +43,32 @@
             <!-- 商品信息 -->
             <view class="goods-info" @tap="toGoods(row)">
               <view class="img">
-                <image :src="row.img"></image>
+                <image :src="row.picture"></image>
               </view>
               <view class="info">
-                <view class="title">{{row.name}}</view>
-                <view class="price">￥{{row.price}}</view>
+                <view class="title">{{row.goods_name}}</view>
+                <view class="price">￥{{row.goods_price}}</view>
                 <view class="price-number">
                   <view class="number">
                     <view class="sub" @tap.stop="sub(index,storeIndex)">
                       <view class="icon jian"></view>
                     </view>
                     <view class="input" @tap.stop="discard">
-                      <input type="number" v-model="row.number" @input="sum($event,index)" disabled="true" />
+                      <input type="number" v-model="row.goods_num" @input="sum($event,index)" disabled="true" />
                     </view>
                     <view class="add" @tap.stop="add(index,storeIndex)">
                       <view class="icon jia"></view>
                     </view>
                   </view>
                   <view class="order-price">合计:
-                    <text class="price">￥{{row.price * row.number}}</text>
+                    <text class="price">￥{{row.goods_price * row.goods_num}}</text>
                   </view>
                 </view>
               </view>
             </view>
           </view>
         </view>
-
       </view>
-
     </view>
 
 
@@ -83,11 +81,11 @@
         </view>
         <view class="text">全选</view>
       </view>
-      <view class="delBtn" @tap="deleteList" v-if="selectedList.length>0">删除</view>
+      <!-- <view class="delBtn" @tap="deleteList">删除</view> -->
       <view class="settlement">
         <view class="sum">合计:<view class="money">￥{{sumPrice}}</view>
         </view>
-        <view class="btn" @tap="toConfirmation">结算({{selectedList.length}})</view>
+        <view class="btn" @tap="toConfirmation">结算({{seleCount}})</view>
       </view>
     </view>
   </view>
@@ -95,7 +93,6 @@
 
 <script>
   import uniNumberBox from '@/components/uni-number-box/uni-number-box.vue';
-
   export default {
     components: {
       uniNumberBox
@@ -106,130 +103,13 @@
         headerPosition: "fixed",
         headerTop: null,
         statusTop: null,
-        selectedList: [],
         isAllselected: false,
-        goodsList: [
-
-          {
-            title: "众冠科技有限公司",
-            id: 1,
-            selected:false,
-            goods: [{
-                id: 1,
-                img: '../../../static/ga005_44.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 1278.5,
-                number: 1,
-                selected: false
-              },
-              {
-                id: 2,
-                img: '../../../static/ga005_45.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 1272.5,
-                number: 1,
-                selected: false
-              },
-              {
-                id: 3,
-                img: '../../../static/ga005_46.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 127.5,
-                number: 1,
-                selected: false
-              },
-              {
-                id: 4,
-                img: '../../../static/ga005_47.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 127.5,
-                number: 1,
-                selected: false
-              },
-              {
-                id: 5,
-                img: '../../../static/ga005_48.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 7.5,
-                number: 1,
-                selected: false
-              }
-            ]
-          },
-          {
-            title: "微代化妆品有限公司",
-            id: 1,
-            selected:false,
-            goods: [{
-                id: 1,
-                img: '../../../static/ga005_44.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 1278.5,
-                number: 1,
-                selected: false
-              },
-              {
-                id: 2,
-                img: '../../../static/ga005_45.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 1272.5,
-                number: 1,
-                selected: false
-              },
-              {
-                id: 3,
-                img: '../../../static/ga005_46.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 127.5,
-                number: 1,
-                selected: false
-              },
-              {
-                id: 4,
-                img: '../../../static/ga005_47.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 127.5,
-                number: 1,
-                selected: false
-              },
-              {
-                id: 5,
-                img: '../../../static/ga005_48.png',
-                name: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题',
-                spec: '规格:S码',
-                price: 7.5,
-                number: 1,
-                selected: false
-              }
-            ]
-          }
-        ],
-        //控制滑动效果
-        theIndex: null,
+        theIndex: null, //控制滑动效果
         oldIndex: null,
-        isStop: false
+        isStop: false,
+        goodsList: [],//购物车商品数据
+        selectedList:[]
       }
-    },
-    onPageScroll(e) {
-      //兼容iOS端下拉时顶部漂移
-      this.headerPosition = e.scrollTop >= 0 ? "fixed" : "absolute";
-      this.headerTop = e.scrollTop >= 0 ? null : 0;
-      this.statusTop = e.scrollTop >= 0 ? null : -this.statusHeight + 'px';
-    },
-    //下拉刷新，需要自己在page.json文件中配置开启页面下拉刷新 "enablePullDownRefresh": true
-    onPullDownRefresh() {
-      setTimeout(function() {
-        uni.stopPullDownRefresh();
-      }, 1000);
     },
     onLoad() {
       //兼容H5下结算条位置
@@ -238,13 +118,37 @@
       // #endif
       // #ifdef APP-PLUS
       this.statusHeight = plus.navigator.getStatusbarHeight();
-      // #endif
+      // #endif 
+      this.fetchData();
+      
+    },
+    computed:{
+      //返回选择的商品的数量
+      seleCount(){
+       let count = [] 
+       this.goodsList.forEach( item => {
+          item.goods_list.forEach( child => {
+            if(child.selected == true){
+              count.push(child);
+            }   
+          })
+        })
+       return count.length;
+      }
     },
     methods: {
+      //获取购物车数据
+      fetchData(){
+        let url = "cart/cartList";
+        this.$Request.get(url).then( res => {
+          if(res && res.code === 200){
+            this.goodsList = res.data.cartList;
+          }
+        })
+      },
       countChange(index) {
         this.sum();
       },
-
       //加入商品 参数 goods:商品数据
       joinGoods(goods) {
         /*
@@ -316,28 +220,16 @@
         //结束禁止触发效果
         this.isStop = false;
       },
-      //控制左滑删除效果-end
-
-
-      //商品跳转
-      toGoods(e) {
-        uni.showToast({
-          title: '商品' + e.id,
-          icon: "none"
-        });
-        uni.navigateTo({
-          url: '../goods/goods'
-        });
-      },
       //跳转确认订单页面
       toConfirmation() {
         let tmpList = [];
-        let len = this.goodsList.length;
-        for (let i = 0; i < len; i++) {
-          if (this.goodsList[i].selected) {
-            tmpList.push(this.goodsList[i]);
-          }
-        }
+        this.goodsList.forEach( item => {
+        	 item.goods_list.forEach(childItem => {
+        		 if(childItem.selected == true){
+        			tmpList.push(childItem);
+        		 } 
+        	 })
+        })
         if (tmpList.length < 1) {
           uni.showToast({
             title: '请选择商品结算',
@@ -356,36 +248,37 @@
         })
       },
       //删除商品
-      deleteGoods(id) {
-        let len = this.goodsList.length;
-        for (let i = 0; i < len; i++) {
-          if (id == this.goodsList[i].id) {
-            this.goodsList.splice(i, 1);
+      deleteGoods(id,storeIndex) {
+        // 根据父级索引 获取到商家店铺产品
+        let goodsItem = this.goodsList[storeIndex].goods_list;
+        
+        for (let i = 0; i < goodsItem.length; i++) {
+          //根据id获取具体产品
+          if (id == goodsItem[i].id) { 
+            //删除具体产品
+              goodsItem.splice(i, 1);
             break;
           }
         }
-        this.selectedList.splice(this.selectedList.indexOf(id), 1);
+        
+        //店铺商品删除完后 需要删除店铺信息
+         if(goodsItem.length === 0){
+          let del = this.goodsList.indexOf(this.goodsList[storeIndex]);
+          this.goodsList.splice(del,1);
+        }
+        
         this.sum();
         this.oldIndex = null;
         this.theIndex = null;
       },
-      // 删除商品s
-      deleteList() {
-        let len = this.selectedList.length;
-        while (this.selectedList.length > 0) {
-          this.deleteGoods(this.selectedList[0]);
-        }
-        this.selectedList = [];
-        this.isAllselected = this.selectedList.length == this.goodsList.length && this.goodsList.length > 0;
-        this.sum();
-      },
       // 选中商品
       selected(index,storeIndex) {
         
-        this.goodsList[storeIndex].goods[index].selected = this.goodsList[storeIndex].goods[index].selected ? false : true;
+        this.goodsList[storeIndex].goods_list[index].selected = this.goodsList[storeIndex].goods_list[index].selected ? false : true;
         
+                
         //门店商品全部点击完以后，需要将门店的选项按钮显示高亮
-        let allSelect =  this.goodsList[storeIndex].goods.every( item => {
+        let allSelect =  this.goodsList[storeIndex].goods_list.every( item => {
           return item.selected;
         })
         
@@ -398,7 +291,7 @@
 				
 			 let storeSelecte =  this.goodsList[index].selected = !this.goodsList[index].selected;
 			  
-			  var goods = this.goodsList[index].goods;
+			  var goods = this.goodsList[index].goods_list;
 			  
 			  for(var i = 0; i < goods.length;i++){
 			    
@@ -414,7 +307,7 @@
 				
 				this.goodsList.forEach( item => {
 					 item.selected = allSelect;
-					 item.goods.forEach(childItem => {
+					 item.goods_list.forEach(childItem => {
 						 childItem.selected = allSelect;
 					 })
 				})
@@ -423,15 +316,65 @@
       },
       // 减少数量
       sub(index,storeIndex) {
-        if (this.goodsList[storeIndex].goods[index].number <= 1) {
-          return;
-        }
-       this.goodsList[storeIndex].goods[index].number--;
+        let li = this.goodsList[storeIndex].goods_list[index];
+        if(!li.selected){
+          uni.showToast({
+            title:"请选择商品",
+            icon:"none"
+          })
+          return;   
+        }else{
+           if (li.goods_num <= 1) {
+            return;
+          }
+          li.goods_num--;
+           let url = "cart/modifyCartInfo";
+           let data = {
+              "id":li.id,
+              "selected":li.selected,
+              "goods_num":li.goods_num
+            }
+            this.$Request.post(url,data).then(res => {
+              if(res && res.code == 200){
+                uni.showToast({
+                  title:res.msg,
+                  icon:"none"
+                })
+              }
+            })
+          }
        this.sum();
       },
       // 增加数量
       add(index,storeIndex) {
-        this.goodsList[storeIndex].goods[index].number++;
+        
+        let li = this.goodsList[storeIndex].goods_list[index];
+        
+        if(!li.selected){
+           uni.showToast({
+             title:"请选择商品",
+             icon:"none"
+           })
+           return;   
+           
+         }else{
+           
+            li.goods_num++;
+            let url = "cart/modifyCartInfo";
+            let data = {
+               "id":li.id,
+               "selected":li.selected,
+               "goods_num":li.goods_num
+             }
+             this.$Request.post(url,data).then(res => {
+               if(res && res.code == 200){
+                 uni.showToast({
+                   title:res.msg,
+                   icon:"none"
+                 })
+               }
+             })
+           }
         this.sum();
       },
       // 合计
@@ -439,9 +382,9 @@
         this.sumPrice = 0;		
             
 				this.goodsList.forEach( item => {
-					 item.goods.forEach(childItem => {
+					 item.goods_list.forEach(childItem => {
 						 if(childItem.selected){
-							 this.sumPrice += childItem.price*childItem.number;
+							 this.sumPrice += childItem.goods_num*childItem.goods_price;
 						 } 
 					 })
 				})
@@ -701,10 +644,6 @@
             .title {
               width: 100%;
               font-size: 28upx;
-              // display: -webkit-box;
-              // -webkit-box-orient: vertical;
-              // -webkit-line-clamp: 2;
-              // text-align: justify;
               white-space: nowrap;
               text-overflow: ellipsis;
               overflow: hidden;
@@ -791,7 +730,8 @@
     }
 
     .settlement {
-      width: 60%;
+      // width: 60%;
+      flex:1;
       display: flex;
       justify-content: flex-end;
       align-items: center;
