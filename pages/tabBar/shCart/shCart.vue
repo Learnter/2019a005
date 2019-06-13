@@ -41,7 +41,7 @@
               </view>
             </view>
             <!-- 商品信息 -->
-            <view class="goods-info" @tap="toGoods(row)">
+            <view class="goods-info">
               <view class="img">
                 <image :src="row.picture"></image>
               </view>
@@ -70,8 +70,6 @@
         </view>
       </view>
     </view>
-
-
 
     <!-- 脚部菜单 -->
     <view class="footer" :style="{bottom:footerbottom}">
@@ -145,9 +143,6 @@
             this.goodsList = res.data.cartList;
           }
         })
-      },
-      countChange(index) {
-        this.sum();
       },
       //加入商品 参数 goods:商品数据
       joinGoods(goods) {
@@ -242,34 +237,50 @@
           data: tmpList,
           success: () => {
             uni.navigateTo({
-              url: '/pages/tabBar/shCart/payment/payment'
+              url: '/pages/tabBar/shCart/confirmation/confirmation'
             })
           }
         })
       },
       //删除商品
       deleteGoods(id,storeIndex) {
+        
         // 根据父级索引 获取到商家店铺产品
         let goodsItem = this.goodsList[storeIndex].goods_list;
         
-        for (let i = 0; i < goodsItem.length; i++) {
-          //根据id获取具体产品
-          if (id == goodsItem[i].id) { 
-            //删除具体产品
-              goodsItem.splice(i, 1);
-            break;
-          }
-        }
-        
-        //店铺商品删除完后 需要删除店铺信息
-         if(goodsItem.length === 0){
-          let del = this.goodsList.indexOf(this.goodsList[storeIndex]);
-          this.goodsList.splice(del,1);
-        }
-        
-        this.sum();
-        this.oldIndex = null;
-        this.theIndex = null;
+        let url = "cart/delCartInfo";
+        let data = {
+           "id":id
+         }
+         this.$Request.post(url,data).then(res => {
+           
+           if(res && res.code == 200){
+             
+             uni.showToast({
+               title:res.msg,
+               icon:"none"
+             })
+             
+              for (let i = 0; i < goodsItem.length; i++) {
+               //根据id获取具体产品
+               if (id == goodsItem[i].id) { 
+                 //删除具体产品
+                   goodsItem.splice(i, 1);
+                 break;
+               }
+             }
+             
+             //店铺商品删除完后 需要删除店铺信息
+              if(goodsItem.length === 0){
+               let del = this.goodsList.indexOf(this.goodsList[storeIndex]);
+               this.goodsList.splice(del,1);
+             }
+             
+             this.sum();
+             this.oldIndex = null;
+             this.theIndex = null;
+           }
+         }) 
       },
       // 选中商品
       selected(index,storeIndex) {

@@ -40,14 +40,19 @@ module.exports = {
 				success: function(result) {
 					// token 验证失败 自动退出
 					if (result.data.code == 1004 || result.data.code == 1104 || result.data.code == 1003 || result.data.code == 1006) {
+                        console.log("token 验证失败 自动退出");
 						cache.remove('app_user_info');
-						uni.navigateTo({
-							url: '/pages/login/login'
-						})
+
 						uni.showToast({
 							icon: 'none',
 							title: '请先登陆'
 						});
+                        
+                        setTimeout(function(){
+                            uni.navigateTo({
+                            	url: '/pages/login/login'
+                            })
+                        },2000)
 					}
 					succ.call(self, result.data)
 				},

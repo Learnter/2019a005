@@ -67,10 +67,10 @@
         <view @tap="insertCart">
           <text style="background:#E8651B;">加入购物车</text>
         </view>
-        <view>
-          <navigator url="/pages/tabBar/shCart/shCart" open-type="switchTab">
+        <view @tap="buyNow">
+          <!-- <navigator url="/pages/tabBar/shCart/shCart" open-type="switchTab"> -->
              <text style="background: #DF0024;">立即购买</text>
-          </navigator>
+          <!-- </navigator> -->
         </view>
       </view>
     </view>
@@ -216,6 +216,7 @@
 			},
 			//加入购物车
 			insertCart(){
+
         let url = "cart/addCart";
         let data = {
           goods_id:this.productId, 
@@ -229,14 +230,31 @@
               title:res.msg,
               icon:"success"
             })
-          }else{
-            uni.showToast({
-              title:res.msg,
-              icon:"none"
-            })
           }
         })
 			},
+      //立即购买
+      buyNow(){
+        let userInfo =  this.$SysCache.get("app_user_info");
+        if(!userInfo.token){
+          uni.showModal({
+            content:"请先登录",
+            success: function (res) {
+                if (res.confirm) {
+                   uni.redirectTo({
+                     url: '/pages/login/login'
+                   });
+                } else if (res.cancel) {
+                   return;
+                }
+            }
+          })
+        }else{
+          uni.switchTab({
+            url:"/pages/tabBar/shCart/shCart"
+          })
+        }
+      },
       stopPrevent(){}
     },
     components:{

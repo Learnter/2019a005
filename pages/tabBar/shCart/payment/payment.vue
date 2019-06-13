@@ -1,244 +1,198 @@
 <template>
-  <!-- 支付页面-->
-  <view class="playment">
-
-   <return-nav>
-     <text>结算</text>
-   </return-nav>
-
-    <!-- 收货人地址-->
-    <view class="play-main">
-
-      <view class="user-info">
-        <view class="user-person">
-          <text class="user-person-name">收件人: ..............</text>
-          <text>联系电话: ..............</text>
-        </view>
-        <view class="user-addre uni-ellipsis">
-          <text>邮寄地址: ................</text>
-        </view>
-      </view>
-
-      <view class="addressBox">
-        <view class="address-nav">
-          <view class="address-top">
-            <view class="address-top-left">
-              <text style="margin-right:10upx">地址簿</text>
-              <image class="iconSize" src="../../../../static/ga005_68.png" mode="widthFix"></image>
-            </view>
-            <image class="iconSize" src="../../../../static/ga005_69.png" mode="widthFix"></image>
-          </view>
-        </view>
-
-        <view class="address-content">
-          <view class="null-content">
-            <image src="../../../../static/ga005_67.png" mode="widthFix" style="width:160upx"></image>
-            <text>你现在好没有添加地址!请点击添加!</text>
-          </view>
-        </view>
-      </view>
-    </view>
-
-
-    <!-- 购买商品清单-->
-    <view class="productBox">
-      <text class="product-title">购物清单</text>
-      <view class="product-items">
-        <view class="uni-list">
-          <view class="uni-list-cell">
-            <view class="uni-media-list">
-              <view class="uni-media-list-logo">
-                <image src="../../../../static/ga005_45.png"></image>
-              </view>
-              <view class="uni-media-list-body">
-                <view class="uni-media-list-body-left">
-                  <view class="uni-media-list-text-top uni-ellipsis">标题</view>
-                  <view class="uni-media-list-text-bottom uni-ellipsis">内容111111111111</view>
-                </view>
-                <text class="pay-money">共22件,小计:￥99 </text>
-              </view>
-            </view>
-          </view>
-          <view class="uni-list-cell">
-            <view class="uni-media-list">
-              <view class="uni-media-list-logo">
-                <image src="../../../../static/ga005_45.png"></image>
-              </view>
-              <view class="uni-media-list-body">
-                <view class="uni-media-list-body-left">
-                  <view class="uni-media-list-text-top uni-ellipsis">标题</view>
-                  <view class="uni-media-list-text-bottom uni-ellipsis">内容111111111111</view>
-                </view>
-                <text class="pay-money">共22件,小计:￥99 </text>
-              </view>
-            </view>
-          </view>
-          <view class="uni-list-cell">
-            <view class="uni-media-list">
-              <view class="uni-media-list-logo">
-                <image src="../../../../static/ga005_45.png"></image>
-              </view>
-              <view class="uni-media-list-body">
-                <view class="uni-media-list-body-left">
-                  <view class="uni-media-list-text-top uni-ellipsis">标题</view>
-                  <view class="uni-media-list-text-bottom uni-ellipsis">内容111111111111</view>
-                </view>
-                <text class="pay-money">共22件,小计:￥99 </text>
-              </view>
-            </view>
-          </view>
-          <view class="uni-list-cell">
-            <view class="uni-media-list">
-              <view class="uni-media-list-logo">
-                <image src="../../../../static/ga005_45.png"></image>
-              </view>
-              <view class="uni-media-list-body">
-                <view class="uni-media-list-body-left">
-                  <view class="uni-media-list-text-top uni-ellipsis">标题</view>
-                  <view class="uni-media-list-text-bottom uni-ellipsis">内容111111111111</view>
-                </view>
-                <text class="pay-money">共22件,小计:￥99 </text>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <!-- 总支付金额-->
-    <view class="total-money">
-      <label>合计:<text style="color:red">￥99</text></label>
-    </view>
-
-    <!-- 支付按钮-->
-    <button class="pay-btn text-bg-green">立即支付</button>
-
-  </view>
+	<view>
+		<view class="block">
+			<view class="content">
+				<view class="orderinfo">
+					<view class="row">
+						<view class="nominal">订单名称:</view><view class="text">{{orderName}}</view>
+					</view>
+					<view class="row">
+						<view class="nominal">订单金额:</view><view class="text">{{amount}}元</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="block">
+			<view class="title">
+				选择支付方式
+			</view>
+			<view class="content">
+				<view class="pay-list">
+					<view class="row" @tap="paytype='alipay'">
+							<view class="left">
+								<image src="/static/img/alipay.png"></image>
+							</view>
+							<view class="center">
+								支付宝支付
+							</view>
+							<view class="right">
+								<radio :checked="paytype=='alipay'" color="#f06c7a" />
+							</view>
+					</view>
+					<view class="row" @tap="paytype='wxpay'">
+							<view class="left">
+								<image src="/static/img/wxpay.png"></image>
+							</view>
+							<view class="center">
+								微信支付
+							</view>
+							<view class="right">
+								<radio :checked="paytype=='wxpay'" color="#f06c7a" />
+							</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="pay">
+			<view class="btn" @tap="doDeposit">立即支付</view>
+			<view class="tis">
+				点击立即支付，即代表您同意<view class="terms">
+					《条款协议》
+				</view>
+			</view>
+		</view>
+	</view>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-
-      };
-    }
-  }
+	export default {
+		data() {
+			return {
+				amount:0,
+				orderName:'',
+				paytype:'alipay'//支付类型
+			};
+		},
+		onLoad(e) {
+			this.amount = parseFloat(e.amount).toFixed(2);
+			uni.getStorage({
+				key:'paymentOrder',
+				success: (e) => {
+					if(e.data.length>1){
+						this.orderName = '多商品合并支付'
+					}else{
+						this.orderName = e.data[0].name;
+					}
+					uni.removeStorage({
+						key:'paymentOrder'
+					})
+				}
+			})
+		},
+		methods:{
+			doDeposit(){
+				//模板模拟支付，实际应用请调起微信/支付宝
+				uni.showLoading({
+					title:'支付中...'
+				});
+				setTimeout(()=>{
+					uni.hideLoading();
+					uni.showToast({
+						title:'支付成功'
+					});
+					setTimeout(()=>{
+						uni.redirectTo({
+							url:'../../pay/success/success?amount='+this.amount
+						});
+					},300);
+				},700)
+			}
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
-  
-  
-  /* 收件人信息样式 */
-  .play-main {
-    padding: 0 1%;
-
-    .user-info {
-      background: white;
-      padding: 0 30upx;
-      margin-top: 20upx;
-
-      .user-person {
-        padding: 20upx 0 10upx;
-
-        .user-person-name {
-          margin-right: 20upx;
-          ;
-        }
-      }
-
-      .user-addre {
-        padding: 10upx 0 20upx;
-      }
-    }
-
-    /* 地址栏样式 */
-    .addressBox {
-      margin: 30upx 0;
-
-      .address-nav {
-        margin-bottom: 6upx;
-        padding: 0 30upx;
-        background: white;
-
-        .address-top {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 70upx;
-
-          image {
-            width: 30upx;
-          }
-        }
-      }
-
-      .address-content {
-        background: white;
-        min-height: 300upx;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .null-content {
-          display: flex;
-          align-items: center;
-          font-size: 22upx;
-          color: #C1C1C1;
-
-          image {
-            margin-right: 30upx;
-          }
-        }
-      }
-    }
-  }
-
-  /* 购物清单列表的样式 */
-  .product-title {
-    display: block;
-    padding: 0 30upx;
-    background: white;
-    height: 56upx;
-    line-height: 56upx;
-  }
-
-  .uni-media-list-logo {
-    border: 2upx solid #C1C1C1;
-  }
-
-  .uni-media-list-body {
-    flex-direction: row;
-    align-items: flex-end;
-
-    .uni-media-list-body-left {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-    }
-
-    /* 右边的单物品金额的样式*/
-    .pay-money {
-      font-size: 20upx;
-      flex-shrink: 0;
-    }
-  }
-
-  /* 物品总金额的样式*/
-  .total-money {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30upx 0;
-  }
-
-  /* 支付按钮的样式*/
-  .pay-btn {
-    width: 340upx;
-    font-size: 28upx;
-    color: white;
-    margin-bottom: 30upx;
-  }
+.block{
+		width: 94%;
+		padding: 0 3% 40upx 3%;
+		.title{
+			width: 100%;
+			font-size: 34upx;
+		}
+		.content{
+			.orderinfo{
+				width: 100%;
+				border-bottom: solid 1upx #eee;
+				.row{
+					width: 100%;
+					height: 90upx;
+					display: flex;
+					align-items: center;
+					.nominal{
+						flex-shrink: 0;
+						font-size: 32upx;
+						color: #7d7d7d;
+					}
+					.text{
+						width: 70%;
+						margin-left: 10upx;
+						overflow: hidden;
+						text-overflow:ellipsis;
+						white-space: nowrap;
+						font-size: 32upx;
+					}
+				}
+			}
+			.pay-list{
+				width: 100%;
+				border-bottom: solid 1upx #eee;
+				.row{
+					width: 100%;
+					height: 120upx;
+					display: flex;
+					align-items: center;
+					.left{
+						width: 100upx;
+						flex-shrink: 0;
+						display: flex;
+						align-items: center;
+						image{
+							width: 80upx;
+							height: 80upx;
+						}
+					}
+					.center{
+						width: 100%;
+						font-size: 30upx;
+					}
+					.right{
+						width: 100upx;
+						flex-shrink: 0;
+						display: flex;
+						justify-content: flex-end;
+					}
+				}
+			}
+		}
+	}
+	.pay{
+		margin-top: 20upx;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		.btn{
+			width: 70%;
+			height: 80upx;
+			border-radius: 80upx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+			background-color: #f06c7a;
+			box-shadow: 0upx 5upx 10upx rgba(0,0,0,0.2);
+		}
+		.tis{
+			margin-top: 10upx;
+			width: 100%;
+			font-size: 24upx;
+			display: flex;
+			justify-content: center;
+			align-items: baseline;
+			color: #999;
+			.terms{
+				color: #5a9ef7;
+			}
+		}
+	}
 </style>
