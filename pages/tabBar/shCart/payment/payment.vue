@@ -1,14 +1,20 @@
 <template>
 	<view>
+   <!-- <return-nav>
+      <text>确认付款</text>
+    </return-nav> -->
 		<view class="block">
 			<view class="content">
 				<view class="orderinfo">
 					<view class="row">
-						<view class="nominal">订单名称:</view><view class="text">{{orderName}}</view>
+						<view class="nominal">订单金额:</view><view class="text">{{orderInfo.orderAmount}}元</view>
 					</view>
-					<view class="row">
-						<view class="nominal">订单金额:</view><view class="text">{{amount}}元</view>
-					</view>
+          <view class="row">
+          	<view class="nominal">订单名称:</view><view class="text">{{orderInfo.orderSn}}</view>
+          </view>
+          <view class="row">
+          	<view class="nominal">生成时间:</view><view class="text">{{orderInfo.add_time}}</view>
+          </view>
 				</view>
 			</view>
 		</view>
@@ -18,30 +24,22 @@
 			</view>
 			<view class="content">
 				<view class="pay-list">
-					<view class="row" @tap="paytype='alipay'">
+					<view class="row"  v-for="(item,index) in payMethodsInfo" :key="index">
 							<view class="left">
-								<image src="/static/img/alipay.png"></image>
+								<image :src="item.logo"></image>
 							</view>
-							<view class="center">
-								支付宝支付
+							<view class="center" v-if="item.amount">
+								<view class="nominal">余额:</view><view style="margin-left:10upx;color:#00d693">{{item.amount}}</view>
 							</view>
-							<view class="right">
-								<radio :checked="paytype=='alipay'" color="#f06c7a" />
-							</view>
-					</view>
-					<view class="row" @tap="paytype='wxpay'">
-							<view class="left">
-								<image src="/static/img/wxpay.png"></image>
-							</view>
-							<view class="center">
-								微信支付
-							</view>
-							<view class="right">
-								<radio :checked="paytype=='wxpay'" color="#f06c7a" />
+							<view class="right" @tap="payType = item.type">
+								<radio :checked="payType == item.type" color="#f06c7a" />
 							</view>
 					</view>
 				</view>
 			</view>
+      <view class="findPswordinput">
+         <input class="finInput" type="password" v-model="passWord"  placeholder="请输入支付密码"/>
+      </view>
 		</view>
 		<view class="pay">
 			<view class="btn" @tap="doDeposit">立即支付</view>
@@ -58,53 +56,86 @@
 	export default {
 		data() {
 			return {
-				amount:0,
-				orderName:'',
-				paytype:'alipay'//支付类型
+        orderInfo:"",//订单信息
+        payMethodsInfo:"",//支付方式信息
+        passWord:"", //支付密码
+        payType:"" //支付类型
 			};
 		},
-		onLoad(e) {
-			this.amount = parseFloat(e.amount).toFixed(2);
-			uni.getStorage({
-				key:'paymentOrder',
-				success: (e) => {
-					if(e.data.length>1){
-						this.orderName = '多商品合并支付'
-					}else{
-						this.orderName = e.data[0].name;
-					}
-					uni.removeStorage({
-						key:'paymentOrder'
-					})
-				}
-			})
+		onLoad(e){
+      this.fetchOrderInfo(e);
+      this.payMethods();
 		},
 		methods:{
+      //获取订单信息
+      fetchOrderInfo(e){
+        let url = "order/payOrderInfo";
+        let data = {
+          "master_order_sn":e.orderSn //传入的订单单号
+        }
+        this.$Request.get(url,data).then( res => {
+          if(res && res.code == 200){
+            this.orderInfo = res.data;
+          }
+        })
+      },
+      //获取支付方式
+      payMethods(){
+        let url = "order/payMethod";
+        this.$Request.get(url).then( res => {
+          if(res && res.code == 200){
+            // console.log(res);
+            this.payMethodsInfo = res.data;
+          }
+        })
+      },
+      //支付订单
 			doDeposit(){
-				//模板模拟支付，实际应用请调起微信/支付宝
-				uni.showLoading({
-					title:'支付中...'
-				});
-				setTimeout(()=>{
-					uni.hideLoading();
-					uni.showToast({
-						title:'支付成功'
-					});
-					setTimeout(()=>{
-						uni.redirectTo({
-							url:'../../pay/success/success?amount='+this.amount
-						});
-					},300);
-				},700)
+        if(!this.payType){
+          uni.showModal({
+            content:"请选择支付方式",
+            showCancel:false
+          })
+          return;
+        }else if(this.passWord.trim().length == 0){
+           uni.showModal({
+            content:"请输入密码",
+            showCancel:false
+          })
+          return;
+        }
+        
+        let url = "order/payOrder";
+        let data = {
+          "master_order_sn":this.orderInfo.orderSn,
+          "pay_password":this.passWord,
+          "pay_type":this.payType,
+        }
+        this.$Request.post(url,data).then(res => {
+              uni.showToast({
+                icon:"none",
+                title:res.msg
+              })
+           if(res && res.code == 200){
+             setTimeout(function(){
+               uni.redirectTo({
+                 url: '/pages/tabBar/shCart/user-orders/user-orders'
+               });
+             },1000) 
+           }
+        })
 			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+
 .block{
 		width: 94%;
 		padding: 0 3% 40upx 3%;
+    background:white;
+    margin-top:10upx;
 		.title{
 			width: 100%;
 			font-size: 34upx;
@@ -115,7 +146,7 @@
 				border-bottom: solid 1upx #eee;
 				.row{
 					width: 100%;
-					height: 90upx;
+					height: 80upx;
 					display: flex;
 					align-items: center;
 					.nominal{
@@ -154,6 +185,8 @@
 					.center{
 						width: 100%;
 						font-size: 30upx;
+            display:flex;
+            align-items:center;
 					}
 					.right{
 						width: 100upx;
@@ -164,6 +197,21 @@
 				}
 			}
 		}
+    .findPswordinput{
+      display:flex;
+      align-items:center;
+      .finInput{
+        flex:1;
+        padding: 0upx 20upx;
+        margin: 0upx;
+        height: 76upx;
+        line-height: 76upx;
+        font-size: 14upx;
+        color: #333333;
+        border: 1px solid #F1F1F1;
+        background: #ffffff;
+      } 
+    }   
 	}
 	.pay{
 		margin-top: 20upx;

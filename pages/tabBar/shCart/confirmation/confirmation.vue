@@ -2,9 +2,9 @@
   <!-- 支付页面-->
   <view class="playment">
 
-   <return-nav>
+  <!-- <return-nav>
      <text>结算</text>
-   </return-nav>
+   </return-nav> -->
 
     <!-- 收货人地址-->
     <view class="play-main" @tap="showAddre">
@@ -30,19 +30,19 @@
     <!-- 购买商品清单-->
     <view class="productBox">
       <text class="product-title">购物清单</text>
-      <view class="product-items">
+      <view class="product-items" v-for="(item,index) in selectList" :key="index">
         <view class="uni-list">
-          <view class="uni-list-cell" v-for="(item,index) in selectList" :key="index">
+          <view class="uni-list-cell" v-for="(childItem,childIndex) in item.goods_list" :key="childIndex">
             <view class="uni-media-list">
               <view class="uni-media-list-logo">
-                <image :src="item.picture"></image>
+                <image :src="childItem.picture"></image>
               </view>
               <view class="uni-media-list-body">
                 <view class="uni-media-list-body-left">
-                  <view class="uni-media-list-text-top uni-ellipsis">{{item.goods_name}}</view>
-                  <view class="uni-media-list-text-bottom uni-ellipsis">{{item.spec_name}}</view>
+                  <view class="uni-media-list-text-top uni-ellipsis">{{childItem.goods_name}}</view>
+                  <view class="uni-media-list-text-bottom uni-ellipsis">{{childItem.spec_name}}</view>
                 </view>
-                <text class="pay-money">共{{item.goods_num}}件,小计:￥{{item.goods_price}} </text>
+                <text class="pay-money">共{{childItem.goods_num}}件,小计:￥{{childItem.goods_price}} </text>
               </view>
             </view>
           </view>
@@ -73,13 +73,7 @@
     },
     onLoad() {
      this.fetchData();
-     uni.getStorage({
-       key:'buylist',
-       success: (res) => {
-         console.log(res);
-         this.selectList = res.data;
-       }
-     })
+     this.fetchOrderList();
     },
     computed:{
       defAddres(){
@@ -92,15 +86,29 @@
       toatleMoney(){
         let money = 0;
         this.selectList.forEach(item => {
-          money += parseInt(item.goods_price);
+          money += parseInt(item.total_price);
         })
         return money;
-      }
+      },
+      
     },
     methods:{
+      //立即支付
        payment(){
-        uni.navigateTo({
-          url:"/pages/tabBar/shCart/payment/payment"
+        let url = "cart/submitOrder";
+        let data = {
+          "address_id":this.userInfo.id
+        }
+        this.$Request.post(url,data).then( res => {
+          
+          if(res && res.code == 200){
+            //获取主订单的信息
+            let orderId = res.data.masterOrderSn;
+            console.log(orderId);
+            uni.navigateTo({
+              url:"/pages/tabBar/shCart/payment/payment?orderSn="+orderId
+            })
+          }
         })
       },
       //获取默认地址信息
@@ -109,6 +117,15 @@
         this.$Request.get(url).then( res => {
          if(res && res.code == 200){
            this.userInfo = res.data;
+          }
+        })
+      },
+      //获取订单列表信息
+      fetchOrderList(){
+        let url = "cart/confirmCartList";
+        this.$Request.get(url).then(res => {
+          if(res && res.code == 200){
+            this.selectList = res.data.cartList;
           }
         })
       },

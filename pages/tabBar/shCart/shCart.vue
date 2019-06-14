@@ -1,14 +1,17 @@
 <template>
   <view class="shCart">
 
-    <return-nav>
+<!--    <return-nav>
       <text>购物车</text>
     </return-nav>
-
+ -->
     <!-- 商品列表 -->
     <view class="goods-list">
-
-      <view class="tis" v-if="goodsList.length==0">购物车是空的哦~</view>
+      
+      <view class="mescroll-empty"  v-if="goodsList.length==0" >
+        <image class="empty-icon" src="../../../static/ga005_67.png" mode="widthFix"></image>
+        <p class="empty-tip">购物车是空的哦~</p>
+      </view>
 
       <view class="goods-list-item" v-for="(item,storeIndex) in goodsList " :key="storeIndex">
 
@@ -145,28 +148,28 @@
         })
       },
       //加入商品 参数 goods:商品数据
-      joinGoods(goods) {
-        /*
-         * 这里只是展示一种添加逻辑，模板并没有做从其他页面加入商品到购物车的具体动作，
-         * 在实际应用上，前端并不会直接插入记录到goodsList这一个动作，一般是更新列表和本地列表缓存。
-         * 一般商城购物车的增删改动作是由后端来完成的,
-         * 后端记录后返回前端更新前端缓存
-         */
-        let len = this.goodsList.length;
-        let isFind = false; //是否找到ID一样的商品
-        for (let i = 0; i < len; i++) {
-          let row = this.goodsList[i];
-          if (row.id == goods.id) { //找到商品一样的商品
-            this.goodsList[i].number++; //数量自增
-            isFind = true; //找到一样的商品
-            break; //跳出循环
-          }
-        }
-        if (!isFind) {
-          //没有找到一样的商品，新增一行到购物车商品列表头部
-          this.goodsList[i].unshift(goods);
-        }
-      },
+      // joinGoods(goods) {
+      //   /*
+      //    * 这里只是展示一种添加逻辑，模板并没有做从其他页面加入商品到购物车的具体动作，
+      //    * 在实际应用上，前端并不会直接插入记录到goodsList这一个动作，一般是更新列表和本地列表缓存。
+      //    * 一般商城购物车的增删改动作是由后端来完成的,
+      //    * 后端记录后返回前端更新前端缓存
+      //    */
+      //   let len = this.goodsList.length;
+      //   let isFind = false; //是否找到ID一样的商品
+      //   for (let i = 0; i < len; i++) {
+      //     let row = this.goodsList[i];
+      //     if (row.id == goods.id) { //找到商品一样的商品
+      //       this.goodsList[i].number++; //数量自增
+      //       isFind = true; //找到一样的商品
+      //       break; //跳出循环
+      //     }
+      //   }
+      //   if (!isFind) {
+      //     //没有找到一样的商品，新增一行到购物车商品列表头部
+      //     this.goodsList[i].unshift(goods);
+      //   }
+      // },
       //控制左滑删除效果-begin
       touchStart(index, event) {
         //多点触控不触发
@@ -218,7 +221,7 @@
       //跳转确认订单页面
       toConfirmation() {
         let tmpList = [];
-        this.goodsList.forEach( item => {
+        this.goodsList.every( item => {
         	 item.goods_list.forEach(childItem => {
         		 if(childItem.selected == true){
         			tmpList.push(childItem);
@@ -232,14 +235,8 @@
           });
           return;
         }
-        uni.setStorage({
-          key: 'buylist',
-          data: tmpList,
-          success: () => {
-            uni.navigateTo({
-              url: '/pages/tabBar/shCart/confirmation/confirmation'
-            })
-          }
+        uni.navigateTo({
+          url: '/pages/tabBar/shCart/confirmation/confirmation'
         })
       },
       //删除商品
@@ -285,7 +282,8 @@
       // 选中商品
       selected(index,storeIndex) {
         
-        this.goodsList[storeIndex].goods_list[index].selected = this.goodsList[storeIndex].goods_list[index].selected ? false : true;
+        let product = this.goodsList[storeIndex].goods_list[index]; //获取具体商品
+        product.selected = product.selected ? false : true;
         
                 
         //门店商品全部点击完以后，需要将门店的选项按钮显示高亮
@@ -295,6 +293,8 @@
         
         this.goodsList[storeIndex].selected = allSelect;
         
+        this.modifyCartInfo(product);  
+             
         this.sum();
       },
 			//店铺按钮选择
@@ -309,6 +309,7 @@
 			    goods[i].selected = storeSelecte;
 			    
 			  }
+        this.modifyCartInfo(goods);
 				this.sum();
 			},
       //全选
@@ -316,13 +317,16 @@
 
 				let allSelect = this.isAllselected = !this.isAllselected;
 				
+        let allList = []; 
 				this.goodsList.forEach( item => {
 					 item.selected = allSelect;
 					 item.goods_list.forEach(childItem => {
 						 childItem.selected = allSelect;
+             allList.push(childItem);
 					 })
 				})
 				
+        this.modifyCartInfo(allList);
         this.sum();
       },
       // 减少数量
@@ -338,21 +342,8 @@
            if (li.goods_num <= 1) {
             return;
           }
-          li.goods_num--;
-           let url = "cart/modifyCartInfo";
-           let data = {
-              "id":li.id,
-              "selected":li.selected,
-              "goods_num":li.goods_num
-            }
-            this.$Request.post(url,data).then(res => {
-              if(res && res.code == 200){
-                uni.showToast({
-                  title:res.msg,
-                  icon:"none"
-                })
-              }
-            })
+            li.goods_num--;
+            this.modifyCartInfo(li);
           }
        this.sum();
       },
@@ -369,29 +360,14 @@
            return;   
            
          }else{
-           
             li.goods_num++;
-            let url = "cart/modifyCartInfo";
-            let data = {
-               "id":li.id,
-               "selected":li.selected,
-               "goods_num":li.goods_num
-             }
-             this.$Request.post(url,data).then(res => {
-               if(res && res.code == 200){
-                 uni.showToast({
-                   title:res.msg,
-                   icon:"none"
-                 })
-               }
-             })
+            this.modifyCartInfo(li);
            }
         this.sum();
       },
       // 合计
       sum() {
-        this.sumPrice = 0;		
-            
+        this.sumPrice = 0;		    
 				this.goodsList.forEach( item => {
 					 item.goods_list.forEach(childItem => {
 						 if(childItem.selected){
@@ -399,16 +375,66 @@
 						 } 
 					 })
 				})
-				
       },
-      discard() {
-        //丢弃
+      //修改商品信息
+      modifyCartInfo(item){
+        let url = "cart/modifyCartInfo";
+        let dataList = [];
+        let data = {};
+        
+       //判断修改的是单个商品还是多个商品
+       if(Array.isArray(item)){
+         item.forEach( child => {
+            data = {
+             "id":child.id,
+             "selected":child.selected,
+             "goods_num":child.goods_num
+           } 
+           dataList.push(data);
+         })
+       }else{
+        data = {
+          "id":item.id,
+          "selected":item.selected,
+          "goods_num":item.goods_num
+        } 
+        dataList.push(data);
+       } 
+       
+        this.$Request.post(url,{
+          data:dataList
+        })
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  
+  page {
+    position: relative;
+    margin-top:10upx;
+  }
+  
+   //空数据的样式
+  .mescroll-empty{
+    width: 100%;
+    padding-top: 40upx;
+    text-align: center;
+    padding-bottom: 40upx;
+    margin-top: 10upx;
+    .empty-icon{
+      width: 30% !important;
+      margin-bottom: 20upx;
+      margin-top: 12%;
+    }
+    .empty-tip{
+      margin-top: 12upx;
+      font-size: 28upx;
+      color: #E7E4E2;
+    }
+  }
+  
   .goods-list-item {
     margin-bottom: 30upx;
   }
@@ -426,10 +452,6 @@
       margin-right: 20upx;
       align-items: flex-start;
     }
-  }
-
-  page {
-    position: relative;
   }
 
   @font-face {
@@ -539,15 +561,6 @@
     width: calc(99%);
     margin: 0 auto;
     padding-bottom: 120upx;
-
-    .tis {
-      width: 100%;
-      height: 60upx;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 32upx;
-    }
 
     .row {
       height: calc(22vw + 40upx);

@@ -2,9 +2,9 @@
   <!-- 交换中心页面-->
   <view class="swCenter">
 
-    <return-nav>
+    <!-- <return-nav>
       <text>交换中心</text>
-    </return-nav>
+    </return-nav> -->
 
     <!--账号余额-->
     <view class="accountInfo">
@@ -210,6 +210,10 @@
 </script>
 
 <style lang="scss" scoped>
+  
+  page{
+    margin-top:10upx;
+  }
   
    /* 账号信息样式 */
   .accountInfo {

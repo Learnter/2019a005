@@ -29,9 +29,9 @@
 	 {
 	  "path": "pages/tabBar/shCart/shCart",//购物车页面
 	  "style": {
-	    "app-plus": {
-	      "titleNView": false
-	    }
+      "navigationBarTitleText": "购物车",
+      "navigationBarBackgroundColor": "white",
+      "navigationBarTextStyle": "black"
 	  }
 	},
   
@@ -94,9 +94,9 @@
     {
       "path": "pages/tabBar/shCart/confirmation/confirmation",
       "style": {
-        "app-plus": {
-          "titleNView": false
-        }
+        "navigationBarTitleText": "结算",
+        "navigationBarBackgroundColor": "white",
+        "navigationBarTextStyle": "black"
       }
     },
     {
@@ -127,9 +127,9 @@
     {
       "path": "pages/tabBar/shCart/user-orders/user-orders",//用户订单页面
       "style": {
-        "app-plus": {
-          "titleNView": false
-        }
+        "navigationBarTitleText": "我的订单",
+        "navigationBarBackgroundColor": "white",
+        "navigationBarTextStyle": "black"
       }
     },
     {
@@ -151,9 +151,9 @@
     {
       "path": "pages/tabBar/swCenter/swCenter",//交换中心页面
       "style": {
-        "app-plus": {
-          "titleNView": false
-        }
+        "navigationBarTitleText": "交换中心",
+        "navigationBarBackgroundColor": "white",
+        "navigationBarTextStyle": "black"
       }
     },
     {
@@ -218,7 +218,11 @@
         }
         ,{
             "path" : "pages/tabBar/shCart/payment/payment",
-            "style" : {}
+            "style" : {
+              "navigationBarTitleText": "确认支付",
+              "navigationBarBackgroundColor": "white",
+              "navigationBarTextStyle": "black"
+            }
         }
     ],
   "globalStyle": {
