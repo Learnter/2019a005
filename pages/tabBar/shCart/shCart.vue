@@ -142,6 +142,7 @@
       fetchData(){
         let url = "cart/cartList";
         this.$Request.get(url).then( res => {
+					console.log("进入购物车" , res);
           if(res && res.code === 200){
             this.goodsList = res.data.cartList;
           }

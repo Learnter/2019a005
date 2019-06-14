@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.nav-list.data-v-0f1f8bef {
+.nav-list.data-v-fdf51bea {
   height: 80rpx;
   background: white;
   display: -webkit-box;
@@ -40,12 +40,12 @@
           align-items: center;
   bottom: 10rpx;
 }
-.nav-list .nav-text.data-v-0f1f8bef {
+.nav-list .nav-text.data-v-fdf51bea {
     padding-bottom: 8rpx;
     border-bottom: 2rpx solid #00d693;
     font-weight: 700;
 }
-.mescroll-empty.data-v-0f1f8bef {
+.mescroll-empty.data-v-fdf51bea {
   width: 100%;
   padding-top: 40rpx;
   text-align: center;
@@ -53,46 +53,46 @@
   background: #ffffff;
   margin-top: 10rpx;
 }
-.mescroll-empty .empty-icon.data-v-0f1f8bef {
+.mescroll-empty .empty-icon.data-v-fdf51bea {
     width: 30% !important;
     margin-bottom: 20rpx;
     margin-top: 12%;
 }
-.mescroll-empty .empty-tip.data-v-0f1f8bef {
+.mescroll-empty .empty-tip.data-v-fdf51bea {
     margin-top: 12rpx;
     font-size: 28rpx;
     color: #E7E4E2;
 }
-.comment-list.data-v-0f1f8bef {
+.comment-list.data-v-fdf51bea {
   margin: 20rpx 16rpx;
 }
-.comment-list .comment-item.data-v-0f1f8bef {
+.comment-list .comment-item.data-v-fdf51bea {
     background: white;
     padding: 10rpx;
     margin: 10rpx 0;
     border-radius: 10rpx;
 }
-.comment-list .comment-item .com-item-head.data-v-0f1f8bef {
+.comment-list .comment-item .com-item-head.data-v-fdf51bea {
       -webkit-box-pack: justify;
       -webkit-justify-content: space-between;
           -ms-flex-pack: justify;
               justify-content: space-between;
       margin-bottom: 10rpx;
 }
-.comment-list .comment-item .com-item-head text.data-v-0f1f8bef {
+.comment-list .comment-item .com-item-head text.data-v-fdf51bea {
         margin: 0;
         padding: 0;
 }
-.comment-list .comment-item .com-item-head .item-head-left.data-v-0f1f8bef {
+.comment-list .comment-item .com-item-head .item-head-left.data-v-fdf51bea {
         -webkit-box-flex: 1;
         -webkit-flex: 1;
             -ms-flex: 1;
                 flex: 1;
 }
-.comment-list .comment-item .com-item-head .item-head-left .member-level.data-v-0f1f8bef {
+.comment-list .comment-item .com-item-head .item-head-left .member-level.data-v-fdf51bea {
           margin: 0 6rpx;
 }
-.comment-list .comment-item .item-content-img.data-v-0f1f8bef {
+.comment-list .comment-item .item-content-img.data-v-fdf51bea {
       width: 128rpx;
       height: 128rpx;
       text-align: center;

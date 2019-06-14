@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/tabBar/onGoods/onGoods",
+    "pages/login/login",
     "pages/category/comment/comment",
     "pages/tabBar/shCart/shCart",
-    "pages/login/login",
     "pages/search/search",
     "pages/category/category",
     "pages/category/stGoods/stGoods",
@@ -11,7 +11,7 @@
     "pages/category/totalShow/totalShow",
     "pages/register/merchant-register/merchant-register",
     "pages/login/merchant-login/merchant-login",
-    "pages/tabBar/shCart/payment/payment",
+    "pages/tabBar/shCart/confirmation/confirmation",
     "pages/packet/packet",
     "pages/tabBar/shCart/pay-bill/pay-bill",
     "pages/tabBar/swCenter/exchange-center/exchange-center",
@@ -24,7 +24,10 @@
     "pages/tabBar/offStores/offStores",
     "pages/register/register",
     "pages/tabBar/psCenter/psCenter",
-    "pages/tabBar/psCenter/systemNotice/systemNotice"
+    "pages/tabBar/psCenter/systemNotice/systemNotice",
+    "pages/address/address",
+    "pages/address/edit/edit",
+    "pages/tabBar/shCart/payment/payment"
   ],
   "subPackages": [],
   "window": {
@@ -73,6 +76,5 @@
   },
   "usingComponents": {
     "return-nav": "/components/returnNav"
-  },
-  "sitemapLocation": "sitemap83.json"
+  }
 }

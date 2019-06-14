@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.buyCount.data-v-57ae2f0f {
+.buyCount.data-v-0eceec2b {
   margin: 8px 0px;
   padding: 8px 0px;
   border-top: 1px solid #F1F1F1;
@@ -42,18 +42,18 @@
           justify-content: space-between;
 }
 /* 规格选择弹窗 */
-.attr-content.data-v-57ae2f0f {
+.attr-content.data-v-0eceec2b {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 10rpx 30rpx;
 }
-.attr-content .a-t.data-v-57ae2f0f {
+.attr-content .a-t.data-v-0eceec2b {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 }
-.attr-content .a-t image.data-v-57ae2f0f {
+.attr-content .a-t image.data-v-0eceec2b {
       width: 170rpx;
       height: 170rpx;
       -webkit-flex-shrink: 0;
@@ -62,7 +62,7 @@
       margin-top: -40rpx;
       border-radius: 8rpx;
 }
-.attr-content .a-t .right.data-v-57ae2f0f {
+.attr-content .a-t .right.data-v-0eceec2b {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -75,14 +75,14 @@
       padding-left: 24rpx;
       line-height: 42rpx;
 }
-.attr-content .a-t .right .price.data-v-57ae2f0f {
+.attr-content .a-t .right .price.data-v-0eceec2b {
         color: #007aff;
         margin-bottom: 10rpx;
 }
-.attr-content .a-t .right .selected-text.data-v-57ae2f0f {
+.attr-content .a-t .right .selected-text.data-v-0eceec2b {
         margin-right: 10rpx;
 }
-.attr-content .attr-list.data-v-57ae2f0f {
+.attr-content .attr-list.data-v-0eceec2b {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -95,7 +95,7 @@
     padding-top: 30rpx;
     padding-left: 10rpx;
 }
-.attr-content .item-list.data-v-57ae2f0f {
+.attr-content .item-list.data-v-0eceec2b {
     padding: 20rpx 0 0;
     display: -webkit-box;
     display: -webkit-flex;
@@ -105,7 +105,7 @@
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 }
-.attr-content .item-list text.data-v-57ae2f0f {
+.attr-content .item-list text.data-v-0eceec2b {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -126,12 +126,12 @@
       height: 60rpx;
       padding: 0 20rpx;
 }
-.attr-content .item-list .selected.data-v-57ae2f0f {
+.attr-content .item-list .selected.data-v-0eceec2b {
       background: #fbebee;
       color: #007aff;
 }
 /*  弹出层 */
-.popup.data-v-57ae2f0f {
+.popup.data-v-0eceec2b {
   position: fixed;
   left: 0;
   top: 0;
@@ -139,29 +139,29 @@
   bottom: 0;
   z-index: 99;
 }
-.popup.show.data-v-57ae2f0f {
+.popup.show.data-v-0eceec2b {
     display: block;
 }
-.popup.show .mask.data-v-57ae2f0f {
-      -webkit-animation: showPopup-data-v-57ae2f0f 0.2s linear both;
-              animation: showPopup-data-v-57ae2f0f 0.2s linear both;
+.popup.show .mask.data-v-0eceec2b {
+      -webkit-animation: showPopup-data-v-0eceec2b 0.2s linear both;
+              animation: showPopup-data-v-0eceec2b 0.2s linear both;
 }
-.popup.show .layer.data-v-57ae2f0f {
-      -webkit-animation: showLayer-data-v-57ae2f0f 0.2s linear both;
-              animation: showLayer-data-v-57ae2f0f 0.2s linear both;
+.popup.show .layer.data-v-0eceec2b {
+      -webkit-animation: showLayer-data-v-0eceec2b 0.2s linear both;
+              animation: showLayer-data-v-0eceec2b 0.2s linear both;
 }
-.popup.hide .mask.data-v-57ae2f0f {
-    -webkit-animation: hidePopup-data-v-57ae2f0f 0.2s linear both;
-            animation: hidePopup-data-v-57ae2f0f 0.2s linear both;
+.popup.hide .mask.data-v-0eceec2b {
+    -webkit-animation: hidePopup-data-v-0eceec2b 0.2s linear both;
+            animation: hidePopup-data-v-0eceec2b 0.2s linear both;
 }
-.popup.hide .layer.data-v-57ae2f0f {
-    -webkit-animation: hideLayer-data-v-57ae2f0f 0.2s linear both;
-            animation: hideLayer-data-v-57ae2f0f 0.2s linear both;
+.popup.hide .layer.data-v-0eceec2b {
+    -webkit-animation: hideLayer-data-v-0eceec2b 0.2s linear both;
+            animation: hideLayer-data-v-0eceec2b 0.2s linear both;
 }
-.popup.none.data-v-57ae2f0f {
+.popup.none.data-v-0eceec2b {
     display: none;
 }
-.popup .mask.data-v-57ae2f0f {
+.popup .mask.data-v-0eceec2b {
     position: fixed;
     top: 0;
     width: 100%;
@@ -169,7 +169,7 @@
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.4);
 }
-.popup .layer.data-v-57ae2f0f {
+.popup .layer.data-v-0eceec2b {
     position: fixed;
     z-index: 99;
     bottom: 0;
@@ -178,7 +178,7 @@
     border-radius: 10rpx 10rpx 0 0;
     background-color: #fff;
 }
-.popup .layer .btn.data-v-57ae2f0f {
+.popup .layer .btn.data-v-0eceec2b {
       height: 66rpx;
       line-height: 66rpx;
       border-radius: 100rpx;
@@ -186,7 +186,7 @@
       color: #fff;
       margin: 30rpx auto 20rpx;
 }
-@-webkit-keyframes showPopup-data-v-57ae2f0f {
+@-webkit-keyframes showPopup-data-v-0eceec2b {
 0% {
     opacity: 0;
 }
@@ -194,7 +194,7 @@
     opacity: 1;
 }
 }
-@keyframes showPopup-data-v-57ae2f0f {
+@keyframes showPopup-data-v-0eceec2b {
 0% {
     opacity: 0;
 }
@@ -202,7 +202,7 @@
     opacity: 1;
 }
 }
-@-webkit-keyframes hidePopup-data-v-57ae2f0f {
+@-webkit-keyframes hidePopup-data-v-0eceec2b {
 0% {
     opacity: 1;
 }
@@ -210,7 +210,7 @@
     opacity: 0;
 }
 }
-@keyframes hidePopup-data-v-57ae2f0f {
+@keyframes hidePopup-data-v-0eceec2b {
 0% {
     opacity: 1;
 }
@@ -218,7 +218,7 @@
     opacity: 0;
 }
 }
-@-webkit-keyframes showLayer-data-v-57ae2f0f {
+@-webkit-keyframes showLayer-data-v-0eceec2b {
 0% {
     -webkit-transform: translateY(120%);
             transform: translateY(120%);
@@ -228,7 +228,7 @@
             transform: translateY(0%);
 }
 }
-@keyframes showLayer-data-v-57ae2f0f {
+@keyframes showLayer-data-v-0eceec2b {
 0% {
     -webkit-transform: translateY(120%);
             transform: translateY(120%);
@@ -238,7 +238,7 @@
             transform: translateY(0%);
 }
 }
-@-webkit-keyframes hideLayer-data-v-57ae2f0f {
+@-webkit-keyframes hideLayer-data-v-0eceec2b {
 0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -248,7 +248,7 @@
             transform: translateY(120%);
 }
 }
-@keyframes hideLayer-data-v-57ae2f0f {
+@keyframes hideLayer-data-v-0eceec2b {
 0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -258,14 +258,14 @@
             transform: translateY(120%);
 }
 }
-.returnBtn.data-v-57ae2f0f {
+.returnBtn.data-v-0eceec2b {
   width: 60rpx;
   height: 60rpx;
 }
-.text-del-style.data-v-57ae2f0f {
+.text-del-style.data-v-0eceec2b {
   color: #E2E0DD;
 }
-.detailPage.data-v-57ae2f0f {
+.detailPage.data-v-0eceec2b {
   position: absolute;
   left: 0;
   top: 0;
@@ -273,7 +273,7 @@
   bottom: 120rpx;
   overflow: auto;
 }
-.big-Piture.data-v-57ae2f0f {
+.big-Piture.data-v-0eceec2b {
   width: 97%;
   left: 1%;
   top: 1%;
@@ -284,15 +284,15 @@
   z-index: 10;
   position: relative;
 }
-.big-Piture .b-p-photo.data-v-57ae2f0f {
+.big-Piture .b-p-photo.data-v-0eceec2b {
     border: 1px solid #E6E6E6;
     height: 700rpx;
 }
-.big-Piture .returnBtn.data-v-57ae2f0f {
+.big-Piture .returnBtn.data-v-0eceec2b {
     top: 12rpx;
     left: 12rpx;
 }
-.detailNav.data-v-57ae2f0f {
+.detailNav.data-v-0eceec2b {
   background: #BAD0BA;
   display: -webkit-box;
   display: -webkit-flex;
@@ -305,7 +305,7 @@
   color: white;
   height: 100rpx;
 }
-.detailNav .nav-left.data-v-57ae2f0f {
+.detailNav .nav-left.data-v-0eceec2b {
     width: 70%;
     height: 100%;
     line-height: 100rpx;
@@ -314,11 +314,11 @@
     background: #41A069;
     overflow: hidden;
 }
-.detailNav .nav-left .nav-l-price.data-v-57ae2f0f {
+.detailNav .nav-left .nav-l-price.data-v-0eceec2b {
       font-size: 44rpx;
       margin: 0 10rpx 0 40rpx;
 }
-.detailNav .nav-right.data-v-57ae2f0f {
+.detailNav .nav-right.data-v-0eceec2b {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
@@ -332,16 +332,16 @@
         -ms-flex-pack: distribute;
             justify-content: space-around;
 }
-.detailNav .nav-right text.data-v-57ae2f0f {
+.detailNav .nav-right text.data-v-0eceec2b {
       padding: 6rpx 14rpx;
       background: #41A069;
 }
-.detailBox.data-v-57ae2f0f {
+.detailBox.data-v-0eceec2b {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 20rpx 26rpx;
 }
-.detailBox .detail-photos.data-v-57ae2f0f {
+.detailBox .detail-photos.data-v-0eceec2b {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -355,18 +355,18 @@
             align-content: center;
     margin-bottom: 20rpx;
 }
-.detailBox .detail-photos image.data-v-57ae2f0f {
+.detailBox .detail-photos image.data-v-0eceec2b {
       width: 17%;
       height: 120rpx;
 }
-.detailBox .detail-title.data-v-57ae2f0f {
+.detailBox .detail-title.data-v-0eceec2b {
     padding: 30rpx 40rpx;
     background: white;
     margin-bottom: 20rpx;
     overflow: hidden;
     word-wrap: break-word;
 }
-.seleBtn.data-v-57ae2f0f {
+.seleBtn.data-v-0eceec2b {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -374,7 +374,11 @@
   padding: 20rpx 26rpx;
   background: #F0F0F0;
 }
-.commentBtn.data-v-57ae2f0f {
+.seleBtn .selected-text.data-v-0eceec2b {
+    margin: 0;
+    margin-left: 10rpx;
+}
+.commentBtn.data-v-0eceec2b {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -382,7 +386,7 @@
   padding: 20rpx 26rpx;
   background: #F0F0F0;
 }
-.detail-introduction.data-v-57ae2f0f {
+.detail-introduction.data-v-0eceec2b {
   background: #ffffff;
   padding: 30rpx 20rpx;
   line-height: 1.5;
@@ -390,7 +394,7 @@
   overflow: hidden;
   word-wrap: break-word;
 }
-.bottom-shop.data-v-57ae2f0f {
+.bottom-shop.data-v-0eceec2b {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -411,7 +415,7 @@
           align-items: center;
   padding: 0 30rpx;
 }
-.bottom-shop .shop-logo.data-v-57ae2f0f {
+.bottom-shop .shop-logo.data-v-0eceec2b {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -428,11 +432,11 @@
     font-size: 20rpx;
     color: #41A069;
 }
-.bottom-shop .shop-logo image.data-v-57ae2f0f {
+.bottom-shop .shop-logo image.data-v-0eceec2b {
       width: 50rpx;
       margin-bottom: 6rpx;
 }
-.bottom-shop .shop-btn.data-v-57ae2f0f {
+.bottom-shop .shop-btn.data-v-0eceec2b {
     color: white;
     display: -webkit-box;
     display: -webkit-flex;
@@ -443,7 +447,7 @@
         -ms-flex-align: center;
             align-items: center;
 }
-.bottom-shop .shop-btn text.data-v-57ae2f0f {
+.bottom-shop .shop-btn text.data-v-0eceec2b {
       padding: 8rpx 20rpx;
       border-radius: 30rpx;
       margin-left: 20rpx;

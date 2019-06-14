@@ -53,7 +53,7 @@
 				保存地址
 			</view>
 		</view>
-		<mpvue-city-picker :provinceData = "province" :cityData = "city" :area = "area"  :themeColor="themeColor" ref="mpvueCityPicker" :pickerValueDefault="cityPickerValue" @onCancel="onCancel" @onConfirm="onConfirm"></mpvue-city-picker>
+		<mpvue-city-picker  :themeColor="themeColor" ref="mpvueCityPicker" :pickerValueDefault="cityPickerValue" @onCancel="onCancel" @onConfirm="onConfirm"></mpvue-city-picker>
 	</view>
 </template>
 
@@ -76,22 +76,26 @@
 				isDefault:false,
 				cityPickerValue: [0, 0, 1],
 				themeColor: '#007AFF',
-				region:{label:"请点击选择地址",value:[],cityCode:""}
+				region:{label:"请点击选择地址",value:[],cityCode:""},
+				// province:[],
+				// city:{},
+				// area:{}
 			};
 		},
 		methods: {
-       fetchAreInfo(){
-        let url = "config/regionInfo";
-        this.$Request.get(url).then( res => {
-          if(res && res.code == 200){
-            this.province = res.data.province;
-            this.city = res.data.city;
-            this.area = res.data.district;
-            // console.log( this.provinceDataList,this.cityDataList,this.areaDataList);
-            // this.addInfo = res.data;
-          }
-        })
-      },
+   //     fetchAreInfo(){
+   //      let url = "config/regionInfo";
+   //      this.$Request.get(url).then( res => {
+   //        if(res && res.code == 200){
+   //          this.province = res.data.province;
+   //          this.city = res.data.city;
+   //          this.area = res.data.district;
+			// console.log(this.province,this.city,this.area);
+   //          // console.log( this.provinceDataList,this.cityDataList,this.areaDataList);
+   //          // this.addInfo = res.data;
+   //        }
+   //      })
+   //    },
 			onCancel(e) {
 				console.log(e)
 			},
@@ -188,7 +192,7 @@
 			}
 		},
 		onLoad(e) {
-      this.fetchAreInfo();
+           // this.fetchAreInfo();
 			//获取传递过来的参数
 			this.editType = e.type;
 			if(e.type=='edit'){

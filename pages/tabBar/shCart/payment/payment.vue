@@ -69,10 +69,13 @@
 		methods:{
       //获取订单信息
       fetchOrderInfo(e){
+		  
         let url = "order/payOrderInfo";
-        let data = {
-          "master_order_sn":e.orderSn //传入的订单单号
-        }
+        let data = {}
+		
+		//判断传入的订单号，还是订单id;
+		e.orderSn ? data["master_order_sn"] = e.orderSn : data["order_id"] = e.orderId;
+		
         this.$Request.get(url,data).then( res => {
           if(res && res.code == 200){
             this.orderInfo = res.data;
