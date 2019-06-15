@@ -1,37 +1,10 @@
 <template>
   <view class="homePage">
-
-    <view class="headBox">
-      <!-- 首页头部 -->
-      <image class="bgImage" src="../../../static/ga005_26.png" mode="widthFix"></image>
-      <view class="contentBox">
-        <view class="con_text">
-          <!-- <text>OPAY</text> -->
-          <h2>OPAY</h2>
-          <view class="con_buttom">
-            <view class="conImg">
-              <image src="../../../static/2019_a005_27.png" mode="widthFix"></image>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
+    
+    <banner-view></banner-view>
 
     <!-- 首页内容区 -->
     <view class="home-main">
-
-      <view class="bannerBox">
-        <!-- 轮播组件 -->
-        <uni-swiper-dot :info="swiperInfo" :current="current" :mode="mode" :dots-styles="dotsStyles">
-          <swiper class="swiper-box" @change="toggleSwiper" autoplay="true" circular="true">
-            <swiper-item v-for="(item ,index) in swiperInfo" :key="index">
-              <view class="swiper-item">
-                <image :src="item.url" mode="widthFix" />
-              </view>
-            </swiper-item>
-          </swiper>
-        </uni-swiper-dot>
-      </view>
 
       <view class="iconBox">
         <!-- 分类区 -->
@@ -249,36 +222,18 @@
 </template>
 
 <script>
-  import uniSwiperDot from '@/components/uni-swiper-dot/uni-swiper-dot.vue'
   import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue'
+  import bannerView from '@/components/bannerView.vue';
   export default {
     data() {
       return {
         status: "noMore",
-        indicatorDots: true,
-        autoplay: true,
-        interval: 2000,
-        duration: 500,
-        modeIndex: -1,
-        styleIndex: -1,
-        current: 0,
-        mode: 'long',
-        dotsStyles: {
-          backgroundColor: 'rgba(83, 200, 249,0.3)',
-          border: '1px rgba(83, 200, 249,0.3) solid',
-          color: '#fff',
-          selectedBackgroundColor: 'rgba(83, 200, 249,0.9)',
-          selectedBorder: '1px rgba(83, 200, 249,0.9) solid',
-          width: 10,
-          height: 2
-        },
         dataInfo: '',
         msg: [], //公告栏数据
         swiperInfo: [], //轮播数据
       }
     },
     onLoad() {
-      this.fetchData();
       this.fetchGoodData();
       this.fetchNoticeData();
     },
@@ -334,8 +289,8 @@
       }
      },
     components: {
-      uniSwiperDot,
-      uniLoadMore
+      uniLoadMore,
+      bannerView
     }
   }
 </script>
@@ -375,68 +330,9 @@
     margin-right: 6upx;
   }
 
-  .headBox {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    width: 100%;
-
-    .bgImage {
-      width: 100%;
-      z-index: 1;
-    }
-
-    .contentBox {
-      position: absolute;
-      left: 0;
-      top: 100upx;
-      right: 0;
-      z-index: 2;
-
-      .con_text {
-        padding: 0 30upx;
-        color: white;
-
-        .con_buttom {
-          background-color: white;
-          width: 100%;
-          box-sizing: border-box;
-          padding: 10upx 0 10upx 20upx;
-          height: 50upx;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          border-radius: 10upx;
-          margin-top: 30upx;
-
-          .conImg {
-            height: 30upx;
-            width: 30upx;
-          }
-        }
-      }
-    }
-  }
 
   .home-main {
-    padding: 480upx 20upx 0;
-    position: relative;
-    z-index: 10;
-
-    .bannerBox {
-      width: 100%;
-      border-radius: 20upx;
-      overflow: hidden;
-      box-shadow: 0upx 10upx 10upx rgba(0, 0, 0, 0.2);
-      margin-bottom: 20upx;
-      margin-top: -240upx;
-
-      .swiper-box {
-        height: 300upx;
-      }
-    }
-
+    margin-top:60upx;
     .iconBox {
       display: flex;
       flex-wrap: wrap;

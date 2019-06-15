@@ -1,6 +1,8 @@
 <template>
 	<view>
-    <image class="returnBtn" src="../../static/ga005_64.png" mode="widthFix"></image>
+     <!-- 返回按钮-->
+    <return-back></return-back>
+    
     <view class="newsImg">
       <image :src="detailInfo.thumb" mode="widthFix"></image>
     </view>
@@ -16,14 +18,15 @@
     <view class="discussBox uni-inline-item">
       <input type="text" value="" placeholder="发表您的评论" placeholder-style="text-align:center"/>
       <view class="disImg">
-        <image src="../../static/ga005_95.png" mode="widthFix"></image>
-        <image src="../../static/ga005_130.png" mode="widthFix"></image>
+        <image src="/static/ga005_95.png" mode="widthFix"></image>
+        <image src="/static/ga005_130.png" mode="widthFix"></image>
       </view>
     </view>  
 	</view>
 </template>
 
 <script>
+  import returnBack from "@/components/returnBack.vue";
 	export default {
 		data() {
 			return {
@@ -51,6 +54,9 @@
     onLoad(options) {
      this.ID = options.id;
      this.fetchData();
+    },
+    components:{
+      returnBack
     }
 	}
 </script>

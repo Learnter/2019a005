@@ -10,11 +10,14 @@
         <view class="con-main">
           <text class="con-main-title">OPAY</text>
           <view class="con-main-search">
-            <uni-icon type="arrowleft" size="30" color="white"></uni-icon>
+            
+             <uni-icon type="arrowleft" size="30" color="white" @tap="returnBack" ></uni-icon>
+                
             <view class="searchNav">
               <image class="search-img" src="../../static/2019_a005_27.png" mode="widthFix"></image>
-              <input type="text" value="" class="search-input" />
+              <input type="text" value="" class="search-input" focus="true" />
             </view>
+            
             <text>搜索</text>
           </view>
         </view>
@@ -157,6 +160,11 @@
 
       };
     },
+    methods:{
+      returnBack(){
+        uni.navigateBack();
+      }
+    },
     components: {
       uniTag,
       uniIcon
@@ -187,7 +195,7 @@
     top: 0;
     right: 0;
     left: 0;
-
+    
     .bgImg {
       width: 100%;
     }
@@ -197,7 +205,7 @@
       left: 0;
       right: 0;
       top: 100upx;
-
+      z-index:999;
       .con-main {
         padding: 0 30upx;
         color: white;

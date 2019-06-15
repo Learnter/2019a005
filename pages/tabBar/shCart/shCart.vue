@@ -142,35 +142,12 @@
       fetchData(){
         let url = "cart/cartList";
         this.$Request.get(url).then( res => {
-					console.log("进入购物车" , res);
           if(res && res.code === 200){
             this.goodsList = res.data.cartList;
+            this.sum(); //初始计算
           }
         })
       },
-      //加入商品 参数 goods:商品数据
-      // joinGoods(goods) {
-      //   /*
-      //    * 这里只是展示一种添加逻辑，模板并没有做从其他页面加入商品到购物车的具体动作，
-      //    * 在实际应用上，前端并不会直接插入记录到goodsList这一个动作，一般是更新列表和本地列表缓存。
-      //    * 一般商城购物车的增删改动作是由后端来完成的,
-      //    * 后端记录后返回前端更新前端缓存
-      //    */
-      //   let len = this.goodsList.length;
-      //   let isFind = false; //是否找到ID一样的商品
-      //   for (let i = 0; i < len; i++) {
-      //     let row = this.goodsList[i];
-      //     if (row.id == goods.id) { //找到商品一样的商品
-      //       this.goodsList[i].number++; //数量自增
-      //       isFind = true; //找到一样的商品
-      //       break; //跳出循环
-      //     }
-      //   }
-      //   if (!isFind) {
-      //     //没有找到一样的商品，新增一行到购物车商品列表头部
-      //     this.goodsList[i].unshift(goods);
-      //   }
-      // },
       //控制左滑删除效果-begin
       touchStart(index, event) {
         //多点触控不触发

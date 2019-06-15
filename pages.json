@@ -1,95 +1,96 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-  {
-    "path": "pages/tabBar/onGoods/onGoods",
-    "style": {
-      "app-plus": { //去除app 头部导航栏
-        "titleNView": false
-      }
-    }
-  },
-  {
-    "path": "pages/login/login",
-    "style": {
-      "app-plus": {
-        "titleNView": false
-      }
-    }
-  },
-   
-  {
-      "path" : "pages/category/comment/comment",
-      "style" : {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-  },
-  
-	 {
-	  "path": "pages/tabBar/shCart/shCart",//购物车页面
-	  "style": {
-      "navigationBarTitleText": "购物车",
-      "navigationBarBackgroundColor": "white",
-      "navigationBarTextStyle": "black"
-	  }
-	},
-  
-  {
-      "path" : "pages/search/search",
-      "style" : {
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-  },
-   {
-         "path" : "pages/category/category",
-         "style": {
-           "app-plus": {
-             "titleNView": false
-           }
-         }
-      }, 
-  {
-    "path": "pages/category/stGoods/stGoods",
-    "style": {
-      "app-plus": { //去除app 头部导航栏
-        "titleNView": false
-      }
-    }
-  },
-  {
-    "path": "pages/codeShow/codeShow",
-    "style": {
-      "app-plus": { //去除app 头部导航栏
-        "titleNView": false
-      }
-    }
-  },
-  {
-      "path" : "pages/category/totalShow/totalShow",
-      "style" : {
+    {
+      "path": "pages/tabBar/onGoods/onGoods",
+      "style": {
         "app-plus": { //去除app 头部导航栏
           "titleNView": false
         }
       }
-  },
-  {
-      "path" : "pages/register/merchant-register/merchant-register",
-      "style" : {
+    },
+    {
+      "path": "pages/category/category",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/category/totalShow/totalShow",
+      "style": {
         "app-plus": { //去除app 头部导航栏
           "titleNView": false
         }
       }
-  },
-  {
-        "path" : "pages/login/merchant-login/merchant-login",
-        "style" : {
-          "app-plus": { //去除app 头部导航栏
-            "titleNView": false
-          }
+    },
+    {
+      "path": "pages/category/stGoods/stGoods",
+      "style": {
+        "app-plus": { //去除app 头部导航栏
+          "titleNView": false
         }
+      }
+    },
+
+    {
+      "path": "pages/login/login",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+
+    {
+      "path": "pages/category/comment/comment",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+
+    {
+      "path": "pages/tabBar/shCart/shCart", //购物车页面
+      "style": {
+        "navigationBarTitleText": "购物车",
+        "navigationBarBackgroundColor": "white",
+        "navigationBarTextStyle": "black"
+      }
+    },
+
+    {
+      "path": "pages/search/search",
+      "style": {
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/codeShow/codeShow",
+      "style": {
+        "app-plus": { //去除app 头部导航栏
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/register/merchant-register/merchant-register",
+      "style": {
+        "app-plus": { //去除app 头部导航栏
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/login/merchant-login/merchant-login",
+      "style": {
+        "app-plus": { //去除app 头部导航栏
+          "titleNView": false
+        }
+      }
     },
     {
       "path": "pages/tabBar/shCart/confirmation/confirmation",
@@ -125,7 +126,7 @@
     },
 
     {
-      "path": "pages/tabBar/shCart/user-orders/user-orders",//用户订单页面
+      "path": "pages/tabBar/shCart/user-orders/user-orders", //用户订单页面
       "style": {
         "navigationBarTitleText": "我的订单",
         "navigationBarBackgroundColor": "white",
@@ -149,7 +150,7 @@
       }
     },
     {
-      "path": "pages/tabBar/swCenter/swCenter",//交换中心页面
+      "path": "pages/tabBar/swCenter/swCenter", //交换中心页面
       "style": {
         "navigationBarTitleText": "交换中心",
         "navigationBarBackgroundColor": "white",
@@ -195,36 +196,39 @@
           "titleNView": false
         }
       }
-    }        
-        ,{
-            "path" : "pages/tabBar/psCenter/systemNotice/systemNotice", //系统公告页面
-            "style" : {
-               "app-plus": {
-                "titleNView": false
-              }
-            }
+    }, {
+      "path": "pages/tabBar/psCenter/systemNotice/systemNotice", //系统公告页面
+      "style": {
+        "app-plus": {
+          "titleNView": false
         }
-        ,{
-            "path" : "pages/address/address",
-            "style" : {
-              "app-plus": {
-                "titleNView": false
-              }
-            }
+      }
+    }, {
+      "path": "pages/address/address",
+      "style": {
+        "app-plus": {
+          "titleNView": false
         }
-        ,{
-            "path" : "pages/address/edit/edit",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/tabBar/shCart/payment/payment",
-            "style" : {
-              "navigationBarTitleText": "确认支付",
-              "navigationBarBackgroundColor": "white",
-              "navigationBarTextStyle": "black"
-            }
-        }
-    ],
+      }
+    }, {
+      "path": "pages/address/edit/edit",
+      "style": {}
+    }, {
+      "path": "pages/tabBar/shCart/payment/payment",
+      "style": {
+        "navigationBarTitleText": "确认支付",
+        "navigationBarBackgroundColor": "white",
+        "navigationBarTextStyle": "black"
+      }
+    }, {
+      "path": "pages/tabBar/shCart/user-orders/orderDetails/orderDetails",
+      "style": {
+        "navigationBarTitleText": "订单详情",
+        "navigationBarBackgroundColor": "white",
+        "navigationBarTextStyle": "black"
+      }
+    }
+  ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",

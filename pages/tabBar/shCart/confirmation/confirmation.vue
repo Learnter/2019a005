@@ -104,7 +104,7 @@
           if(res && res.code == 200){
             //获取主订单的信息
             let orderId = res.data.masterOrderSn;
-            console.log(orderId);
+
             uni.navigateTo({
               url:"/pages/tabBar/shCart/payment/payment?orderSn="+orderId
             })
@@ -227,7 +227,7 @@
       left:0;
       right:0;
       bottom:0;
-      background:white;
+      background: #F7F5F4;
       z-index:999;
       
        /* 物品总金额的样式*/

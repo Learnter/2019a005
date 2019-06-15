@@ -1,12 +1,11 @@
 <template>
   <view>
+      <!-- 返回按钮-->
+    <return-back></return-back>
+    
     <!-- 产品详情页面-->
-    <view class="detailPage">
-      
+    <view class="detailPage">  
       <view class="big-Piture">
-        <navigator open-type="navigateBack" hover-class="none">
-            <image class="returnBtn" src="../../../static/ga005_64.png" mode="widthFix"></image>
-        </navigator>
         <image class="b-p-photo"  :src="detailInfo.picture" mode="scaleToFill"></image>
       </view>
 
@@ -29,7 +28,7 @@
         </h2>
       </view>
       
-      <view class="seleBtn uni-inline-item" @click="toggleSpec">
+      <view class="seleBtn uni-inline-item" @click.stop="toggleSpec">
         <view>
           已选择:
           <text class="selected-text text-color-red" v-for="(sItem, sIndex) in specSelected" :key="sIndex">
@@ -60,17 +59,15 @@
 
     <view class="bottom-shop">
       <view class="shop-logo">
-        <image src="../../../static/2019_a005_58_1.png" mode="widthFix"></image>
+        <image src="/static/2019_a005_58_1.png" mode="widthFix"></image>
         <text>购物车</text>
       </view>
       <view class="shop-btn">
-        <view @tap="insertCart">
+        <view @tap.stop="insertCart">
           <text style="background:#E8651B;">加入购物车</text>
         </view>
-        <view @tap="buyNow">
-          <!-- <navigator url="/pages/tabBar/shCart/shCart" open-type="switchTab"> -->
+        <view @tap.stop="buyNow">
              <text style="background: #DF0024;">立即购买</text>
-          <!-- </navigator> -->
         </view>
       </view>
     </view>
@@ -124,6 +121,7 @@
 <script>
   import uniIcon from '@/components/uni-icon/uni-icon.vue';
   import uniNumberBox from '@/components/uni-number-box/uni-number-box.vue';
+  import returnBack from "@/components/returnBack.vue";
   export default {
     data() {
       return {
@@ -226,9 +224,25 @@
         
         this.$Request.post(url,data).then( res => {
           if(res && res.code == 200){
+            uni.showModal({
+              title:"温馨提示",
+              content:"成功加入购物车",
+              confirmText:"立即购买",
+              cancelText:"继续购物",
+              success: (res) => {
+                if(res.confirm){
+                  uni.switchTab({
+                    url:"/pages/tabBar/shCart/shCart"
+                  })
+                }else{
+                  return;
+                }
+              }
+            })
+          }else{
             uni.showToast({
               title:res.msg,
-              icon:"success"
+              icon:"none"
             })
           }
         })
@@ -250,22 +264,38 @@
             }
           })
         }else{
-          uni.switchTab({
-            url:"/pages/tabBar/shCart/shCart"
-          })
+          let url = "cart/addCart";
+          let data = {
+            goods_id:this.productId, 
+            buy_num:this.buyNum,
+            goods_spec:this.goodsSpec
+          }
+          this.$Request.post(url,data).then( res => {
+             if(res && res.code === 200){
+                uni.switchTab({
+                 url:"/pages/tabBar/shCart/shCart"
+               })
+             }else{
+               uni.showToast({
+                 title:res.msg,
+                 icon:"none"
+               })
+             }
+           })
         }
       },
       stopPrevent(){}
     },
     components:{
       uniIcon,
-      uniNumberBox
+      uniNumberBox,
+      returnBack
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  
+
   .buyCount{
     margin: 8px 0px;
     padding: 8px 0px;
@@ -420,12 +450,6 @@
   	}
   }
 
-
-    
- .returnBtn{
-   width:60upx;
-   height:60upx;
- }
   
   .text-del-style {
     color: #E2E0DD;
@@ -453,11 +477,6 @@
     .b-p-photo {
       border: 1px solid #E6E6E6;
       height:700upx;
-    }
-
-    .returnBtn {
-      top: 12upx;
-      left: 12upx;
     }
   }
 

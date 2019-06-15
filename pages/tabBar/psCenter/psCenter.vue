@@ -3,8 +3,8 @@
   <view>
     <!-- 顶部背景模块-->
     <view class="headBg">
-      <image src="../../../static/ga005_26.png" mode="widthFix"></image>
-      <image class="bgImage" src="../../../static/ga005_125.png" mode="widthFix"></image>
+      <image src="/static/ga005_26.png" mode="widthFix"></image>
+      <image class="bgImage" src="/static/ga005_125.png" mode="widthFix"></image>
       <view class="useInfo">
         <view class="info-left">
           <image class="use-logo" src="" mode=""></image>
@@ -15,7 +15,7 @@
         </view>
 
         <view class="info-right">
-          <image src="../../../static/ga005_91.png" mode="widthFix"></image>
+          <image src="/static/ga005_91.png" mode="widthFix"></image>
           <p class="text-w-color text-xm-size">客服</p>
         </view>
       </view>
@@ -28,7 +28,7 @@
           
           <view class="useRight">
             <p>立刻领取
-              <image src="../../../static/ga005_128.png" mode="widthFix"></image>
+              <image src="/static/ga005_128.png" mode="widthFix"></image>
             </p>
           </view>
         </view>   

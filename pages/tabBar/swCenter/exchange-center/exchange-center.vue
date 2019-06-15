@@ -34,9 +34,6 @@
         </view> 
       </view>
       
-     <!-- <view class="convert-btn">
-          <button type="primary">提交</button>
-      </view> -->
       <button type="primary" class="convert-btn">提交</button>
       
     </view>

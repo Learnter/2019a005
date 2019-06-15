@@ -21,22 +21,22 @@
 					<text>您目前还没有订单哦!</text>
 				</view>
 
-				<view class="mechantLst " v-for="(item,index) in orderList" :key="index">
-					<view class="sactioncoTl df ">
-						<view class="fx1">订单号：{{item.order_sn}}</view>
+				<view class="mechantLst " v-for="(item,index) in orderList" :key="index"@tap.stop="orderDetal(item)">
+					<view class="sactioncoTl uni-flex ">
+						<view class="uni-flex-item">订单号：{{item.order_sn}}</view>
 					</view>
-					<view class="sactioncoztBox df">
-						<view class="fx1">
+					<view class="sactioncoztBox uni-flex">
+						<view class="uni-flex-item">
 							<view class="sactioncozttx">状态：
 								<span class="span_1">{{item.status.name}}</span> </view>
 							<view class="sactioncoztzj">总价：￥{{item.order_amount}}</view>
 						</view>
 						<view class="sactioncoztczBox">
 							<view class="sactioncoztczBox" v-if="item.status.value === 1">
-								<button class="btn" @tap="payment(item)">去支付</button>
-								<button class="btn" @tap="cancleOrder(item)">取消订单</button>
+								<button class="btn" @tap.stop="payment(item)">去支付</button>
+								<button class="btn" @tap.stop="cancleOrder(item)">取消订单</button>
 							</view>
-							<view class="sactioncoztczBox" v-if="item.status.value === 3" @tap="confirmOrder(item)">
+							<view class="sactioncoztczBox" v-if="item.status.value === 3" @tap.stop="confirmOrder(item)">
 								<button class="btn">确认收货</button>
 							</view>
 							<view class="sactioncoztczBox" v-if="item.status.value === 9">
@@ -44,15 +44,15 @@
 							</view>
 						</view>
 					</view>
-					<view class="df sactionsp" v-for="(childItem,childIndex) in item.goods_list" :key="childIndex">
+					<view class="uni-flex sactionsp" v-for="(childItem,childIndex) in item.goods_list" :key="childIndex">
 						<view class="sactionspimage likeA">
 							<image :src="childItem.picture" alt=""></image>
 						</view>
-						<view class="fx1">
-							<view class="textove2 fx1">
+						<view class="uni-flex-item">
+							<view class="textove2 uni-flex-item">
 								{{childItem.goods_name}}</view>
-							<view class="df">
-								<view class="sactionspms fx1">x{{childItem.goods_num}}</view>
+							<view class="uni-flex">
+								<view class="sactionspms uni-flex-item">x{{childItem.goods_num}}</view>
 								<view class="sactioncoztczBox" v-if="item.status.value === 6">
 									<button class="btn">去评价</button>
 								</view>
@@ -113,12 +113,8 @@
 						</view>
 					</view>
 				</view>
-
 			</view>
-
 		</view>
-
-
 	</view>
 </template>
 
@@ -190,6 +186,15 @@
 				})
 
 			},
+      //去订单详情页
+      orderDetal(item){
+        
+         let orderId = item.order_id;
+         
+        	uni.navigateTo({
+            url: "/pages/tabBar/shCart/user-orders/orderDetails/orderDetails?orderId=" + orderId
+        })
+      },
 			//取消订单
 			cancleOrder(item) {
 
@@ -275,14 +280,7 @@
 				padding: 10upx 20upx;
 				color: #333333;
 				border: 1px solid #F1F1F1;
-				.df {
-					display: flex;
-				}
-
-				.fx1 {
-					flex: 1
-				}
-
+        
 				.span_1 {
 					color: #00d693;
 				}
@@ -335,7 +333,7 @@
 			align-items: center;
 
 			.btn {
-				width: 140upx;
+				width: 150upx;
 				height: 40upx;
 				line-height: 40upx;
 				padding: 0 10upx;
