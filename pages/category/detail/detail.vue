@@ -168,6 +168,8 @@
             /* 规格价格信息*/
             this.specPriceData = res.data.specPriceData;
             
+            console.log(res.data.goodsInfo.spec_data);
+            
             /* 获取产品规格的初始值*/
             res.data.goodsInfo.spec_data.forEach(item => {
                 item.child[0].selected = true;
